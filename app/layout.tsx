@@ -15,16 +15,12 @@ export const metadata: Metadata = {
   manifest: "/manifest.json",
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "48x48" },
+      { url: "/favicon.ico", sizes: "any" },
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
       { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
     ],
     shortcut: "/favicon.ico",
-    apple: [
-      { url: "/apple-touch-icon.png", sizes: "180x180" },
-      { url: "/apple-touch-icon-180x180.png", sizes: "180x180" },
-    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
   },
   appleWebApp: {
     capable: true,
@@ -48,19 +44,14 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head>
-        {/* Standard favicons */}
-        <link rel="icon" href="/favicon.ico" sizes="48x48" />
-        <link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png" />
-        <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
-        <link rel="icon" href="/favicon-96x96.png" sizes="96x96" type="image/png" />
+        {/* Force favicon refresh with cache busting and proper format */}
+        <link rel="icon" type="image/x-icon" href="/favicon.ico?v=3" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=3" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=3" />
+        <link rel="shortcut icon" href="/favicon.ico?v=3" />
 
         {/* Apple touch icons */}
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon-180x180.png" sizes="180x180" />
-
-        {/* Android chrome icons */}
-        <link rel="icon" href="/android-chrome-192x192.png" sizes="192x192" type="image/png" />
-        <link rel="icon" href="/android-chrome-512x512.png" sizes="512x512" type="image/png" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3" sizes="180x180" />
 
         {/* Web app manifest */}
         <link rel="manifest" href="/manifest.json" />
@@ -70,8 +61,8 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="apple-mobile-web-app-title" content="EdTechie" />
-        <meta name="theme-color" content="#6366f1" />
-        <meta name="msapplication-TileColor" content="#1e293b" />
+        <meta name="theme-color" content="#4981f2" />
+        <meta name="msapplication-TileColor" content="#4981f2" />
       </head>
       <body className={`${inter.className} bg-[#1e293b] text-white antialiased`}>
         <Navigation />
