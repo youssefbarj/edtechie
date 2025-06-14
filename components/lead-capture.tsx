@@ -25,7 +25,7 @@ export function LeadCapture() {
         <Card className="bg-gradient-to-r from-slate-800 to-slate-700 border-slate-600">
           <CardContent className="p-8 md:p-12 text-center">
             <div className="mb-8">
-              <Mail className="w-16 h-16 text-[#f59e0b] mx-auto mb-4" />
+              <Mail className="w-16 h-16 text-[#6366F1] mx-auto mb-4" />
               <h2 className="text-3xl font-bold text-white mb-4">Ready to Stop Failing Audits?</h2>
               <p className="text-xl text-slate-300">
                 Get our free Cybersecurity Audit Checklist and see where your team stands.
@@ -42,7 +42,7 @@ export function LeadCapture() {
                   required
                   className="flex-1 bg-slate-700 border-slate-600 text-white placeholder-slate-400"
                 />
-                <Button type="submit" className="bg-[#f59e0b] hover:bg-[#d97706] px-6" disabled={isSubmitted}>
+                <Button type="submit" className="bg-[#6366F1] hover:bg-[#5B21B6] px-6" disabled={isSubmitted}>
                   {isSubmitted ? (
                     "Sent!"
                   ) : (

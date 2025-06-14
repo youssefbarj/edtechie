@@ -23,7 +23,7 @@ export function ContactForm() {
       <Card className="bg-slate-800/50 border-slate-700 h-full">
         <CardHeader className="text-center">
           <div className="flex items-center justify-center space-x-2 mb-4">
-            <MessageSquare className="w-8 h-8 text-blue-400" />
+            <MessageSquare className="w-8 h-8 text-[#3B82F6]" />
             <CardTitle className="text-2xl text-white">Get In Touch</CardTitle>
           </div>
           <p className="text-slate-400">Have questions? Need a custom quote? We're here to help.</p>
@@ -78,7 +78,7 @@ export function ContactForm() {
                 required
                 className="bg-slate-700 border-slate-600 text-white placeholder-slate-400 min-h-[120px]"
               />
-              <Button type="submit" className="w-full bg-[#f59e0b] hover:bg-[#d97706] font-semibold py-3">
+              <Button type="submit" className="w-full bg-[#6366F1] hover:bg-[#5B21B6] font-semibold py-3">
                 <Mail className="w-4 h-4 mr-2" />
                 Send Message
               </Button>

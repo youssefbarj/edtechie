@@ -22,10 +22,10 @@ export function Stats() {
   }, [])
 
   const stats = [
-    { label: "Audit Pass Rate", value: "95%", color: "text-[#f59e0b]" },
-    { label: "Training Completion", value: "89%", color: "text-[#f59e0b]" },
-    { label: "Incident Reduction", value: "73%", color: "text-[#f59e0b]" },
-    { label: "Client Satisfaction", value: "4.9/5", color: "text-[#f59e0b]" },
+    { label: "Audit Pass Rate", value: "95%", color: "text-[#180A73]" },
+    { label: "Training Completion", value: "89%", color: "text-[#180A73]" },
+    { label: "Incident Reduction", value: "73%", color: "text-[#180A73]" },
+    { label: "Client Satisfaction", value: "4.9/5", color: "text-[#180A73]" },
   ]
 
   return (
@@ -40,7 +40,7 @@ export function Stats() {
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="text-center p-6 bg-slate-800/50 rounded-lg border border-slate-700 hover:border-cyan-500/50 transition-all duration-300"
+              className="text-center p-6 bg-slate-800/50 rounded-lg border border-slate-700 hover:border-[#03A6A6]/50 transition-all duration-300"
             >
               <div className={`text-4xl md:text-5xl font-bold mb-2 ${stat.color} ${isVisible ? "animate-pulse" : ""}`}>
                 {stat.value}
@@ -60,8 +60,8 @@ export function Stats() {
               <li>• $2.4M average breach cost</li>
             </ul>
           </div>
-          <div className="bg-orange-900/20 border border-orange-500/30 rounded-lg p-6">
-            <h3 className="text-xl font-bold text-[#f59e0b] mb-4">After EdTechie</h3>
+          <div className="bg-[#180A73]/20 border border-[#180A73]/30 rounded-lg p-6">
+            <h3 className="text-xl font-bold text-[#180A73] mb-4">After EdTechie</h3>
             <ul className="space-y-2 text-slate-300">
               <li>• 95% audit pass rate</li>
               <li>• 73% reduction in incidents</li>

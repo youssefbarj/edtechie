@@ -44,10 +44,10 @@ export function ProblemSolution() {
           {/* Solution */}
           <div className="space-y-8">
             <div>
-              <h2 className="text-4xl font-bold text-[#f59e0b] mb-4">The EdTechie Solution</h2>
+              <h2 className="text-4xl font-bold text-[#180A73] mb-4">The EdTechie Solution</h2>
               <p className="text-xl text-slate-300 mb-8">
                 Interactive simulations that mirror real attacks. Your team learns by doing, not watching.
-                <span className="text-[#f59e0b] font-semibold">
+                <span className="text-[#180A73] font-semibold">
                   {" "}
                   This is how EdTechie Corp fixes what others break.
                 </span>
@@ -56,21 +56,21 @@ export function ProblemSolution() {
 
             <div className="space-y-6">
               <div className="flex items-start space-x-4">
-                <CheckCircle className="w-6 h-6 text-[#f59e0b] mt-1 flex-shrink-0" />
+                <CheckCircle className="w-6 h-6 text-[#03A6A6] mt-1 flex-shrink-0" />
                 <div>
                   <h3 className="text-lg font-semibold text-white mb-2">Real-World Scenarios</h3>
                   <p className="text-slate-400">Practice with actual attack vectors targeting your industry.</p>
                 </div>
               </div>
               <div className="flex items-start space-x-4">
-                <TrendingUp className="w-6 h-6 text-[#f59e0b] mt-1 flex-shrink-0" />
+                <TrendingUp className="w-6 h-6 text-[#05F2C7] mt-1 flex-shrink-0" />
                 <div>
                   <h3 className="text-lg font-semibold text-white mb-2">Measurable Progress</h3>
                   <p className="text-slate-400">Track improvement with detailed analytics and audit-ready reports.</p>
                 </div>
               </div>
               <div className="flex items-start space-x-4">
-                <Users className="w-6 h-6 text-[#f59e0b] mt-1 flex-shrink-0" />
+                <Users className="w-6 h-6 text-[#4981F2] mt-1 flex-shrink-0" />
                 <div>
                   <h3 className="text-lg font-semibold text-white mb-2">Team Engagement</h3>
                   <p className="text-slate-400">Gamified learning that keeps your team coming back for more.</p>

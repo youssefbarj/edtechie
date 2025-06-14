@@ -8,7 +8,7 @@ export function CTA() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="space-y-8">
           <h2 className="text-4xl md:text-5xl font-bold text-white">
-            <span className="text-[#f59e0b]">EdTechie</span> builds it tonight,{" "}
+            <span className="text-[#6366F1]">EdTechie</span> builds it tonight,{" "}
             <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
               you conquer tomorrow.
             </span>
@@ -16,7 +16,7 @@ export function CTA() {
 
           <p className="text-xl text-slate-300 max-w-2xl mx-auto">
             Stop failing audits. Start building a security culture that actually works with{" "}
-            <span className="text-[#f59e0b] font-semibold">EdTechie Corp</span>. Your next audit is coming whether
+            <span className="text-[#6366F1] font-semibold">EdTechie Corp</span>. Your next audit is coming whether
             you're ready or not.
           </p>
 
@@ -24,7 +24,7 @@ export function CTA() {
             <Button
               asChild
               size="lg"
-              className="bg-[#f59e0b] hover:bg-[#d97706] text-white font-bold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-orange-500/25"
+              className="bg-[#6366F1] hover:bg-[#5B21B6] text-white font-bold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-purple-500/25"
             >
               <Link href="/contact" className="flex items-center space-x-2">
                 <Calendar className="w-5 h-5" />

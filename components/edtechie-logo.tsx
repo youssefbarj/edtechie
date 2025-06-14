@@ -22,7 +22,7 @@ export function EdTechieLogo({ className = "", size = "md", showTagline = true }
             y1={owlSize * 0.1}
             x2={-owlSize * 0.1}
             y2={-owlSize * 0.2}
-            stroke="#f59e0b"
+            stroke="#180A73"
             strokeWidth={owlSize * 0.08}
             strokeLinecap="round"
           />
@@ -31,15 +31,15 @@ export function EdTechieLogo({ className = "", size = "md", showTagline = true }
             cy={-owlSize * 0.1}
             rx={owlSize * 0.08}
             ry={owlSize * 0.15}
-            fill="#f59e0b"
+            fill="#180A73"
             transform={`rotate(-30 ${-owlSize * 0.35} ${-owlSize * 0.1})`}
           />
-          <ellipse cx={0} cy={owlSize * 0.3} rx={owlSize * 0.45} ry={owlSize * 0.55} fill="#f59e0b" />
-          <circle cx={0} cy={0} r={owlSize * 0.4} fill="#f59e0b" />
+          <ellipse cx={0} cy={owlSize * 0.3} rx={owlSize * 0.45} ry={owlSize * 0.55} fill="#180A73" />
+          <circle cx={0} cy={0} r={owlSize * 0.4} fill="#180A73" />
           <circle cx={-owlSize * 0.15} cy={-owlSize * 0.05} r={owlSize * 0.12} fill="#1e293b" />
           <circle cx={owlSize * 0.15} cy={-owlSize * 0.05} r={owlSize * 0.12} fill="#1e293b" />
-          <circle cx={-owlSize * 0.15} cy={-owlSize * 0.05} r={owlSize * 0.06} fill="#f59e0b" />
-          <circle cx={owlSize * 0.15} cy={-owlSize * 0.05} r={owlSize * 0.06} fill="#f59e0b" />
+          <circle cx={-owlSize * 0.15} cy={-owlSize * 0.05} r={owlSize * 0.06} fill="#180A73" />
+          <circle cx={owlSize * 0.15} cy={-owlSize * 0.05} r={owlSize * 0.06} fill="#180A73" />
           <polygon
             points={`0,${owlSize * 0.08} ${-owlSize * 0.04},${owlSize * 0.15} ${owlSize * 0.04},${owlSize * 0.15}`}
             fill="#1e293b"
@@ -51,7 +51,7 @@ export function EdTechieLogo({ className = "", size = "md", showTagline = true }
           fontSize={textSize}
           fontFamily="Arial, sans-serif"
           fontWeight="bold"
-          fill="#f59e0b"
+          fill="#180A73"
         >
           Ed
         </text>
@@ -61,7 +61,7 @@ export function EdTechieLogo({ className = "", size = "md", showTagline = true }
           fontSize={textSize}
           fontFamily="Arial, sans-serif"
           fontWeight="bold"
-          fill="#ffffff"
+          fill="#FEFFFB"
         >
           Techie
         </text>
@@ -71,7 +71,7 @@ export function EdTechieLogo({ className = "", size = "md", showTagline = true }
           fontSize={corpSize}
           fontFamily="Arial, sans-serif"
           fontWeight="bold"
-          fill="#ffffff"
+          fill="#FEFFFB"
         >
           CORP
         </text>
@@ -82,7 +82,7 @@ export function EdTechieLogo({ className = "", size = "md", showTagline = true }
             fontSize={taglineSize}
             fontFamily="Arial, sans-serif"
             fontWeight="normal"
-            fill="#ffffff"
+            fill="#FEFFFB"
           >
             E-Learning & Digital Training
           </text>
@@ -96,8 +96,8 @@ export function OwlIcon({ className = "", size = 24 }: { className?: string; siz
   return (
     <div className={`inline-block ${className}`} style={{ width: size, height: size }}>
       <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} className="w-full h-full">
-        <ellipse cx={size * 0.5} cy={size * 0.65} rx={size * 0.22} ry={size * 0.28} fill="#f59e0b" />
-        <circle cx={size * 0.5} cy={size * 0.4} r={size * 0.2} fill="#f59e0b" />
+        <ellipse cx={size * 0.5} cy={size * 0.65} rx={size * 0.22} ry={size * 0.28} fill="#180A73" />
+        <circle cx={size * 0.5} cy={size * 0.4} r={size * 0.2} fill="#180A73" />
         <circle cx={size * 0.42} cy={size * 0.37} r={size * 0.06} fill="#1e293b" />
         <circle cx={size * 0.58} cy={size * 0.37} r={size * 0.06} fill="#1e293b" />
         <polygon

@@ -100,7 +100,7 @@ export function ResourceGrid() {
               Can't find what you're looking for? Our security experts can create custom resources for your specific
               needs.
             </p>
-            <Button className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700">
+            <Button className="bg-gradient-to-r from-[#14B8A6] to-[#3B82F6] hover:from-[#0F766E] hover:to-[#2563EB]">
               Request Custom Resource
             </Button>
           </div>

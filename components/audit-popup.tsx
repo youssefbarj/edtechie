@@ -66,7 +66,7 @@ export function AuditPopup() {
                   required
                   className="bg-slate-800 border-slate-600 text-white"
                 />
-                <Button type="submit" className="w-full bg-[#f59e0b] hover:bg-[#d97706]">
+                <Button type="submit" className="w-full bg-[#6366F1] hover:bg-[#5B21B6]">
                   <Download className="w-4 h-4 mr-2" />
                   Download Free Checklist
                 </Button>

@@ -61,7 +61,7 @@ export function ServiceFeatures() {
               className="bg-slate-800/50 border-slate-700 hover:border-cyan-500/50 transition-all duration-300 group"
             >
               <CardContent className="p-6 text-center">
-                <feature.icon className="w-12 h-12 text-[#f59e0b] mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" />
+                <feature.icon className="w-12 h-12 text-[#6366F1] mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" />
                 <h3 className="text-lg font-semibold text-white mb-2">{feature.title}</h3>
                 <p className="text-slate-400 text-sm">{feature.description}</p>
               </CardContent>

@@ -31,7 +31,7 @@ export function DemoScheduler() {
       <Card className="bg-slate-800/50 border-slate-700 h-full">
         <CardHeader className="text-center">
           <div className="flex items-center justify-center space-x-2 mb-4">
-            <Video className="w-8 h-8 text-cyan-400" />
+            <Video className="w-8 h-8 text-[#14B8A6]" />
             <CardTitle className="text-2xl text-white">Schedule Live Demo</CardTitle>
           </div>
           <p className="text-slate-400">See EdTechie in action with a personalized demonstration</p>
@@ -44,7 +44,7 @@ export function DemoScheduler() {
                 <ul className="space-y-2">
                   {demoFeatures.map((feature, index) => (
                     <li key={index} className="flex items-start space-x-3">
-                      <CheckCircle className="w-5 h-5 text-cyan-400 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-[#14B8A6] mt-0.5 flex-shrink-0" />
                       <span className="text-slate-300 text-sm">{feature}</span>
                     </li>
                   ))}
@@ -89,7 +89,7 @@ export function DemoScheduler() {
                   placeholder="Tell us about your current security challenges..."
                   className="bg-slate-700 border-slate-600 text-white placeholder-slate-400 min-h-[100px]"
                 />
-                <Button type="submit" className="w-full bg-[#f59e0b] hover:bg-[#d97706] font-semibold py-3">
+                <Button type="submit" className="w-full bg-[#6366F1] hover:bg-[#5B21B6] font-semibold py-3">
                   <Calendar className="w-4 h-4 mr-2" />
                   Schedule My Demo
                 </Button>

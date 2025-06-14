@@ -10,7 +10,7 @@ export function SocialProof() {
             {companies.map((company, index) => (
               <div
                 key={index}
-                className="flex items-center justify-center p-4 bg-slate-800/30 rounded-lg border border-slate-700 hover:border-cyan-500/50 transition-all duration-300"
+                className="flex items-center justify-center p-4 bg-slate-800/30 rounded-lg border border-slate-700 hover:border-[#03A6A6]/50 transition-all duration-300"
               >
                 <span className="text-slate-400 font-semibold text-sm">{company}</span>
               </div>
@@ -20,15 +20,15 @@ export function SocialProof() {
 
         <div className="grid md:grid-cols-3 gap-8 mt-16">
           <div className="text-center">
-            <div className="text-3xl font-bold text-[#f59e0b] mb-2">500+</div>
+            <div className="text-3xl font-bold text-[#180A73] mb-2">500+</div>
             <div className="text-slate-300">Companies Trained</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-[#f59e0b] mb-2">50K+</div>
+            <div className="text-3xl font-bold text-[#180A73] mb-2">50K+</div>
             <div className="text-slate-300">Employees Certified</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-[#f59e0b] mb-2">$50M+</div>
+            <div className="text-3xl font-bold text-[#180A73] mb-2">$50M+</div>
             <div className="text-slate-300">Losses Prevented</div>
           </div>
         </div>

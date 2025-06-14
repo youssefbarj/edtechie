@@ -59,12 +59,12 @@ export function ServiceTiers() {
             <Card
               key={index}
               className={`relative bg-slate-800/50 border-slate-700 hover:border-cyan-500/50 transition-all duration-300 ${
-                tier.popular ? "ring-2 ring-cyan-500/50" : ""
+                tier.popular ? "ring-2 ring-purple-500/50" : ""
               }`}
             >
               {tier.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <div className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-4 py-1 rounded-full text-sm font-semibold flex items-center space-x-1">
+                  <div className="bg-gradient-to-r from-[#6366F1] to-[#5B21B6] text-white px-4 py-1 rounded-full text-sm font-semibold flex items-center space-x-1">
                     <Star className="w-4 h-4" />
                     <span>Most Popular</span>
                   </div>
@@ -94,7 +94,7 @@ export function ServiceTiers() {
                 <Button
                   asChild
                   className={`w-full ${
-                    tier.popular ? "bg-[#f59e0b] hover:bg-[#d97706]" : "bg-slate-700 hover:bg-slate-600"
+                    tier.popular ? "bg-[#6366F1] hover:bg-[#5B21B6]" : "bg-slate-700 hover:bg-slate-600"
                   } transition-all duration-300`}
                 >
                   <Link href="/contact" className="flex items-center justify-center space-x-2">

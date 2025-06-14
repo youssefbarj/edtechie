@@ -7,13 +7,13 @@ export function Footer() {
     <footer className="bg-[#1e293b] border-t border-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid md:grid-cols-4 gap-8">
-          <div className="space-y-2">
+          <div className="space-y-4">
             <Image
               src="/images/edtechie-logo-vertical.png"
               alt="EdTechie Corp - E-Learning & Digital Training"
-              width={200}
-              height={150}
-              className="h-32 w-auto mb-2"
+              width={220}
+              height={280}
+              className="h-36 w-auto mb-4"
             />
             <p className="text-slate-400 text-sm leading-relaxed max-w-xs">
               Interactive cybersecurity training that actually works. We fix what others break.
@@ -24,22 +24,22 @@ export function Footer() {
             <h3 className="text-white font-semibold mb-4">Services</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/services" className="text-slate-400 hover:text-cyan-400">
+                <Link href="/services" className="text-slate-400 hover:text-[#03A6A6]">
                   Ready-Made Training
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-slate-400 hover:text-cyan-400">
+                <Link href="/services" className="text-slate-400 hover:text-[#03A6A6]">
                   Custom Simulations
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-slate-400 hover:text-cyan-400">
+                <Link href="/services" className="text-slate-400 hover:text-[#03A6A6]">
                   Audit Preparation
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-slate-400 hover:text-cyan-400">
+                <Link href="/services" className="text-slate-400 hover:text-[#03A6A6]">
                   Compliance Tracking
                 </Link>
               </li>
@@ -50,22 +50,22 @@ export function Footer() {
             <h3 className="text-white font-semibold mb-4">Resources</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/resources" className="text-slate-400 hover:text-cyan-400">
+                <Link href="/resources" className="text-slate-400 hover:text-[#03A6A6]">
                   Audit Checklist
                 </Link>
               </li>
               <li>
-                <Link href="/case-studies" className="text-slate-400 hover:text-cyan-400">
+                <Link href="/case-studies" className="text-slate-400 hover:text-[#03A6A6]">
                   Case Studies
                 </Link>
               </li>
               <li>
-                <Link href="/resources" className="text-slate-400 hover:text-cyan-400">
+                <Link href="/resources" className="text-slate-400 hover:text-[#03A6A6]">
                   Security Blog
                 </Link>
               </li>
               <li>
-                <Link href="/resources" className="text-slate-400 hover:text-cyan-400">
+                <Link href="/resources" className="text-slate-400 hover:text-[#03A6A6]">
                   Best Practices
                 </Link>
               </li>

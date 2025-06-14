@@ -18,14 +18,14 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#1e293b]">
-      <div className="absolute inset-0 bg-gradient-to-br from-[#1e293b] via-blue-950 to-[#1e293b]">
+      <div className="absolute inset-0 bg-gradient-to-br from-[#1e293b] via-[#180A73] to-[#1e293b]">
         <div className="absolute inset-0 bg-gradient-to-t from-[#1e293b]/80 to-transparent"></div>
       </div>
 
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
-        <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-blue-400 rounded-full animate-ping"></div>
-        <div className="absolute bottom-1/4 left-1/3 w-3 h-3 bg-cyan-300 rounded-full animate-pulse delay-1000"></div>
+        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-[#03A6A6] rounded-full animate-pulse"></div>
+        <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-[#4981F2] rounded-full animate-ping"></div>
+        <div className="absolute bottom-1/4 left-1/3 w-3 h-3 bg-[#05F2C7] rounded-full animate-pulse delay-1000"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -34,28 +34,28 @@ export function Hero() {
             <h1 className="text-5xl md:text-7xl font-bold">
               <span className="text-red-400 transition-all duration-500">{texts[currentText]}</span>
               <br />
-              <span className="bg-gradient-to-r from-[#f59e0b] to-[#d97706] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#180A73] to-[#4981F2] bg-clip-text text-transparent">
                 We fix what others break.
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-              <span className="text-[#f59e0b] font-bold">EdTechie Corp</span> transforms boring cybersecurity training
+              <span className="text-[#4981F2] font-bold">EdTechie Corp</span> transforms boring cybersecurity training
               into interactive simulations that prepare your team for real threats.
-              <span className="text-[#f59e0b] font-semibold"> Build it tonight, conquer tomorrow.</span>
+              <span className="text-[#03A6A6] font-semibold"> Build it tonight, conquer tomorrow.</span>
             </p>
           </div>
 
           <div className="flex flex-wrap justify-center gap-6 text-sm md:text-base">
             <div className="flex items-center space-x-2 bg-slate-800/50 px-4 py-2 rounded-full">
-              <Shield className="w-5 h-5 text-[#f59e0b]" />
+              <Shield className="w-5 h-5 text-[#03A6A6]" />
               <span>Audit-Ready Training</span>
             </div>
             <div className="flex items-center space-x-2 bg-slate-800/50 px-4 py-2 rounded-full">
-              <Zap className="w-5 h-5 text-[#f59e0b]" />
+              <Zap className="w-5 h-5 text-[#4981F2]" />
               <span>Real-World Simulations</span>
             </div>
             <div className="flex items-center space-x-2 bg-slate-800/50 px-4 py-2 rounded-full">
-              <Target className="w-5 h-5 text-[#f59e0b]" />
+              <Target className="w-5 h-5 text-[#05F2C7]" />
               <span>Measurable Results</span>
             </div>
           </div>
@@ -64,7 +64,7 @@ export function Hero() {
             <Button
               asChild
               size="lg"
-              className="bg-[#f59e0b] hover:bg-[#d97706] text-white font-bold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-orange-500/25"
+              className="bg-[#180A73] hover:bg-[#4981F2] text-white font-bold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-purple-500/25"
             >
               <Link href="/contact" className="flex items-center space-x-2">
                 <span>Get Audit-Ready Training</span>

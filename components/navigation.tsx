@@ -31,33 +31,33 @@ export function Navigation() {
             <Image
               src="/images/edtechie-logo-official.png"
               alt="EdTechie Corp - E-Learning & Digital Training"
-              width={600}
-              height={200}
-              className="h-16 w-auto max-w-none"
+              width={300}
+              height={90}
+              className="h-14 w-auto"
               priority
             />
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link href="/" className="text-slate-300 hover:text-cyan-400 transition-colors">
+            <Link href="/" className="text-slate-300 hover:text-[#03A6A6] transition-colors">
               Home
             </Link>
-            <Link href="/services" className="text-slate-300 hover:text-cyan-400 transition-colors">
+            <Link href="/services" className="text-slate-300 hover:text-[#03A6A6] transition-colors">
               Services
             </Link>
-            <Link href="/case-studies" className="text-slate-300 hover:text-cyan-400 transition-colors">
+            <Link href="/case-studies" className="text-slate-300 hover:text-[#03A6A6] transition-colors">
               Case Studies
             </Link>
-            <Link href="/resources" className="text-slate-300 hover:text-cyan-400 transition-colors">
+            <Link href="/resources" className="text-slate-300 hover:text-[#03A6A6] transition-colors">
               Resources
             </Link>
-            <Link href="/contact" className="text-slate-300 hover:text-cyan-400 transition-colors">
+            <Link href="/contact" className="text-slate-300 hover:text-[#03A6A6] transition-colors">
               Contact
             </Link>
             <Button
               asChild
-              className="bg-[#f59e0b] hover:bg-[#d97706] text-white font-semibold px-6 py-2 rounded-lg transition-all duration-300 transform hover:scale-105"
+              className="bg-[#180A73] hover:bg-[#4981F2] text-white font-semibold px-6 py-2 rounded-lg transition-all duration-300 transform hover:scale-105"
             >
               <Link href="/contact">Schedule Demo</Link>
             </Button>
@@ -75,23 +75,23 @@ export function Navigation() {
         {isMobileMenuOpen && (
           <div className="md:hidden bg-[#1e293b] border-t border-slate-800">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              <Link href="/" className="block px-3 py-2 text-slate-300 hover:text-cyan-400">
+              <Link href="/" className="block px-3 py-2 text-slate-300 hover:text-[#03A6A6]">
                 Home
               </Link>
-              <Link href="/services" className="block px-3 py-2 text-slate-300 hover:text-cyan-400">
+              <Link href="/services" className="block px-3 py-2 text-slate-300 hover:text-[#03A6A6]">
                 Services
               </Link>
-              <Link href="/case-studies" className="block px-3 py-2 text-slate-300 hover:text-cyan-400">
+              <Link href="/case-studies" className="block px-3 py-2 text-slate-300 hover:text-[#03A6A6]">
                 Case Studies
               </Link>
-              <Link href="/resources" className="block px-3 py-2 text-slate-300 hover:text-cyan-400">
+              <Link href="/resources" className="block px-3 py-2 text-slate-300 hover:text-[#03A6A6]">
                 Resources
               </Link>
-              <Link href="/contact" className="block px-3 py-2 text-slate-300 hover:text-cyan-400">
+              <Link href="/contact" className="block px-3 py-2 text-slate-300 hover:text-[#03A6A6]">
                 Contact
               </Link>
               <div className="px-3 py-2">
-                <Button asChild className="w-full bg-[#f59e0b] hover:bg-[#d97706]">
+                <Button asChild className="w-full bg-[#180A73] hover:bg-[#4981F2]">
                   <Link href="/contact">Schedule Demo</Link>
                 </Button>
               </div>

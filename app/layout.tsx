@@ -18,6 +18,7 @@ export const metadata: Metadata = {
       { url: "/favicon.ico", sizes: "48x48" },
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
       { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
     ],
     shortcut: "/favicon.ico",
     apple: [
@@ -36,7 +37,7 @@ export const metadata: Metadata = {
     maximumScale: 1,
     userScalable: false,
   },
-    generator: 'v0.dev'
+  generator: "v0.dev",
 }
 
 export default function RootLayout({
@@ -51,6 +52,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="48x48" />
         <link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png" />
         <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
+        <link rel="icon" href="/favicon-96x96.png" sizes="96x96" type="image/png" />
 
         {/* Apple touch icons */}
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
@@ -68,7 +70,7 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="apple-mobile-web-app-title" content="EdTechie" />
-        <meta name="theme-color" content="#f59e0b" />
+        <meta name="theme-color" content="#6366f1" />
         <meta name="msapplication-TileColor" content="#1e293b" />
       </head>
       <body className={`${inter.className} bg-[#1e293b] text-white antialiased`}>

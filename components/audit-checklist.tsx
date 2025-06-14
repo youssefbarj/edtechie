@@ -50,7 +50,7 @@ export function AuditChecklist() {
               <ul className="space-y-2">
                 {checklistItems.map((item, index) => (
                   <li key={index} className="flex items-start space-x-3">
-                    <CheckCircle className="w-5 h-5 text-cyan-400 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-[#14B8A6] mt-0.5 flex-shrink-0" />
                     <span className="text-slate-300">{item}</span>
                   </li>
                 ))}
@@ -105,7 +105,7 @@ export function AuditChecklist() {
                       className="bg-slate-700 border-slate-600 text-white placeholder-slate-400"
                     />
                   </div>
-                  <Button type="submit" className="w-full bg-[#f59e0b] hover:bg-[#d97706] font-semibold">
+                  <Button type="submit" className="w-full bg-[#6366F1] hover:bg-[#5B21B6] font-semibold">
                     <Download className="w-4 h-4 mr-2" />
                     Download Free Checklist
                   </Button>
