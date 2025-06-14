@@ -18,13 +18,10 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#1e293b]">
-      {/* Animated background */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#1e293b] via-blue-950 to-[#1e293b]">
-        <div className="absolute inset-0 bg-[url('/placeholder.svg?height=1080&width=1920')] opacity-5"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-[#1e293b]/80 to-transparent"></div>
       </div>
 
-      {/* Floating elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
         <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-blue-400 rounded-full animate-ping"></div>
@@ -33,7 +30,6 @@ export function Hero() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="space-y-8">
-          {/* Dynamic headline */}
           <div className="space-y-4">
             <h1 className="text-5xl md:text-7xl font-bold">
               <span className="text-red-400 transition-all duration-500">{texts[currentText]}</span>
@@ -49,7 +45,6 @@ export function Hero() {
             </p>
           </div>
 
-          {/* Feature highlights */}
           <div className="flex flex-wrap justify-center gap-6 text-sm md:text-base">
             <div className="flex items-center space-x-2 bg-slate-800/50 px-4 py-2 rounded-full">
               <Shield className="w-5 h-5 text-[#f59e0b]" />
@@ -65,7 +60,6 @@ export function Hero() {
             </div>
           </div>
 
-          {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button
               asChild
@@ -87,7 +81,6 @@ export function Hero() {
             </Button>
           </div>
 
-          {/* Trust indicators */}
           <div className="pt-8 text-slate-400 text-sm">
             <p>Trusted by 500+ tech companies • 95% audit pass rate • 24/7 support</p>
           </div>
