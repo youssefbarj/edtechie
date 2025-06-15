@@ -6,43 +6,56 @@ import Link from "next/link"
 export function ServiceTiers() {
   const tiers = [
     {
-      name: "Ready-Made Training",
-      subtitle: "Deploy Tonight",
-      price: "$2,500",
-      period: "/month",
+      name: "Content Transformation Services",
+      subtitle: "PDF to Interactive Magic",
       description:
-        "Pre-built simulations covering the most common attack vectors. Perfect for getting audit-ready fast.",
+        "Convert your existing PDFs, PowerPoints, and Word docs into engaging interactive e-learning experiences.",
       features: [
-        "20+ Interactive Simulations",
-        "Phishing & Social Engineering",
-        "Password Security Training",
-        "Data Breach Response",
-        "Compliance Reporting",
-        "24/7 Support",
-        "Mobile Access",
-        "Progress Tracking",
+        "Transform existing content",
+        "Add quizzes & assessments",
+        "Interactive scenarios",
+        "Gamification elements",
+        "HTML5/SCORM output",
+        "Mobile-responsive design",
+        "LMS integration ready",
+        "2-week turnaround",
       ],
-      cta: "Start Training",
+      cta: "Get Custom Quote",
       popular: false,
     },
     {
-      name: "Custom Simulations",
-      subtitle: "Built for Your Threats",
-      price: "$7,500",
-      period: "/month",
-      description: "Tailored training that mirrors your actual environment and specific threat landscape.",
+      name: "Custom Course Development",
+      subtitle: "Built from Scratch",
+      description: "Build comprehensive courses from scratch with SME collaboration and advanced simulations.",
       features: [
-        "Everything in Ready-Made",
-        "Custom Threat Scenarios",
-        "Your Tech Stack Integration",
-        "Industry-Specific Attacks",
-        "Advanced Analytics",
-        "Dedicated Success Manager",
-        "White-Label Options",
-        "API Integration",
+        "Everything in Transformation",
+        "Custom course development",
+        "SME collaboration sessions",
+        "Advanced simulations",
+        "Serious games integration",
+        "Stakeholder meetings",
+        "Complete instructional design",
+        "Ongoing iterations",
       ],
       cta: "Get Custom Quote",
       popular: true,
+    },
+    {
+      name: "Learning Infrastructure",
+      subtitle: "Complete LMS Solution",
+      description: "Full learning management system setup with ongoing course development support.",
+      features: [
+        "Everything in Custom",
+        "LMS selection & setup",
+        "System integrations",
+        "Analytics dashboards",
+        "Ongoing course support",
+        "Training for your team",
+        "Monthly content updates",
+        "Dedicated success manager",
+      ],
+      cta: "Get Custom Quote",
+      popular: false,
     },
   ]
 
@@ -50,8 +63,10 @@ export function ServiceTiers() {
     <section className="py-20 bg-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-4">Choose Your Training Approach</h2>
-          <p className="text-xl text-slate-300">Fast deployment or custom-built. Both get you audit-ready.</p>
+          <h2 className="text-4xl font-bold text-white mb-4">Choose Your Content Transformation Approach</h2>
+          <p className="text-xl text-slate-300">
+            Fast transformation or complete custom development. Both get your learners engaged.
+          </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
@@ -75,8 +90,7 @@ export function ServiceTiers() {
                 <CardTitle className="text-2xl font-bold text-white">{tier.name}</CardTitle>
                 <p className="text-cyan-400 font-semibold">{tier.subtitle}</p>
                 <div className="mt-4">
-                  <span className="text-4xl font-bold text-white">{tier.price}</span>
-                  <span className="text-slate-400">{tier.period}</span>
+                  <span className="text-2xl font-bold text-cyan-400">Get Custom Quote</span>
                 </div>
                 <p className="text-slate-300 mt-2">{tier.description}</p>
               </CardHeader>

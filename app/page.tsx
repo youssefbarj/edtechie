@@ -4,7 +4,6 @@ import { SocialProof } from "@/components/social-proof"
 import { Stats } from "@/components/stats"
 import { Testimonials } from "@/components/testimonials"
 import { CTA } from "@/components/cta"
-import { LeadCapture } from "@/components/lead-capture"
 
 export default function HomePage() {
   return (
@@ -14,7 +13,6 @@ export default function HomePage() {
       <Stats />
       <SocialProof />
       <Testimonials />
-      <LeadCapture />
       <CTA />
     </div>
   )

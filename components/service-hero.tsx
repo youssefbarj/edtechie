@@ -8,18 +8,21 @@ export function ServiceHero() {
           <h1 className="text-5xl md:text-6xl font-bold">
             <span className="text-[#6366F1]">EdTechie</span>{" "}
             <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
-              Training That Works
+              Content Transformation That Actually Works
             </span>
           </h1>
           <p className="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto">
-            Choose from ready-made simulations or custom training built for your specific threats. Either way,
-            <span className="text-[#6366F1] font-semibold"> EdTechie Corp gets your team audit-ready fast.</span>
+            Choose from content transformation services or custom course development. Either way,
+            <span className="text-[#6366F1] font-semibold">
+              {" "}
+              EdTechie Corp gets your learners engaged and compliant fast.
+            </span>
           </p>
 
           <div className="flex flex-wrap justify-center gap-6 text-sm md:text-base">
             <div className="flex items-center space-x-2 bg-slate-800/50 px-4 py-2 rounded-full">
               <Shield className="w-5 h-5 text-[#6366F1]" />
-              <span>SOC 2 Ready</span>
+              <span>PDF to Interactive</span>
             </div>
             <div className="flex items-center space-x-2 bg-slate-800/50 px-4 py-2 rounded-full">
               <Zap className="w-5 h-5 text-[#6366F1]" />
@@ -27,7 +30,7 @@ export function ServiceHero() {
             </div>
             <div className="flex items-center space-x-2 bg-slate-800/50 px-4 py-2 rounded-full">
               <Target className="w-5 h-5 text-[#6366F1]" />
-              <span>Measurable ROI</span>
+              <span>Measurable Results</span>
             </div>
           </div>
         </div>

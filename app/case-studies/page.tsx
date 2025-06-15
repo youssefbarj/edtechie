@@ -1,7 +1,6 @@
 import { CaseStudyHero } from "@/components/case-study-hero"
 import { CaseStudyGrid } from "@/components/case-study-grid"
 import { CaseStudyStats } from "@/components/case-study-stats"
-import { LeadCapture } from "@/components/lead-capture"
 
 export default function CaseStudiesPage() {
   return (
@@ -9,7 +8,6 @@ export default function CaseStudiesPage() {
       <CaseStudyHero />
       <CaseStudyGrid />
       <CaseStudyStats />
-      <LeadCapture />
     </div>
   )
 }

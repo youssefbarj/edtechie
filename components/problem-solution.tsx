@@ -8,34 +8,38 @@ export function ProblemSolution() {
           {/* Problem */}
           <div className="space-y-8">
             <div>
-              <h2 className="text-4xl font-bold text-red-400 mb-4">The Problem</h2>
+              <h2 className="text-4xl font-bold text-[#4981F2] mb-4">The Problem</h2>
               <p className="text-xl text-slate-300 mb-8">
-                Your team failed the cybersecurity audit. Again. Generic training isn't cutting it.
+                Your compliance training is putting people to sleep. What doesn't engage doesn't stick.
               </p>
             </div>
 
             <div className="space-y-6">
               <div className="flex items-start space-x-4">
-                <AlertTriangle className="w-6 h-6 text-red-400 mt-1 flex-shrink-0" />
+                <AlertTriangle className="w-6 h-6 text-[#4981F2] mt-1 flex-shrink-0" />
                 <div>
-                  <h3 className="text-lg font-semibold text-white mb-2">Failed Audits Cost Millions</h3>
+                  <h3 className="text-lg font-semibold text-[#FEFFFB] mb-2">Death by PowerPoint Syndrome</h3>
                   <p className="text-slate-400">
-                    Compliance failures lead to fines, lost contracts, and damaged reputation.
+                    PDFs and presentations don't engage learners, leading to poor retention and failed compliance.
                   </p>
                 </div>
               </div>
               <div className="flex items-start space-x-4">
-                <AlertTriangle className="w-6 h-6 text-red-400 mt-1 flex-shrink-0" />
+                <AlertTriangle className="w-6 h-6 text-[#4981F2] mt-1 flex-shrink-0" />
                 <div>
-                  <h3 className="text-lg font-semibold text-white mb-2">Generic Training Doesn't Work</h3>
-                  <p className="text-slate-400">One-size-fits-all solutions ignore your specific vulnerabilities.</p>
+                  <h3 className="text-lg font-semibold text-[#FEFFFB] mb-2">Static Content Doesn't Stick</h3>
+                  <p className="text-slate-400">
+                    Traditional training materials result in 40% retention rates and high failure rates.
+                  </p>
                 </div>
               </div>
               <div className="flex items-start space-x-4">
-                <AlertTriangle className="w-6 h-6 text-red-400 mt-1 flex-shrink-0" />
+                <AlertTriangle className="w-6 h-6 text-[#4981F2] mt-1 flex-shrink-0" />
                 <div>
-                  <h3 className="text-lg font-semibold text-white mb-2">Teams Aren't Engaged</h3>
-                  <p className="text-slate-400">Boring presentations create checkbox compliance, not real security.</p>
+                  <h3 className="text-lg font-semibold text-[#FEFFFB] mb-2">Audit Failures Are Just Symptoms</h3>
+                  <p className="text-slate-400">
+                    The real problem is boring content that learners ignore or forget immediately.
+                  </p>
                 </div>
               </div>
             </div>
@@ -44,12 +48,12 @@ export function ProblemSolution() {
           {/* Solution */}
           <div className="space-y-8">
             <div>
-              <h2 className="text-4xl font-bold text-[#180A73] mb-4">The EdTechie Solution</h2>
+              <h2 className="text-4xl font-bold text-[#03A6A6] mb-4">The EdTechie Solution</h2>
               <p className="text-xl text-slate-300 mb-8">
-                Interactive simulations that mirror real attacks. Your team learns by doing, not watching.
-                <span className="text-[#180A73] font-semibold">
+                Transform static content into interactive experiences that learners actually want to complete.
+                <span className="text-[#03A6A6] font-semibold">
                   {" "}
-                  This is how EdTechie Corp fixes what others break.
+                  This is how EdTechie Corp transforms boring into brilliant.
                 </span>
               </p>
             </div>
@@ -58,22 +62,28 @@ export function ProblemSolution() {
               <div className="flex items-start space-x-4">
                 <CheckCircle className="w-6 h-6 text-[#03A6A6] mt-1 flex-shrink-0" />
                 <div>
-                  <h3 className="text-lg font-semibold text-white mb-2">Real-World Scenarios</h3>
-                  <p className="text-slate-400">Practice with actual attack vectors targeting your industry.</p>
+                  <h3 className="text-lg font-semibold text-[#FEFFFB] mb-2">Content Transformation Magic</h3>
+                  <p className="text-slate-400">
+                    Convert your existing PDFs, PowerPoints, and Word docs into engaging interactive e-learning.
+                  </p>
                 </div>
               </div>
               <div className="flex items-start space-x-4">
                 <TrendingUp className="w-6 h-6 text-[#05F2C7] mt-1 flex-shrink-0" />
                 <div>
-                  <h3 className="text-lg font-semibold text-white mb-2">Measurable Progress</h3>
-                  <p className="text-slate-400">Track improvement with detailed analytics and audit-ready reports.</p>
+                  <h3 className="text-lg font-semibold text-[#FEFFFB] mb-2">Measurable Engagement Tracking</h3>
+                  <p className="text-slate-400">
+                    Track completion rates, engagement metrics, and knowledge retention with detailed analytics.
+                  </p>
                 </div>
               </div>
               <div className="flex items-start space-x-4">
                 <Users className="w-6 h-6 text-[#4981F2] mt-1 flex-shrink-0" />
                 <div>
-                  <h3 className="text-lg font-semibold text-white mb-2">Team Engagement</h3>
-                  <p className="text-slate-400">Gamified learning that keeps your team coming back for more.</p>
+                  <h3 className="text-lg font-semibold text-[#FEFFFB] mb-2">Cross-Industry Expertise</h3>
+                  <p className="text-slate-400">
+                    From HR compliance to safety training to cybersecurity - we transform content across all areas.
+                  </p>
                 </div>
               </div>
             </div>

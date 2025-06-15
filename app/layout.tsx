@@ -4,14 +4,13 @@ import { Inter } from "next/font/google"
 import "./globals.css"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
-import { AuditPopup } from "@/components/audit-popup"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "EdTechie Corp - Cybersecurity Training That Actually Works",
+  title: "EdTechie Corp - E-Learning Content Transformation That Actually Works",
   description:
-    "Interactive cybersecurity simulations for tech companies. EdTechie Corp specializes in audit-ready training that transforms your security posture. We fix what others break.",
+    "Transform your boring PDFs and presentations into engaging interactive e-learning. EdTechie Corp specializes in content transformation that gets learners engaged and compliant.",
   manifest: "/manifest.json",
   icons: {
     icon: [
@@ -70,14 +69,13 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="apple-mobile-web-app-title" content="EdTechie" />
-        <meta name="theme-color" content="#6366f1" />
+        <meta name="theme-color" content="#4981F2" />
         <meta name="msapplication-TileColor" content="#1e293b" />
       </head>
       <body className={`${inter.className} bg-[#1e293b] text-white antialiased`}>
         <Navigation />
         <main className="min-h-screen">{children}</main>
         <Footer />
-        <AuditPopup />
       </body>
     </html>
   )
