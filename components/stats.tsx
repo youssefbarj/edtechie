@@ -22,18 +22,31 @@ export function Stats() {
   }, [])
 
   const stats = [
-    { label: "Completion Rate Improvement", value: "+55%", color: "text-[#4981F2]", detail: "34% → 89%" },
-    { label: "Knowledge Retention Increase", value: "+45%", color: "text-[#4981F2]", detail: "40% → 85%" },
-    { label: "Content Creation Speed", value: "10x", color: "text-[#4981F2]", detail: "Weeks → Days" },
-    { label: "Engagement Boost", value: "73%", color: "text-[#4981F2]", detail: "Interactive vs Static" },
+    { label: "Completion Rate Improvement", value: "+89%", color: "text-[#4981F2]", detail: "vs traditional methods" },
+    {
+      label: "Knowledge Retention Increase",
+      value: "+73%",
+      color: "text-[#4981F2]",
+      detail: "interactive vs static",
+    },
+    { label: "Content Creation Speed", value: "10x", color: "text-[#4981F2]", detail: "transformation vs scratch" },
+    {
+      label: "Works Across ALL Compliance Areas",
+      value: "100%",
+      color: "text-[#4981F2]",
+      detail: "not just one industry",
+    },
   ]
 
   return (
     <section id="stats-section" className="py-20 bg-slate-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-[#FEFFFB] mb-4">Before vs After Content Transformation</h2>
-          <p className="text-xl text-slate-300">The numbers don't lie. Interactive content delivers results.</p>
+          <h2 className="text-4xl font-bold text-[#FEFFFB] mb-4">Content Transformation Results Across Industries</h2>
+          <p className="text-xl text-slate-300">
+            The numbers don't lie. Interactive content delivers results everywhere - from healthcare to manufacturing to
+            financial services.
+          </p>
         </div>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">

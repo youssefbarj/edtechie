@@ -16,7 +16,8 @@ export function Footer() {
               className="h-36 w-auto mb-4"
             />
             <p className="text-slate-400 text-sm leading-relaxed max-w-xs">
-              Interactive cybersecurity training that actually works. We fix what others break.
+              Interactive e-learning transformation across all compliance areas. We transform boring PDFs into engaging
+              experiences that actually work.
             </p>
           </div>
 
@@ -25,48 +26,48 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link href="/services" className="text-slate-400 hover:text-[#03A6A6]">
-                  Ready-Made Training
+                  Content Transformation
                 </Link>
               </li>
               <li>
                 <Link href="/services" className="text-slate-400 hover:text-[#03A6A6]">
-                  Custom Simulations
+                  Custom Course Development
                 </Link>
               </li>
               <li>
                 <Link href="/services" className="text-slate-400 hover:text-[#03A6A6]">
-                  Audit Preparation
+                  Learning Infrastructure
                 </Link>
               </li>
               <li>
                 <Link href="/services" className="text-slate-400 hover:text-[#03A6A6]">
-                  Compliance Tracking
+                  LMS Integration
                 </Link>
               </li>
             </ul>
           </div>
 
           <div>
-            <h3 className="text-white font-semibold mb-4">Resources</h3>
+            <h3 className="text-white font-semibold mb-4">Industries</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/resources" className="text-slate-400 hover:text-[#03A6A6]">
-                  Audit Checklist
+                <Link href="/case-studies" className="text-slate-400 hover:text-[#03A6A6]">
+                  Healthcare & HIPAA
                 </Link>
               </li>
               <li>
                 <Link href="/case-studies" className="text-slate-400 hover:text-[#03A6A6]">
-                  Case Studies
+                  Manufacturing & Safety
                 </Link>
               </li>
               <li>
-                <Link href="/resources" className="text-slate-400 hover:text-[#03A6A6]">
-                  Security Blog
+                <Link href="/case-studies" className="text-slate-400 hover:text-[#03A6A6]">
+                  Financial Services
                 </Link>
               </li>
               <li>
-                <Link href="/resources" className="text-slate-400 hover:text-[#03A6A6]">
-                  Best Practices
+                <Link href="/case-studies" className="text-slate-400 hover:text-[#03A6A6]">
+                  Corporate HR
                 </Link>
               </li>
             </ul>
@@ -92,7 +93,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-slate-800 mt-8 pt-8 text-center text-sm text-slate-400">
-          <p>&copy; 2024 EdTechie Corp. All rights reserved. We fix what others break.</p>
+          <p>&copy; 2024 EdTechie Corp. All rights reserved. We transform boring content into engaging experiences.</p>
         </div>
       </div>
     </footer>

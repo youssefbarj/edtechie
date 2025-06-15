@@ -20,32 +20,34 @@ export function ServiceTiers() {
         "LMS integration ready",
         "2-week turnaround",
       ],
-      cta: "Stop Losing Learners - Book Free Audit",
+      cta: "Stop Losing Learners - Book Content Audit",
       price: "Get Custom Quote",
       popular: false,
+      perfectFor: "Companies with existing materials, quick wins, budget-conscious",
     },
     {
       name: "Custom Course Development",
-      subtitle: "Built from Scratch",
-      description: "Build comprehensive courses from scratch with SME collaboration and advanced simulations.",
+      subtitle: "Built from Scratch with SME Collaboration",
+      description: "Complete courses with advanced simulations, serious games, and complex scenarios.",
       features: [
         "Everything in Transformation",
-        "Custom course development",
         "SME collaboration sessions",
         "Advanced simulations",
         "Serious games integration",
+        "Custom graphics & media",
         "Stakeholder meetings",
         "Complete instructional design",
-        "Ongoing iterations",
+        "Iterative development process",
       ],
-      cta: "Stop Losing Learners - Book Free Audit",
+      cta: "Stop Losing Learners - Book Content Audit",
       price: "Get Custom Quote",
       popular: true,
+      perfectFor: "New programs, complex subject matter, higher engagement needs",
     },
     {
-      name: "Learning Infrastructure",
-      subtitle: "Complete LMS Solution",
-      description: "Full learning management system setup with ongoing course development support.",
+      name: "Learning Infrastructure Solutions",
+      subtitle: "Complete LMS Ecosystem",
+      description: "Full LMS setup, integrations, ongoing support, and dedicated success management.",
       features: [
         "Everything in Custom",
         "LMS selection & setup",
@@ -56,9 +58,10 @@ export function ServiceTiers() {
         "Monthly content updates",
         "Dedicated success manager",
       ],
-      cta: "Stop Losing Learners - Book Free Audit",
+      cta: "Stop Losing Learners - Book Content Audit",
       price: "Get Custom Quote",
       popular: false,
+      perfectFor: "Starting from scratch, ongoing partnership, multi-department needs",
     },
   ]
 
@@ -68,11 +71,12 @@ export function ServiceTiers() {
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-white mb-4">Choose Your Content Transformation Approach</h2>
           <p className="text-xl text-slate-300">
-            Fast transformation or complete custom development. Both get your learners engaged.
+            Fast transformation or complete custom development. Both get your learners engaged across all compliance
+            areas.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="grid lg:grid-cols-3 gap-8">
           {tiers.map((tier, index) => (
             <Card
               key={index}
@@ -97,6 +101,11 @@ export function ServiceTiers() {
                 </div>
                 <p className="text-slate-400 text-sm">Pricing based on scope and complexity</p>
                 <p className="text-slate-300 mt-2">{tier.description}</p>
+                <div className="mt-3 p-3 bg-slate-700/50 rounded-lg">
+                  <p className="text-sm text-slate-400">
+                    <span className="font-semibold text-cyan-400">Perfect for:</span> {tier.perfectFor}
+                  </p>
+                </div>
               </CardHeader>
 
               <CardContent className="space-y-6">
@@ -128,7 +137,7 @@ export function ServiceTiers() {
         <div className="text-center mt-12">
           <p className="text-slate-400 mb-4">Not sure which option is right for you?</p>
           <Button asChild variant="outline" className="border-slate-600 text-slate-300 hover:bg-slate-800">
-            <Link href="/contact">Schedule a Consultation</Link>
+            <Link href="/contact">Schedule Content Transformation Consultation</Link>
           </Button>
         </div>
       </div>

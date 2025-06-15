@@ -13,9 +13,9 @@ export function CTA() {
           </h2>
 
           <p className="text-xl text-slate-300 max-w-2xl mx-auto">
-            Stop losing learners to boring content. Start building engaging experiences that actually work with{" "}
-            <span className="text-[#4981F2] font-semibold">EdTechie Corp</span>. Your next compliance deadline is coming
-            whether you're ready or not.
+            Stop losing learners to boring content across all your compliance areas. Start building engaging experiences
+            that actually work with <span className="text-[#4981F2] font-semibold">EdTechie Corp</span>. Your next
+            compliance deadline is coming whether you're ready or not.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -36,12 +36,12 @@ export function CTA() {
               size="lg"
               className="border-slate-600 text-slate-300 hover:bg-slate-800 hover:text-[#FEFFFB] px-8 py-4 rounded-lg transition-all duration-300"
             >
-              <Link href="/services">View Transformation Examples</Link>
+              <Link href="/services">Transform Your First PDF Free</Link>
             </Button>
           </div>
 
           <div className="pt-8 text-slate-400 text-sm">
-            <p>Free consultation • No commitment • Stop losing $X per failed training hour</p>
+            <p>Free consultation • No commitment • Works across ALL compliance areas</p>
           </div>
         </div>
       </div>

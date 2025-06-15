@@ -5,10 +5,12 @@ import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
+import { useRouter } from "next/navigation"
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const router = useRouter()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,6 +19,15 @@ export function Navigation() {
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
+
+  const handleNavClick = (href: string) => {
+    setIsMobileMenuOpen(false)
+    router.push(href)
+    // Scroll to top after navigation
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" })
+    }, 100)
+  }
 
   return (
     <nav
@@ -27,7 +38,7 @@ export function Navigation() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-24">
-          <Link href="/" className="flex items-center">
+          <Link href="/" className="flex items-center" onClick={() => handleNavClick("/")}>
             <Image
               src="/images/edtechie-logo-official.png"
               alt="EdTechie Corp - E-Learning & Digital Training"
@@ -40,21 +51,36 @@ export function Navigation() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link href="/" className="text-slate-300 hover:text-[#03A6A6] transition-colors">
+            <button
+              onClick={() => handleNavClick("/")}
+              className="text-slate-300 hover:text-[#03A6A6] transition-colors"
+            >
               Home
-            </Link>
-            <Link href="/services" className="text-slate-300 hover:text-[#03A6A6] transition-colors">
+            </button>
+            <button
+              onClick={() => handleNavClick("/services")}
+              className="text-slate-300 hover:text-[#03A6A6] transition-colors"
+            >
               Services
-            </Link>
-            <Link href="/case-studies" className="text-slate-300 hover:text-[#03A6A6] transition-colors">
+            </button>
+            <button
+              onClick={() => handleNavClick("/case-studies")}
+              className="text-slate-300 hover:text-[#03A6A6] transition-colors"
+            >
               Case Studies
-            </Link>
-            <Link href="/resources" className="text-slate-300 hover:text-[#03A6A6] transition-colors">
+            </button>
+            <button
+              onClick={() => handleNavClick("/resources")}
+              className="text-slate-300 hover:text-[#03A6A6] transition-colors"
+            >
               Resources
-            </Link>
-            <Link href="/contact" className="text-slate-300 hover:text-[#03A6A6] transition-colors">
+            </button>
+            <button
+              onClick={() => handleNavClick("/contact")}
+              className="text-slate-300 hover:text-[#03A6A6] transition-colors"
+            >
               Contact
-            </Link>
+            </button>
             <Button
               asChild
               className="bg-[#180A73] hover:bg-[#4981F2] text-white font-semibold px-6 py-2 rounded-lg transition-all duration-300 transform hover:scale-105"
@@ -75,21 +101,36 @@ export function Navigation() {
         {isMobileMenuOpen && (
           <div className="md:hidden bg-[#1e293b] border-t border-slate-800">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              <Link href="/" className="block px-3 py-2 text-slate-300 hover:text-[#03A6A6]">
+              <button
+                onClick={() => handleNavClick("/")}
+                className="block w-full text-left px-3 py-2 text-slate-300 hover:text-[#03A6A6]"
+              >
                 Home
-              </Link>
-              <Link href="/services" className="block px-3 py-2 text-slate-300 hover:text-[#03A6A6]">
+              </button>
+              <button
+                onClick={() => handleNavClick("/services")}
+                className="block w-full text-left px-3 py-2 text-slate-300 hover:text-[#03A6A6]"
+              >
                 Services
-              </Link>
-              <Link href="/case-studies" className="block px-3 py-2 text-slate-300 hover:text-[#03A6A6]">
+              </button>
+              <button
+                onClick={() => handleNavClick("/case-studies")}
+                className="block w-full text-left px-3 py-2 text-slate-300 hover:text-[#03A6A6]"
+              >
                 Case Studies
-              </Link>
-              <Link href="/resources" className="block px-3 py-2 text-slate-300 hover:text-[#03A6A6]">
+              </button>
+              <button
+                onClick={() => handleNavClick("/resources")}
+                className="block w-full text-left px-3 py-2 text-slate-300 hover:text-[#03A6A6]"
+              >
                 Resources
-              </Link>
-              <Link href="/contact" className="block px-3 py-2 text-slate-300 hover:text-[#03A6A6]">
+              </button>
+              <button
+                onClick={() => handleNavClick("/contact")}
+                className="block w-full text-left px-3 py-2 text-slate-300 hover:text-[#03A6A6]"
+              >
                 Contact
-              </Link>
+              </button>
               <div className="px-3 py-2">
                 <Button asChild className="w-full bg-[#180A73] hover:bg-[#4981F2]">
                   <Link href="/contact">Schedule Demo</Link>

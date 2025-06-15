@@ -20,7 +20,8 @@ export function ProblemSolution() {
                 <div>
                   <h3 className="text-lg font-semibold text-[#FEFFFB] mb-2">Death by PowerPoint Syndrome</h3>
                   <p className="text-slate-400">
-                    PDFs and presentations don't engage learners, leading to poor retention and failed compliance.
+                    PDFs and presentations don't engage learners, leading to poor retention and failed compliance across
+                    all industries.
                   </p>
                 </div>
               </div>
@@ -29,16 +30,18 @@ export function ProblemSolution() {
                 <div>
                   <h3 className="text-lg font-semibold text-[#FEFFFB] mb-2">Static Content Doesn't Stick</h3>
                   <p className="text-slate-400">
-                    Traditional training materials result in 40% retention rates and high failure rates.
+                    Traditional training materials result in 40% retention rates and high failure rates across HR,
+                    safety, and compliance areas.
                   </p>
                 </div>
               </div>
               <div className="flex items-start space-x-4">
                 <AlertTriangle className="w-6 h-6 text-[#4981F2] mt-1 flex-shrink-0" />
                 <div>
-                  <h3 className="text-lg font-semibold text-[#FEFFFB] mb-2">Audit Failures Are Just Symptoms</h3>
+                  <h3 className="text-lg font-semibold text-[#FEFFFB] mb-2">Boring Content = Poor Compliance</h3>
                   <p className="text-slate-400">
-                    The real problem is boring content that learners ignore or forget immediately.
+                    Failed audits are just symptoms. The real problem is boring content that learners ignore or forget
+                    immediately.
                   </p>
                 </div>
               </div>
@@ -64,7 +67,8 @@ export function ProblemSolution() {
                 <div>
                   <h3 className="text-lg font-semibold text-[#FEFFFB] mb-2">Content Transformation Magic</h3>
                   <p className="text-slate-400">
-                    Convert your existing PDFs, PowerPoints, and Word docs into engaging interactive e-learning.
+                    Convert your existing PDFs, PowerPoints, and Word docs into engaging interactive e-learning across
+                    all compliance areas.
                   </p>
                 </div>
               </div>
@@ -73,7 +77,8 @@ export function ProblemSolution() {
                 <div>
                   <h3 className="text-lg font-semibold text-[#FEFFFB] mb-2">Measurable Engagement Tracking</h3>
                   <p className="text-slate-400">
-                    Track completion rates, engagement metrics, and knowledge retention with detailed analytics.
+                    Track completion rates, engagement metrics, and knowledge retention with detailed analytics across
+                    all your training programs.
                   </p>
                 </div>
               </div>
@@ -82,7 +87,8 @@ export function ProblemSolution() {
                 <div>
                   <h3 className="text-lg font-semibold text-[#FEFFFB] mb-2">Cross-Industry Expertise</h3>
                   <p className="text-slate-400">
-                    From HR compliance to safety training to cybersecurity - we transform content across all areas.
+                    From HR compliance to safety training to financial regulations - we transform content across all
+                    industries and compliance areas.
                   </p>
                 </div>
               </div>

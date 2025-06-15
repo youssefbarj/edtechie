@@ -1,12 +1,12 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, TrendingUp, Shield, Users } from "lucide-react"
+import { ArrowRight, Heart, Shield, TrendingUp, Users } from "lucide-react"
 
 export function CaseStudyGrid() {
   const caseStudies = [
     {
       company: "Mid-Size Healthcare System (250 employees)",
-      industry: "Safety & Compliance",
+      industry: "Healthcare HIPAA Compliance",
       challenge: "432 HIPAA compliance PDFs, 28% completion rate, failed state audit",
       solution: "Transformed top 50 critical policies into interactive modules with decision trees",
       results: [
@@ -14,41 +14,49 @@ export function CaseStudyGrid() {
         "Passed follow-up audit with zero violations",
         "Reduced training time from 12 hours to 6 hours per employee",
       ],
-      icon: Shield,
+      icon: Heart,
       color: "text-green-400",
     },
     {
-      company: "Regional Healthcare System",
-      industry: "Healthcare Compliance",
-      challenge: "HIPAA training was boring PowerPoints with poor engagement and failed audits",
-      solution: "Interactive HIPAA scenarios with real-world decision trees and immediate feedback",
-      results: [
-        "89% completion rate vs previous 31%",
-        "Passed compliance audit on first try",
-        "Reduced training costs by 45%",
-      ],
-      icon: Users,
+      company: "Regional Manufacturing Plant (180 employees)",
+      industry: "Manufacturing Safety Training",
+      challenge: "OSHA safety manuals in static PDF, high incident rates, poor engagement",
+      solution: "Interactive safety scenarios with VR-style simulations and real workplace situations",
+      results: ["Incidents reduced 60% within 6 months", "Safety scores: 65% → 91%", "Engagement increased 300%"],
+      icon: Shield,
       color: "text-blue-400",
     },
     {
-      company: "Financial Services Firm",
+      company: "Financial Services Firm (120 employees)",
       industry: "Financial Compliance",
-      challenge: "Regulatory training across multiple frameworks, low engagement, high turnover",
-      solution: "Gamified compliance training with progress tracking and certification paths",
-      results: [
-        "Achieved 100% regulatory compliance",
-        "Employee satisfaction scores up 60%",
-        "Reduced onboarding time by 50%",
-      ],
+      challenge: "Multiple regulatory frameworks in boring PowerPoints, low engagement",
+      solution: "Gamified compliance learning paths with real-world scenarios and progress tracking",
+      results: ["Achieved 100% regulatory compliance", "Employee satisfaction up 85%", "Audit prep time reduced 70%"],
       icon: TrendingUp,
       color: "text-cyan-400",
+    },
+    {
+      company: "Corporate HR Department (300 employees)",
+      industry: "HR Harassment Prevention",
+      challenge: "Annual harassment training was click-through PowerPoint with poor retention",
+      solution: "Interactive scenario-based training with multiple perspectives and outcomes",
+      results: ["Completion: 45% → 96%", "HR incidents down 40%", "Feedback: 2.1/5 → 4.7/5"],
+      icon: Users,
+      color: "text-purple-400",
     },
   ]
 
   return (
     <section className="py-20 bg-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-white mb-4">Success Stories Across All Industries</h2>
+          <p className="text-xl text-slate-300">
+            From healthcare to manufacturing to financial services - see how content transformation works everywhere.
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-8">
           {caseStudies.map((study, index) => (
             <Card
               key={index}
