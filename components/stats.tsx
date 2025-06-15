@@ -22,10 +22,10 @@ export function Stats() {
   }, [])
 
   const stats = [
-    { label: "Completion Rate Improvement", value: "89%", color: "text-[#4981F2]" },
-    { label: "Knowledge Retention Increase", value: "85%", color: "text-[#4981F2]" },
-    { label: "Engagement Rate Boost", value: "73%", color: "text-[#4981F2]" },
-    { label: "Content Transformation Speed", value: "10x", color: "text-[#4981F2]" },
+    { label: "Completion Rate Improvement", value: "+55%", color: "text-[#4981F2]", detail: "34% → 89%" },
+    { label: "Knowledge Retention Increase", value: "+45%", color: "text-[#4981F2]", detail: "40% → 85%" },
+    { label: "Content Creation Speed", value: "10x", color: "text-[#4981F2]", detail: "Weeks → Days" },
+    { label: "Engagement Boost", value: "73%", color: "text-[#4981F2]", detail: "Interactive vs Static" },
   ]
 
   return (
@@ -46,6 +46,7 @@ export function Stats() {
                 {stat.value}
               </div>
               <div className="text-slate-300 font-medium">{stat.label}</div>
+              <div className="text-slate-400 text-sm mt-2">{stat.detail}</div>
             </div>
           ))}
         </div>
@@ -54,8 +55,8 @@ export function Stats() {
           <div className="bg-[#4981F2]/20 border border-[#4981F2]/30 rounded-lg p-6">
             <h3 className="text-xl font-bold text-[#4981F2] mb-4">Before EdTechie</h3>
             <ul className="space-y-2 text-slate-300">
-              <li>• 40% average completion rates</li>
-              <li>• 35% knowledge retention</li>
+              <li>• 34% average completion rates</li>
+              <li>• 40% knowledge retention</li>
               <li>• Weeks to create new content</li>
               <li>• Static PDFs and PowerPoints</li>
             </ul>

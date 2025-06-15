@@ -7,21 +7,21 @@ export function Testimonials() {
       name: "Jennifer Martinez",
       role: "HR Director, TechFlow Inc",
       content:
-        "EdTechie transformed our boring HR compliance PDFs into interactive experiences. Completion rates went from 34% to 91% in just one quarter.",
+        "Converting our compliance PDFs took 3 weeks. Worth every penny - our completion rates doubled and people actually retain the info now.",
       rating: 5,
     },
     {
       name: "David Chen",
       role: "Safety Manager, Manufacturing Corp",
       content:
-        "Our OSHA training was death by PowerPoint. EdTechie's interactive modules increased engagement by 73% and reduced incidents significantly.",
+        "Our OSHA training was just endless PowerPoints. EdTechie made it interactive and our incident reports dropped 40%. Managers love the analytics.",
       rating: 5,
     },
     {
       name: "Sarah Rodriguez",
       role: "L&D Director, Financial Services",
       content:
-        "We had thousands of compliance PDFs gathering digital dust. EdTechie transformed them into engaging courses our employees actually complete.",
+        "Had 200+ compliance PDFs gathering dust. EdTechie transformed the critical ones first - saved us 6 months of internal development time.",
       rating: 5,
     },
   ]

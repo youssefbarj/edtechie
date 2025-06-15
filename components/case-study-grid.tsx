@@ -5,14 +5,14 @@ import { ArrowRight, TrendingUp, Shield, Users } from "lucide-react"
 export function CaseStudyGrid() {
   const caseStudies = [
     {
-      company: "Global Manufacturing Corp",
+      company: "Mid-Size Healthcare System (250 employees)",
       industry: "Safety & Compliance",
-      challenge: "OSHA training completion rates at 28%, multiple safety incidents due to poor knowledge retention",
-      solution: "Transformed 50+ safety PDFs into interactive modules with scenario-based learning",
+      challenge: "432 HIPAA compliance PDFs, 28% completion rate, failed state audit",
+      solution: "Transformed top 50 critical policies into interactive modules with decision trees",
       results: [
-        "Completion rates increased to 94%",
-        "Safety incidents reduced by 67%",
-        "Training time reduced from 8 hours to 4 hours",
+        "Completion rate: 28% → 94% in 4 months",
+        "Passed follow-up audit with zero violations",
+        "Reduced training time from 12 hours to 6 hours per employee",
       ],
       icon: Shield,
       color: "text-green-400",

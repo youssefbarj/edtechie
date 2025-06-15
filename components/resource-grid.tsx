@@ -5,16 +5,16 @@ import { Download, ExternalLink, FileText, Video, BookOpen, Shield } from "lucid
 export function ResourceGrid() {
   const resources = [
     {
-      title: "SOC 2 Compliance Guide",
-      description: "Complete guide to achieving SOC 2 Type II certification with real-world examples and templates.",
+      title: "Free Before/After PDF Transformation Showcase",
+      description: "See real examples of boring PDFs transformed into engaging interactive experiences.",
       type: "PDF Guide",
       icon: FileText,
       color: "text-blue-400",
       cta: "Download Guide",
     },
     {
-      title: "Incident Response Playbook",
-      description: "Step-by-step procedures for handling security incidents, from detection to recovery.",
+      title: "Compliance Training Failure Assessment",
+      description: "Identify why your current training isn't working and get specific recommendations.",
       type: "Interactive Playbook",
       icon: Shield,
       color: "text-red-400",
@@ -51,6 +51,14 @@ export function ResourceGrid() {
       icon: Video,
       color: "text-cyan-400",
       cta: "Watch Videos",
+    },
+    {
+      title: "Get 1 PDF Transformed Free (10 slides max)",
+      description: "See our transformation process in action with your own content - no commitment required.",
+      type: "Free Transformation",
+      icon: Download,
+      color: "text-pink-400",
+      cta: "Get Free Transformation",
     },
   ]
 

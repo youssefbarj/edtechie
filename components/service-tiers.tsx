@@ -20,7 +20,8 @@ export function ServiceTiers() {
         "LMS integration ready",
         "2-week turnaround",
       ],
-      cta: "Get Custom Quote",
+      cta: "Stop Losing Learners - Book Free Audit",
+      price: "Get Custom Quote",
       popular: false,
     },
     {
@@ -37,7 +38,8 @@ export function ServiceTiers() {
         "Complete instructional design",
         "Ongoing iterations",
       ],
-      cta: "Get Custom Quote",
+      cta: "Stop Losing Learners - Book Free Audit",
+      price: "Get Custom Quote",
       popular: true,
     },
     {
@@ -54,7 +56,8 @@ export function ServiceTiers() {
         "Monthly content updates",
         "Dedicated success manager",
       ],
-      cta: "Get Custom Quote",
+      cta: "Stop Losing Learners - Book Free Audit",
+      price: "Get Custom Quote",
       popular: false,
     },
   ]
@@ -90,8 +93,9 @@ export function ServiceTiers() {
                 <CardTitle className="text-2xl font-bold text-white">{tier.name}</CardTitle>
                 <p className="text-cyan-400 font-semibold">{tier.subtitle}</p>
                 <div className="mt-4">
-                  <span className="text-2xl font-bold text-cyan-400">Get Custom Quote</span>
+                  <span className="text-2xl font-bold text-cyan-400">{tier.price}</span>
                 </div>
+                <p className="text-slate-400 text-sm">Pricing based on scope and complexity</p>
                 <p className="text-slate-300 mt-2">{tier.description}</p>
               </CardHeader>
 

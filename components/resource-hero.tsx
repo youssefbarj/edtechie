@@ -9,8 +9,8 @@ export function ResourceHero() {
             </span>
           </h1>
           <p className="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto">
-            Free tools, checklists, and insights to help you build a security culture that actually works. No fluff,
-            just actionable intelligence.
+            Free tools, before/after showcases, and transformation samples to help you build engaging content that
+            actually works.
           </p>
         </div>
       </div>

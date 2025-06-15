@@ -26,7 +26,7 @@ export function CTA() {
             >
               <Link href="/contact" className="flex items-center space-x-2">
                 <Calendar className="w-5 h-5" />
-                <span>Transform Your Content</span>
+                <span>See Your PDFs Come to Life - Free Demo</span>
                 <ArrowRight className="w-5 h-5" />
               </Link>
             </Button>
@@ -41,7 +41,7 @@ export function CTA() {
           </div>
 
           <div className="pt-8 text-slate-400 text-sm">
-            <p>Free consultation • No commitment • Results guaranteed</p>
+            <p>Free consultation • No commitment • Stop losing $X per failed training hour</p>
           </div>
         </div>
       </div>

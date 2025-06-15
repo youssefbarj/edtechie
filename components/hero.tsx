@@ -30,11 +30,14 @@ export function Hero() {
               <br />
               <span className="text-4xl md:text-5xl text-[#FEFFFB]">73% zone out during compliance training.</span>
             </h1>
-            <p className="text-xs text-slate-500 mb-4">(Source: Kineo blog post)</p>
+            <p className="text-xs text-slate-500 mb-4">(Source: Corporate Compliance Insights Survey)</p>
             <p className="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
               <span className="text-[#4981F2] font-bold">EdTechie Corp</span> transforms your boring PDFs and
               presentations into engaging interactive e-learning that actually works.
-              <span className="text-[#03A6A6] font-semibold"> Transform your content, engage your learners.</span>
+              <span className="text-[#03A6A6] font-semibold">
+                {" "}
+                Transform boring PDFs into interactive experiences that actually stick.
+              </span>
             </p>
           </div>
 
@@ -60,7 +63,7 @@ export function Hero() {
               className="bg-[#4981F2] hover:bg-[#180A73] text-[#FEFFFB] font-bold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-blue-500/25"
             >
               <Link href="/contact" className="flex items-center space-x-2">
-                <span>Transform Your Content Today</span>
+                <span>See Your PDFs Come to Life - Free Demo</span>
                 <ArrowRight className="w-5 h-5" />
               </Link>
             </Button>
@@ -70,12 +73,15 @@ export function Hero() {
               size="lg"
               className="border-slate-600 text-slate-300 hover:bg-slate-800 hover:text-[#FEFFFB] px-8 py-4 rounded-lg transition-all duration-300"
             >
-              <Link href="/resources">Download Content Transformation Guide</Link>
+              <Link href="/resources">Get Instant PDF Transformation Sample</Link>
             </Button>
           </div>
 
           <div className="pt-8 text-slate-400 text-sm">
-            <p>Trusted by 1000+ organizations • 89% completion rates • Free consultation</p>
+            <p>
+              Trusted by 1000+ organizations • 73% of employees zone out during training - are yours learning or just
+              clicking through?
+            </p>
           </div>
         </div>
       </div>
