@@ -1,0 +1,89 @@
+{
+  "deployment_checklist": {
+    "pre_deployment": [
+      {
+        "task": "Check git status",
+        "command": "git status",
+        "expected": "Working tree clean or staged changes ready"
+      },
+      {
+        "task": "Test local build",
+        "command": "npm run build",
+        "expected": "Build completes without errors"
+      },
+      {
+        "task": "Check TypeScript",
+        "command": "npm run type-check",
+        "expected": "No TypeScript errors"
+      },
+      {
+        "task": "Verify dependencies",
+        "command": "npm install",
+        "expected": "All dependencies installed"
+      }
+    ],
+    "git_operations": [
+      {
+        "task": "Stage changes",
+        "command": "git add .",
+        "expected": "All changes staged"
+      },
+      {
+        "task": "Commit changes",
+        "command": "git commit -m 'Update website'",
+        "expected": "Commit created successfully"
+      },
+      {
+        "task": "Push to remote",
+        "command": "git push origin main",
+        "expected": "Changes pushed to remote repository"
+      }
+    ],
+    "deployment_platforms": {
+      "vercel": {
+        "auto_deploy": "Pushes to main branch trigger automatic deployment",
+        "manual_deploy": "Use 'vercel --prod' command",
+        "dashboard": "https://vercel.com/dashboard"
+      },
+      "netlify": {
+        "auto_deploy": "Connected to git repository for automatic deployment",
+        "manual_deploy": "Drag and drop build folder or use Netlify CLI",
+        "dashboard": "https://app.netlify.com/"
+      },
+      "github_pages": {
+        "auto_deploy": "GitHub Actions workflow triggers on push",
+        "manual_deploy": "Enable Pages in repository settings",
+        "dashboard": "Repository Settings > Pages"
+      }
+    },
+    "common_issues": [
+      {
+        "issue": "Build fails",
+        "solutions": [
+          "Check for TypeScript errors",
+          "Verify all dependencies are installed",
+          "Check Next.js configuration",
+          "Review build logs for specific errors"
+        ]
+      },
+      {
+        "issue": "Git push fails",
+        "solutions": [
+          "Check authentication (GitHub token/SSH key)",
+          "Verify remote repository URL",
+          "Pull latest changes first",
+          "Resolve merge conflicts"
+        ]
+      },
+      {
+        "issue": "Deployment not updating",
+        "solutions": [
+          "Check deployment platform dashboard",
+          "Verify git repository connection",
+          "Check for failed builds",
+          "Clear deployment cache"
+        ]
+      }
+    ]
+  }
+}

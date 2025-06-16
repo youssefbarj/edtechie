@@ -7,11 +7,12 @@ import { CaseStudyStats } from "@/components/case-study-stats"
 
 export default function CaseStudiesPage() {
   useEffect(() => {
+    // Ensure we start at the top
     window.scrollTo(0, 0)
   }, [])
 
   return (
-    <div className="bg-slate-950 pt-16">
+    <div className="bg-slate-950 min-h-screen">
       <CaseStudyHero />
       <CaseStudyGrid />
       <CaseStudyStats />
