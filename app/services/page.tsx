@@ -8,7 +8,6 @@ import { ServiceComparison } from "@/components/service-comparison"
 
 export default function ServicesPage() {
   useEffect(() => {
-    // Ensure we start at the top
     window.scrollTo(0, 0)
   }, [])
 

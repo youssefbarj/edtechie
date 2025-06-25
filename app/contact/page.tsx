@@ -8,7 +8,6 @@ import { DemoScheduler } from "@/components/demo-scheduler"
 
 export default function ContactPage() {
   useEffect(() => {
-    // Ensure we start at the top
     window.scrollTo(0, 0)
   }, [])
 

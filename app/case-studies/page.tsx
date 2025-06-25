@@ -7,7 +7,6 @@ import { CaseStudyStats } from "@/components/case-study-stats"
 
 export default function CaseStudiesPage() {
   useEffect(() => {
-    // Ensure we start at the top
     window.scrollTo(0, 0)
   }, [])
 

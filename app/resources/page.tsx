@@ -7,7 +7,6 @@ import { BlogSection } from "@/components/blog-section"
 
 export default function ResourcesPage() {
   useEffect(() => {
-    // Ensure we start at the top
     window.scrollTo(0, 0)
   }, [])
 
