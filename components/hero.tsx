@@ -57,7 +57,7 @@ export function Hero() {
             </div>
             <div className="flex items-center space-x-2 bg-slate-800/50 px-3 sm:px-4 py-2 rounded-full">
               <Target className="w-4 h-4 sm:w-5 sm:h-5 text-[#05F2C7]" />
-              <span>Global Efficiency, US Standards</span>
+              <span>Modern Tools, Fast Results</span>
             </div>
           </div>
 
@@ -85,7 +85,7 @@ export function Hero() {
           <div className="pt-6 sm:pt-8 text-slate-400 text-xs sm:text-sm px-2">
             <p className="max-w-4xl mx-auto">
               Trusted by 1000+ organizations across healthcare, manufacturing, financial services, and more • Global
-              team, local expertise • International efficiency with US business standards
+              team, local expertise • Advanced authoring tools with proven methodologies
             </p>
           </div>
         </div>

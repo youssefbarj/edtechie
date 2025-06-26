@@ -25,8 +25,8 @@ export function ServiceFeatures() {
     },
     {
       icon: Globe,
-      title: "Global Expertise",
-      description: "International team with US business standards and cultural understanding.",
+      title: "Specialized Expertise",
+      description: "Dedicated content transformation team with deep industry knowledge and proven processes.",
     },
     {
       icon: CheckCircle,
