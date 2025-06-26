@@ -5,17 +5,17 @@ export function Testimonials() {
   const testimonials = [
     {
       name: "Jennifer Martinez",
-      role: "HR Director, TechFlow Inc",
+      role: "Compliance Director, HealthTech Corp",
       content:
-        "Converting our HIPAA compliance PDFs took 3 weeks. Worth every penny - our completion rates doubled and people actually retain the info now. ROI was clear within 2 months.",
+        "Transformed our HIPAA training PDFs in 3 weeks. Completion rates went from 34% to 91%. The interactive scenarios actually prepare staff for real situations. ROI was clear within 2 months.",
       rating: 5,
       industry: "Healthcare Compliance",
     },
     {
       name: "David Chen",
-      role: "Safety Manager, Manufacturing Corp",
+      role: "Safety Manager, Manufacturing Inc",
       content:
-        "Our OSHA training was just endless PowerPoints. EdTechie made it interactive and our incident reports dropped 40%. Managers love the analytics. Saved us $50K in potential fines.",
+        "Our OSHA PowerPoints were deadly boring. EdTechie made them interactive and engaging. Incident reports dropped 40% after the new training rollout. Saved us $50K in potential fines.",
       rating: 5,
       industry: "Manufacturing Safety",
     },
@@ -23,7 +23,7 @@ export function Testimonials() {
       name: "Sarah Rodriguez",
       role: "L&D Director, Financial Services",
       content:
-        "Had 200+ compliance PDFs gathering dust. EdTechie transformed the critical ones first - saved us 6 months of internal development time. SOX audit prep became actually manageable.",
+        "Had 200+ compliance documents gathering dust. EdTechie transformed the critical ones first - saved us 6 months of internal development time and $150K in costs. SOX audit prep became manageable.",
       rating: 5,
       industry: "Financial Services",
     },

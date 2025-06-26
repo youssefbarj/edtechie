@@ -69,8 +69,8 @@ export function ProblemSolution() {
                     Modern Tool Mastery + Strategic Expertise
                   </h3>
                   <p className="text-slate-400">
-                    Template-based approach eliminates development bottlenecks. Professional results through efficient
-                    global operations.
+                    Template-based approach eliminates development bottlenecks. Tool mastery reduces costs 60-80% vs
+                    custom development.
                   </p>
                 </div>
               </div>
@@ -79,8 +79,8 @@ export function ProblemSolution() {
                 <div>
                   <h3 className="text-lg font-semibold text-[#FEFFFB] mb-2">10x Development Speed</h3>
                   <p className="text-slate-400">
-                    60-80% faster than custom development with measurable engagement tracking and knowledge retention
-                    analytics.
+                    Modern authoring tools + business expertise deliver 60-80% faster results with measurable engagement
+                    tracking.
                   </p>
                 </div>
               </div>

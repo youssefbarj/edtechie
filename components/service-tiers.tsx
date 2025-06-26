@@ -3,20 +3,7 @@
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import {
-  Check,
-  ArrowRight,
-  Star,
-  ArrowLeft,
-  Zap,
-  Users,
-  Cog,
-  Play,
-  Gamepad2,
-  Sparkles,
-  Shield,
-  HelpCircle,
-} from "lucide-react"
+import { Check, ArrowRight, Star, ArrowLeft, Zap, Users, Cog, Play, Gamepad2, Sparkles, HelpCircle } from "lucide-react"
 import Link from "next/link"
 
 export function ServiceTiers() {
@@ -27,7 +14,7 @@ export function ServiceTiers() {
     {
       name: "Basic",
       subtitle: "8 documents (50 pages)",
-      price: "$3,495",
+      price: "$2,995",
       priceSubtitle: "Basic interactions",
       description: "Perfect for compliance docs and simple training materials",
       icon: <Play className="w-8 h-8" />,
@@ -42,13 +29,13 @@ export function ServiceTiers() {
       ],
       examples: "Accordions, hotspots, flip cards, multiple choice",
       perfectFor: "Compliance training, policy documents, quick wins",
-      cta: "Get Content Audit",
+      cta: "Get Free Content Audit",
       ctaLink: "/contact",
     },
     {
       name: "Enhanced",
       subtitle: "5 documents (50 pages)",
-      price: "$4,995",
+      price: "$4,795",
       priceSubtitle: "Interactive videos, animations",
       description: "Advanced interactions with video and custom elements",
       icon: <Sparkles className="w-8 h-8" />,
@@ -64,13 +51,13 @@ export function ServiceTiers() {
       examples: "Clickable videos, branching scenarios, custom animations",
       perfectFor: "Engaging training materials, video-based content",
       popular: true,
-      cta: "Get Content Audit",
+      cta: "Get Free Content Audit",
       ctaLink: "/contact",
     },
     {
       name: "Premium",
       subtitle: "3 documents (50 pages)",
-      price: "$7,995",
+      price: "$7,495",
       priceSubtitle: "Serious games, simulations",
       description: "Serious games and immersive simulations",
       icon: <Gamepad2 className="w-8 h-8" />,
@@ -85,8 +72,56 @@ export function ServiceTiers() {
       ],
       examples: "Game-based learning, complex simulations, virtual scenarios",
       perfectFor: "High-engagement training, skill-based learning",
-      cta: "Strategy Call",
+      cta: "Schedule Strategy Call",
       ctaLink: "/contact",
+    },
+    {
+      name: "Custom Development",
+      subtitle: "Enterprise Solutions",
+      price: "Starting at $35,000",
+      priceSubtitle: "Complete LMS ecosystems",
+      description: "Full-scale learning infrastructure and custom development",
+      icon: <Cog className="w-8 h-8" />,
+      features: [
+        "Complete LMS ecosystem design",
+        "Custom development and integrations",
+        "Ongoing support contracts",
+        "Enterprise project management",
+        "Quality assurance process",
+        "Dedicated account team",
+      ],
+      examples: "Full learning platforms, enterprise integrations, custom workflows",
+      perfectFor: "Large organizations, complex requirements, ongoing partnerships",
+      cta: "Schedule Strategy Call",
+      ctaLink: "/contact",
+      enterprise: true,
+    },
+  ]
+
+  const assessmentQuestions = [
+    {
+      question: "How many documents need transformation?",
+      options: [
+        { text: "1-5 documents", recommendation: "Enhanced or Premium Package" },
+        { text: "6-15 documents", recommendation: "Basic Package or phased approach" },
+        { text: "16+ documents", recommendation: "Custom Development with phased rollout" },
+      ],
+    },
+    {
+      question: "What type of interactivity do you need?",
+      options: [
+        { text: "Basic (quizzes, hotspots)", recommendation: "Basic Package" },
+        { text: "Enhanced (videos, animations)", recommendation: "Enhanced Package" },
+        { text: "Advanced (simulations, games)", recommendation: "Premium Package" },
+      ],
+    },
+    {
+      question: "Timeline requirements?",
+      options: [
+        { text: "Standard (2-4 weeks)", recommendation: "Any package works" },
+        { text: "Rush (1-2 weeks)", recommendation: "Basic or Enhanced with rush fee" },
+        { text: "Extended (1-3 months)", recommendation: "Custom Development" },
+      ],
     },
   ]
 
@@ -108,67 +143,25 @@ export function ServiceTiers() {
           <p className="text-slate-300">Help us recommend the right service for your needs</p>
         </CardHeader>
         <CardContent className="space-y-6">
-          <div className="space-y-4">
-            <div>
-              <h3 className="text-white font-semibold mb-3">1. How many documents do you need transformed?</h3>
+          {assessmentQuestions.map((q, index) => (
+            <div key={index} className="space-y-4">
+              <h3 className="text-white font-semibold mb-3">
+                {index + 1}. {q.question}
+              </h3>
               <div className="space-y-2">
-                <Button
-                  variant="outline"
-                  className="w-full justify-start border-slate-600 text-slate-300 hover:bg-slate-800"
-                >
-                  1-3 documents → Premium Package
-                </Button>
-                <Button
-                  variant="outline"
-                  className="w-full justify-start border-slate-600 text-slate-300 hover:bg-slate-800"
-                >
-                  4-5 documents → Enhanced Package
-                </Button>
-                <Button
-                  variant="outline"
-                  className="w-full justify-start border-slate-600 text-slate-300 hover:bg-slate-800"
-                >
-                  6-8 documents → Basic Package
-                </Button>
-                <Button
-                  variant="outline"
-                  className="w-full justify-start border-slate-600 text-slate-300 hover:bg-slate-800"
-                >
-                  9+ documents → Custom Development
-                </Button>
+                {q.options.map((option, optionIndex) => (
+                  <Button
+                    key={optionIndex}
+                    variant="outline"
+                    className="w-full justify-between border-slate-600 text-slate-300 hover:bg-slate-800"
+                  >
+                    <span>{option.text}</span>
+                    <span className="text-xs text-slate-500">→ {option.recommendation}</span>
+                  </Button>
+                ))}
               </div>
             </div>
-
-            <div>
-              <h3 className="text-white font-semibold mb-3">2. What level of interactivity do you need?</h3>
-              <div className="space-y-2">
-                <Button
-                  variant="outline"
-                  className="w-full justify-start border-slate-600 text-slate-300 hover:bg-slate-800"
-                >
-                  Basic (clicks, quizzes) → Basic Package
-                </Button>
-                <Button
-                  variant="outline"
-                  className="w-full justify-start border-slate-600 text-slate-300 hover:bg-slate-800"
-                >
-                  Advanced (videos, animations) → Enhanced Package
-                </Button>
-                <Button
-                  variant="outline"
-                  className="w-full justify-start border-slate-600 text-slate-300 hover:bg-slate-800"
-                >
-                  Games & simulations → Premium Package
-                </Button>
-                <Button
-                  variant="outline"
-                  className="w-full justify-start border-slate-600 text-slate-300 hover:bg-slate-800"
-                >
-                  Complete LMS solution → Custom Development
-                </Button>
-              </div>
-            </div>
-          </div>
+          ))}
 
           <div className="bg-slate-800/50 p-4 rounded-lg">
             <p className="text-slate-300 text-sm mb-3">
@@ -188,7 +181,7 @@ export function ServiceTiers() {
               }}
               className="flex-1 bg-green-600 hover:bg-green-700"
             >
-              View Packages
+              View All Packages
             </Button>
             <Button asChild variant="outline" className="flex-1 border-slate-600 text-slate-300 hover:bg-slate-800">
               <Link href="/contact">Get Personal Consultation</Link>
@@ -218,28 +211,21 @@ export function ServiceTiers() {
           {/* Header */}
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
-              Quick Transformation Packages
+              Content Transformation Packages
             </h2>
             <p className="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto">
-              All packages include 2-week delivery, 1 revision round, and SCORM output
+              From quick transformations to enterprise solutions - choose the right level for your needs
             </p>
-            <div className="mt-4 space-y-2">
-              <p className="text-amber-400 text-sm font-medium">Rush delivery (under 2 weeks): +25% fee</p>
-              <p className="text-green-400 text-sm font-medium flex items-center justify-center space-x-2">
-                <Shield className="w-4 h-4" />
-                <span>Quality Guarantee: If you're not satisfied, we'll revise until you are</span>
-              </p>
-            </div>
           </div>
 
-          {/* Complexity Levels */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+          {/* All Packages */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-8 mb-12">
             {quickTransformTiers.map((tier, index) => (
               <Card
                 key={index}
                 className={`relative bg-slate-800/50 border-slate-700 hover:border-green-500/50 transition-all duration-300 h-full ${
                   tier.popular ? "ring-2 ring-green-500/50 scale-105" : ""
-                }`}
+                } ${tier.enterprise ? "ring-2 ring-purple-500/50" : ""}`}
               >
                 {tier.popular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
@@ -250,49 +236,76 @@ export function ServiceTiers() {
                   </div>
                 )}
 
+                {tier.enterprise && (
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                    <div className="bg-gradient-to-r from-purple-500 to-blue-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
+                      Enterprise
+                    </div>
+                  </div>
+                )}
+
                 <CardHeader className="text-center pb-6">
                   <div className="flex justify-center mb-4">
-                    <div className="p-3 bg-green-900/30 rounded-full text-green-400">{tier.icon}</div>
+                    <div
+                      className={`p-3 rounded-full ${
+                        tier.enterprise ? "bg-purple-900/30 text-purple-400" : "bg-green-900/30 text-green-400"
+                      }`}
+                    >
+                      {tier.icon}
+                    </div>
                   </div>
-                  <CardTitle className="text-2xl font-bold text-white mb-2">{tier.name}</CardTitle>
-                  <p className="text-green-400 font-semibold text-lg">{tier.subtitle}</p>
+                  <CardTitle className="text-xl font-bold text-white mb-2">{tier.name}</CardTitle>
+                  <p className={`font-semibold text-lg ${tier.enterprise ? "text-purple-400" : "text-green-400"}`}>
+                    {tier.subtitle}
+                  </p>
                   <div className="mt-4">
-                    <span className="text-3xl font-bold text-green-400">Starting at {tier.price}</span>
+                    <span className={`text-2xl font-bold ${tier.enterprise ? "text-purple-400" : "text-green-400"}`}>
+                      {tier.price}
+                    </span>
                     <p className="text-slate-400 text-sm mt-1">{tier.priceSubtitle}</p>
                   </div>
-                  <p className="text-slate-300 mt-3">{tier.description}</p>
+                  <p className="text-slate-300 mt-3 text-sm">{tier.description}</p>
                 </CardHeader>
 
-                <CardContent className="space-y-6 flex-1 flex flex-col">
+                <CardContent className="space-y-4 flex-1 flex flex-col">
                   <div>
-                    <h4 className="text-white font-semibold mb-3">What's Included:</h4>
+                    <h4 className="text-white font-semibold mb-3 text-sm">What's Included:</h4>
                     <ul className="space-y-2">
                       {tier.features.map((feature, featureIndex) => (
                         <li key={featureIndex} className="flex items-center space-x-3">
-                          <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
-                          <span className="text-slate-300">{feature}</span>
+                          <Check
+                            className={`w-4 h-4 flex-shrink-0 ${
+                              tier.enterprise ? "text-purple-400" : "text-green-400"
+                            }`}
+                          />
+                          <span className="text-slate-300 text-sm">{feature}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
 
                   <div>
-                    <h4 className="text-white font-semibold mb-2">Examples:</h4>
-                    <p className="text-slate-400 text-sm">{tier.examples}</p>
+                    <h4 className="text-white font-semibold mb-2 text-sm">Examples:</h4>
+                    <p className="text-slate-400 text-xs">{tier.examples}</p>
                   </div>
 
                   <div className="bg-slate-700/50 p-3 rounded-lg">
                     <p className="text-xs text-slate-400">
-                      <span className="font-semibold text-green-400">Perfect for:</span> {tier.perfectFor}
+                      <span className={`font-semibold ${tier.enterprise ? "text-purple-400" : "text-green-400"}`}>
+                        Perfect for:
+                      </span>{" "}
+                      {tier.perfectFor}
                     </p>
                   </div>
 
                   <Button
                     asChild
-                    className="w-full mt-auto bg-green-600 hover:bg-green-700 transition-all duration-300 py-3"
+                    className={`w-full mt-auto transition-all duration-300 py-3 ${
+                      tier.enterprise ? "bg-purple-600 hover:bg-purple-700" : "bg-green-600 hover:bg-green-700"
+                    }`}
                   >
                     <Link href={tier.ctaLink} className="flex items-center justify-center space-x-2">
-                      <span>{tier.cta}</span>
+                      <span className="text-sm">{tier.cta}</span>
                       <ArrowRight className="w-4 h-4" />
                     </Link>
                   </Button>
@@ -302,7 +315,7 @@ export function ServiceTiers() {
           </div>
 
           {/* Why Choose EdTechie Corp */}
-          <div className="bg-gradient-to-r from-slate-800/50 to-slate-700/50 border border-slate-600 rounded-lg p-8 mb-8">
+          <div className="bg-gradient-to-r from-slate-800/50 to-slate-700/50 border border-slate-600 rounded-lg p-8">
             <h3 className="text-2xl font-bold text-white mb-6 text-center">Why Choose EdTechie Corp?</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-4">
@@ -368,7 +381,7 @@ export function ServiceTiers() {
                 Quick Transformation Packages
               </CardTitle>
               <p className="text-green-400 font-semibold text-lg mb-4">2-week delivery, multiple complexity levels</p>
-              <div className="text-3xl font-bold text-green-400 mb-4">$3,495 - $7,995</div>
+              <div className="text-3xl font-bold text-green-400 mb-4">$2,995 - $7,495</div>
             </CardHeader>
 
             <CardContent className="space-y-6 flex-1 flex flex-col">
@@ -428,7 +441,7 @@ export function ServiceTiers() {
                 Custom Development Services
               </CardTitle>
               <p className="text-purple-400 font-semibold text-lg mb-4">Complete LMS ecosystem solutions</p>
-              <div className="text-3xl font-bold text-purple-400 mb-4">Starting at enterprise level</div>
+              <div className="text-3xl font-bold text-purple-400 mb-4">Starting at $35,000</div>
             </CardHeader>
 
             <CardContent className="space-y-6 flex-1 flex flex-col">
@@ -467,7 +480,7 @@ export function ServiceTiers() {
                 className="w-full bg-purple-600 hover:bg-purple-700 transition-all duration-300 py-4 text-lg group-hover:scale-105"
               >
                 <Link href="/contact" className="flex items-center justify-center space-x-2">
-                  <span>Strategy Call</span>
+                  <span>Schedule Strategy Call</span>
                   <ArrowRight className="w-5 h-5" />
                 </Link>
               </Button>

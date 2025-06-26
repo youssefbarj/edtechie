@@ -22,20 +22,15 @@ export function Stats() {
   }, [])
 
   const stats = [
-    { label: "Development Speed", value: "10x", color: "text-[#4981F2]", detail: "faster than scratch builds" },
     {
-      label: "Cost Efficiency",
+      label: "Faster Than Custom Development",
       value: "60%",
       color: "text-[#4981F2]",
-      detail: "agency quality at competitive rates",
+      detail: "using modern authoring tools",
     },
     { label: "Completion Rate Improvement", value: "+89%", color: "text-[#4981F2]", detail: "vs traditional methods" },
-    {
-      label: "Knowledge Retention Increase",
-      value: "+73%",
-      color: "text-[#4981F2]",
-      detail: "interactive vs static",
-    },
+    { label: "Knowledge Retention Increase", value: "+73%", color: "text-[#4981F2]", detail: "interactive vs static" },
+    { label: "Content Creation Speed", value: "10x", color: "text-[#4981F2]", detail: "transformation vs scratch" },
   ]
 
   return (
