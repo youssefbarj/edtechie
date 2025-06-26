@@ -1,39 +1,83 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Check, ArrowRight, Star, Zap, HelpCircle } from "lucide-react"
+import { Check, ArrowRight, Star, HelpCircle } from "lucide-react"
 import Link from "next/link"
 
 export function ServiceTiers() {
   const tiers = [
     {
-      name: "Quick Wins Content Transformation",
-      subtitle: "Multiple Documents → Interactive in 2 Weeks",
-      description:
-        "Transform your existing PDFs, PowerPoints, and Word docs into interactive modules with standard elements. Perfect for getting multiple quick wins.",
+      name: "Basic Quick Transformation",
+      subtitle: "Up to 8 Documents → Interactive in 2 Weeks",
+      description: "Transform up to 8 simple documents (50 pages total) with basic interactive elements.",
       features: [
-        "Multiple document transformations (up to 20 pages each)",
-        "3-5 interactive elements (quizzes, hotspots, scenarios)",
-        "Standard template interactions only",
+        "Up to 8 documents (max 50 pages total)",
+        "Basic interactions: accordions, hotspots, flip cards",
+        "Simple multiple choice quizzes",
+        "Click-through scenarios",
+        "Standard templates only",
         "1 revision round included",
         "2-week delivery guarantee",
-        "Single point of contact required",
         "HTML5/SCORM output",
-        "LMS integration ready",
       ],
-      cta: "Get 30-Min Content Audit",
-      price: "Starting at $2,995",
+      cta: "Get Content Audit",
+      price: "Starting at $2,495",
       popular: false,
-      fastest: true,
-      perfectFor: "Immediate compliance needs, proof of concept, urgent deadlines",
+      fastest: false,
+      perfectFor: "Compliance docs, simple training materials, quick wins",
       badgeColor: "from-green-500 to-emerald-600",
       cardColor: "ring-green-500/50 border-green-500/30",
+      tier: "1A",
+    },
+    {
+      name: "Enhanced Quick Transformation",
+      subtitle: "Up to 5 Documents → Interactive in 2 Weeks",
+      description: "Transform up to 5 documents (50 pages total) with advanced interactive elements.",
+      features: [
+        "Everything in Basic",
+        "Up to 5 documents (max 50 pages total)",
+        "Interactive videos with clickable elements",
+        "Drag-and-drop activities",
+        "Advanced branching scenarios",
+        "Custom graphics & animations",
+        "Assessment scoring & feedback",
+      ],
+      cta: "Get Content Audit",
+      price: "Starting at $3,995",
+      popular: true,
+      fastest: false,
+      perfectFor: "Training materials needing engagement, video-based content",
+      badgeColor: "from-green-500 to-emerald-600",
+      cardColor: "ring-green-500/50 border-green-500/30",
+      tier: "1B",
+    },
+    {
+      name: "Premium Quick Transformation",
+      subtitle: "Up to 3 Documents → Interactive in 2 Weeks",
+      description: "Transform up to 3 documents (50 pages total) with serious games and simulations.",
+      features: [
+        "Everything in Enhanced",
+        "Up to 3 documents (max 50 pages total)",
+        "Serious games & gamification",
+        "Complex simulations",
+        "Virtual environments",
+        "Advanced multimedia integration",
+        "Custom interactivity design",
+      ],
+      cta: "Get Content Audit",
+      price: "Starting at $5,995",
+      popular: false,
+      fastest: false,
+      perfectFor: "High-engagement training, skill-based learning, premium content",
+      badgeColor: "from-green-500 to-emerald-600",
+      cardColor: "ring-green-500/50 border-green-500/30",
+      tier: "1C",
     },
     {
       name: "Custom Course Development",
       subtitle: "Built from Scratch with SME Collaboration",
       description: "Complete courses with advanced simulations, serious games, and complex scenarios.",
       features: [
-        "Everything in Quick Wins",
+        "Everything in Premium Quick",
         "SME collaboration sessions",
         "Advanced simulations",
         "Serious games integration",
@@ -44,11 +88,12 @@ export function ServiceTiers() {
       ],
       cta: "Schedule Strategy Call",
       price: "Starting at $8,500",
-      popular: true,
+      popular: false,
       fastest: false,
       perfectFor: "New programs, complex subject matter, higher engagement needs",
       badgeColor: "from-[#6366F1] to-[#5B21B6]",
       cardColor: "ring-purple-500/50 border-purple-500/30",
+      tier: "2",
     },
     {
       name: "Learning Infrastructure Solutions",
@@ -71,25 +116,26 @@ export function ServiceTiers() {
       perfectFor: "Starting from scratch, ongoing partnership, multi-department needs",
       badgeColor: "from-cyan-500 to-blue-600",
       cardColor: "ring-cyan-500/50 border-cyan-500/30",
+      tier: "3",
     },
   ]
 
   const qualificationQuestions = [
     {
       question: "How many documents need transformation?",
-      tier1: "1 document",
-      tier2Plus: "Multiple documents",
+      tier1: "1-8 documents",
+      tier2Plus: "Multiple complex projects",
       recommendation: "Tier 1 vs Tier 2+",
     },
     {
-      question: "Do you need custom graphics/media?",
-      tier1: "No, standard templates",
-      tier2Plus: "Yes, custom design",
+      question: "What level of interactivity do you need?",
+      tier1: "Basic to advanced interactions",
+      tier2Plus: "Custom simulations & games",
       recommendation: "Tier 1 vs Tier 2+",
     },
     {
       question: "Timeline urgency?",
-      tier1: "Under 3 weeks",
+      tier1: "2-3 weeks",
       tier2Plus: "1+ months",
       recommendation: "Tier 1 vs Tier 2+",
     },
@@ -103,17 +149,18 @@ export function ServiceTiers() {
             Choose Your Content Transformation Approach
           </h2>
           <p className="text-lg sm:text-xl lg:text-2xl text-slate-300 max-w-4xl mx-auto">
-            From quick wins to complete custom development. Each tier has distinct processes and expectations.
+            From basic transformations to complete custom development. Each tier has distinct complexity levels and
+            pricing.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 xl:gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-5 gap-6 sm:gap-8 lg:gap-6 xl:gap-4">
           {tiers.map((tier, index) => (
             <Card
               key={index}
               className={`relative bg-slate-800/50 border-slate-700 hover:${tier.cardColor} transition-all duration-300 h-full ${
-                tier.popular ? "ring-2 ring-purple-500/50" : tier.fastest ? "ring-2 ring-green-500/50" : ""
-              }`}
+                tier.popular ? "ring-2 ring-green-500/50" : ""
+              } ${tier.tier?.startsWith("1") ? "lg:col-span-1" : "lg:col-span-1 xl:col-span-1"}`}
             >
               {tier.popular && (
                 <div className="absolute -top-3 sm:-top-4 left-1/2 transform -translate-x-1/2">
@@ -126,45 +173,57 @@ export function ServiceTiers() {
                 </div>
               )}
 
-              {tier.fastest && (
-                <div className="absolute -top-3 sm:-top-4 left-1/2 transform -translate-x-1/2">
-                  <div
-                    className={`bg-gradient-to-r ${tier.badgeColor} text-white px-3 sm:px-4 py-1 rounded-full text-xs sm:text-sm font-semibold flex items-center space-x-1`}
-                  >
-                    <Zap className="w-3 h-3 sm:w-4 sm:h-4" />
-                    <span>Fastest Option</span>
-                  </div>
-                </div>
-              )}
-
               <CardHeader className="text-center pb-4 sm:pb-6">
-                <CardTitle className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2">{tier.name}</CardTitle>
+                <div className="mb-2">
+                  <span
+                    className={`text-xs font-semibold px-2 py-1 rounded-full ${
+                      tier.tier?.startsWith("1")
+                        ? "bg-green-900/30 text-green-400"
+                        : tier.tier === "2"
+                          ? "bg-purple-900/30 text-purple-400"
+                          : "bg-cyan-900/30 text-cyan-400"
+                    }`}
+                  >
+                    Tier {tier.tier}
+                  </span>
+                </div>
+                <CardTitle className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-2">{tier.name}</CardTitle>
                 <p
-                  className={`font-semibold text-sm sm:text-base lg:text-lg ${
-                    tier.fastest ? "text-green-400" : tier.popular ? "text-purple-400" : "text-cyan-400"
+                  className={`font-semibold text-xs sm:text-sm lg:text-base ${
+                    tier.tier?.startsWith("1")
+                      ? "text-green-400"
+                      : tier.tier === "2"
+                        ? "text-purple-400"
+                        : "text-cyan-400"
                   }`}
                 >
                   {tier.subtitle}
                 </p>
                 <div className="mt-3 sm:mt-4">
                   <span
-                    className={`text-xl sm:text-2xl lg:text-3xl font-bold ${
-                      tier.fastest ? "text-green-400" : tier.popular ? "text-purple-400" : "text-cyan-400"
+                    className={`text-lg sm:text-xl lg:text-2xl font-bold ${
+                      tier.tier?.startsWith("1")
+                        ? "text-green-400"
+                        : tier.tier === "2"
+                          ? "text-purple-400"
+                          : "text-cyan-400"
                     }`}
                   >
                     {tier.price}
                   </span>
                 </div>
-                <p className="text-slate-400 text-xs sm:text-sm">Final pricing based on scope review</p>
-                <p className="text-amber-400 text-xs sm:text-sm font-medium mt-1">
-                  Rush delivery (under 2 weeks): +25% fee
-                </p>
-                <p className="text-slate-300 mt-2 text-sm sm:text-base">{tier.description}</p>
-                <div className="mt-3 p-3 bg-slate-700/50 rounded-lg">
-                  <p className="text-xs sm:text-sm text-slate-400">
+                <p className="text-slate-400 text-xs">Final pricing based on scope review</p>
+                <p className="text-amber-400 text-xs font-medium mt-1">Rush delivery (under 2 weeks): +25% fee</p>
+                <p className="text-slate-300 mt-2 text-xs sm:text-sm">{tier.description}</p>
+                <div className="mt-3 p-2 bg-slate-700/50 rounded-lg">
+                  <p className="text-xs text-slate-400">
                     <span
                       className={`font-semibold ${
-                        tier.fastest ? "text-green-400" : tier.popular ? "text-purple-400" : "text-cyan-400"
+                        tier.tier?.startsWith("1")
+                          ? "text-green-400"
+                          : tier.tier === "2"
+                            ? "text-purple-400"
+                            : "text-cyan-400"
                       }`}
                     >
                       Perfect for:
@@ -174,33 +233,37 @@ export function ServiceTiers() {
                 </div>
               </CardHeader>
 
-              <CardContent className="space-y-4 sm:space-y-6 flex-1 flex flex-col">
-                <ul className="space-y-2 sm:space-y-3 flex-1">
+              <CardContent className="space-y-3 sm:space-y-4 flex-1 flex flex-col">
+                <ul className="space-y-1 sm:space-y-2 flex-1">
                   {tier.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center space-x-3">
+                    <li key={featureIndex} className="flex items-center space-x-2">
                       <Check
-                        className={`w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0 ${
-                          tier.fastest ? "text-green-400" : tier.popular ? "text-purple-400" : "text-cyan-400"
+                        className={`w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0 ${
+                          tier.tier?.startsWith("1")
+                            ? "text-green-400"
+                            : tier.tier === "2"
+                              ? "text-purple-400"
+                              : "text-cyan-400"
                         }`}
                       />
-                      <span className="text-slate-300 text-sm sm:text-base">{feature}</span>
+                      <span className="text-slate-300 text-xs sm:text-sm">{feature}</span>
                     </li>
                   ))}
                 </ul>
 
                 <Button
                   asChild
-                  className={`w-full mt-auto transition-all duration-300 py-3 sm:py-4 text-sm sm:text-base ${
-                    tier.fastest
+                  className={`w-full mt-auto transition-all duration-300 py-2 sm:py-3 text-xs sm:text-sm ${
+                    tier.tier?.startsWith("1")
                       ? "bg-green-600 hover:bg-green-700"
-                      : tier.popular
+                      : tier.tier === "2"
                         ? "bg-[#6366F1] hover:bg-[#5B21B6]"
                         : "bg-cyan-600 hover:bg-cyan-700"
                   }`}
                 >
                   <Link href="/contact" className="flex items-center justify-center space-x-2">
                     <span>{tier.cta}</span>
-                    <ArrowRight className="w-4 h-4" />
+                    <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4" />
                   </Link>
                 </Button>
               </CardContent>
