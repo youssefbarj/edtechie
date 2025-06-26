@@ -12,9 +12,11 @@ export function ResourceGrid() {
   const [currentCost, setCurrentCost] = useState(100000)
 
   // Real-time calculations
-  const moroccanSavings = currentCost * 0.65
+  const operationalSavings = currentCost * 0.45 // 45% operational efficiency savings
+  const toolEfficiency = currentCost * 0.15 // Modern authoring tool efficiency
+  const processOptimization = currentCost * 0.2 // Streamlined process improvements
   const productivityGains = employees * 65000 * 0.15 * 0.4 // 40% completion improvement
-  const totalSavings = moroccanSavings + productivityGains
+  const totalSavings = operationalSavings + productivityGains
 
   // Transformation examples for instant viewing
   const transformationExamples = [
@@ -72,10 +74,34 @@ export function ResourceGrid() {
   ]
 
   const costComparison = [
-    { provider: "US Agency", cost: 150000, quality: "High", speed: "Slow" },
-    { provider: "Freelancer", cost: 45000, quality: "Variable", speed: "Variable" },
-    { provider: "EdTechie", cost: 35000, quality: "High", speed: "Fast" },
-    { provider: "DIY Tools", cost: 12000, quality: "Low", speed: "Very Slow" },
+    {
+      provider: "Traditional Agency",
+      cost: 150000,
+      quality: "High",
+      speed: "Slow",
+      note: "Full service, premium pricing",
+    },
+    {
+      provider: "Freelancer Network",
+      cost: 45000,
+      quality: "Variable",
+      speed: "Variable",
+      note: "Variable quality, project risk",
+    },
+    {
+      provider: "EdTechie Corp",
+      cost: 65000,
+      quality: "High",
+      speed: "Fast",
+      note: "Agency quality, efficient delivery",
+    },
+    {
+      provider: "DIY Tools",
+      cost: 12000,
+      quality: "Low",
+      speed: "Very Slow",
+      note: "Time-intensive, 80% failure rate",
+    },
   ]
 
   const instantResources = [
@@ -182,7 +208,7 @@ export function ResourceGrid() {
           <Card className="bg-gradient-to-r from-blue-900/20 to-cyan-900/20 border-blue-500/30 max-w-4xl mx-auto">
             <CardHeader className="text-center">
               <CardTitle className="text-2xl text-white mb-2">Live ROI Calculator</CardTitle>
-              <p className="text-slate-300">See your savings in real-time as you type</p>
+              <p className="text-slate-300">See your savings through operational efficiency and modern tooling</p>
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
@@ -213,8 +239,18 @@ export function ResourceGrid() {
                   <h4 className="text-lg font-semibold text-white mb-4">Your Instant Savings</h4>
                   <div className="space-y-3">
                     <div className="flex justify-between">
-                      <span className="text-slate-400">Morocco Cost Advantage:</span>
-                      <span className="text-green-400 font-bold">${moroccanSavings.toLocaleString()}</span>
+                      <span className="text-slate-400">Operational Efficiency:</span>
+                      <span className="text-green-400 font-bold">${operationalSavings.toLocaleString()}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-slate-400">Modern Tool Advantage:</span>
+                      <span className="text-blue-400 font-bold">${Math.round(toolEfficiency).toLocaleString()}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-slate-400">Process Optimization:</span>
+                      <span className="text-cyan-400 font-bold">
+                        ${Math.round(processOptimization).toLocaleString()}
+                      </span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-slate-400">Productivity Gains:</span>
@@ -239,7 +275,7 @@ export function ResourceGrid() {
           <div className="text-center mb-12">
             <h3 className="text-3xl font-bold text-white mb-4">Instant Cost Comparison</h3>
             <p className="text-lg text-slate-300">
-              See why EdTechie is the smart choice between expensive agencies and risky freelancers
+              See why EdTechie delivers agency quality through operational excellence and efficient processes
             </p>
           </div>
 
@@ -247,13 +283,15 @@ export function ResourceGrid() {
             {costComparison.map((option, index) => (
               <Card
                 key={index}
-                className={`bg-slate-800/50 border-slate-700 text-center ${option.provider === "EdTechie" ? "ring-2 ring-green-500/50 scale-105" : ""}`}
+                className={`bg-slate-800/50 border-slate-700 text-center ${option.provider === "EdTechie Corp" ? "ring-2 ring-green-500/50 scale-105" : ""}`}
               >
                 <CardHeader>
-                  <CardTitle className={`text-lg ${option.provider === "EdTechie" ? "text-green-400" : "text-white"}`}>
+                  <CardTitle
+                    className={`text-lg ${option.provider === "EdTechie Corp" ? "text-green-400" : "text-white"}`}
+                  >
                     {option.provider}
                   </CardTitle>
-                  {option.provider === "EdTechie" && (
+                  {option.provider === "EdTechie Corp" && (
                     <div className="bg-green-500/20 text-green-300 px-2 py-1 rounded-full text-xs">Best Value</div>
                   )}
                 </CardHeader>
@@ -262,6 +300,7 @@ export function ResourceGrid() {
                   <div className="space-y-1 text-sm">
                     <p className="text-slate-400">Quality: {option.quality}</p>
                     <p className="text-slate-400">Speed: {option.speed}</p>
+                    <p className="text-slate-400">{option.note}</p>
                   </div>
                 </CardContent>
               </Card>
