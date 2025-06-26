@@ -3,7 +3,6 @@
 import { useEffect } from "react"
 import { ResourceHero } from "@/components/resource-hero"
 import { ResourceGrid } from "@/components/resource-grid"
-import { BlogSection } from "@/components/blog-section"
 
 export default function ResourcesPage() {
   useEffect(() => {
@@ -14,7 +13,6 @@ export default function ResourcesPage() {
     <div className="bg-slate-950 min-h-screen">
       <ResourceHero />
       <ResourceGrid />
-      <BlogSection />
     </div>
   )
 }

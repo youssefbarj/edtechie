@@ -4,32 +4,32 @@ import { Star } from "lucide-react"
 export function Testimonials() {
   const testimonials = [
     {
-      name: "Jennifer Martinez",
-      role: "Compliance Director, HealthTech Corp",
+      role: "Compliance Director",
+      company: "Healthcare Organization",
       content:
         "Transformed our HIPAA training PDFs in 3 weeks. Completion rates went from 34% to 91%. The interactive scenarios actually prepare staff for real situations. ROI was clear within 2 months.",
       rating: 5,
       industry: "Healthcare Compliance",
     },
     {
-      name: "David Chen",
-      role: "Safety Manager, Manufacturing Inc",
+      role: "Safety Manager",
+      company: "Manufacturing Company",
       content:
         "Our OSHA PowerPoints were deadly boring. EdTechie made them interactive and engaging. Incident reports dropped 40% after the new training rollout. Saved us $50K in potential fines.",
       rating: 5,
       industry: "Manufacturing Safety",
     },
     {
-      name: "Sarah Rodriguez",
-      role: "L&D Director, Financial Services",
+      role: "L&D Director",
+      company: "Financial Services Firm",
       content:
         "Had 200+ compliance documents gathering dust. EdTechie transformed the critical ones first - saved us 6 months of internal development time and $150K in costs. SOX audit prep became manageable.",
       rating: 5,
       industry: "Financial Services",
     },
     {
-      name: "Michael Thompson",
-      role: "Compliance Officer, Corporate HR",
+      role: "Compliance Officer",
+      company: "Corporate Organization",
       content:
         "Harassment prevention training went from 23% completion to 94% after EdTechie transformation. The interactive scenarios made all the difference. No more compliance headaches.",
       rating: 5,
@@ -66,8 +66,8 @@ export function Testimonials() {
                 </div>
                 <p className="text-slate-300 mb-6 italic text-sm">"{testimonial.content}"</p>
                 <div>
-                  <div className="font-semibold text-[#FEFFFB] text-sm">{testimonial.name}</div>
-                  <div className="text-xs text-slate-400">{testimonial.role}</div>
+                  <div className="font-semibold text-[#FEFFFB] text-sm">{testimonial.role}</div>
+                  <div className="text-xs text-slate-400">{testimonial.company}</div>
                 </div>
               </CardContent>
             </Card>
