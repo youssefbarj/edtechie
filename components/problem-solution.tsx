@@ -1,4 +1,4 @@
-import { AlertTriangle, CheckCircle, TrendingUp, Users } from "lucide-react"
+import { AlertTriangle, CheckCircle, TrendingUp, Globe } from "lucide-react"
 
 export function ProblemSolution() {
   return (
@@ -38,10 +38,10 @@ export function ProblemSolution() {
               <div className="flex items-start space-x-4">
                 <AlertTriangle className="w-6 h-6 text-[#4981F2] mt-1 flex-shrink-0" />
                 <div>
-                  <h3 className="text-lg font-semibold text-[#FEFFFB] mb-2">Boring Content = Poor Compliance</h3>
+                  <h3 className="text-lg font-semibold text-[#FEFFFB] mb-2">Expensive Agencies vs Risky Freelancers</h3>
                   <p className="text-slate-400">
-                    Failed audits are just symptoms. The real problem is boring content that learners ignore or forget
-                    immediately.
+                    Premium agencies charge $50K+ while freelancers lack business expertise and reliability. You need
+                    the smart choice in between.
                   </p>
                 </div>
               </div>
@@ -56,7 +56,7 @@ export function ProblemSolution() {
                 Transform static content into interactive experiences that learners actually want to complete.
                 <span className="text-[#03A6A6] font-semibold">
                   {" "}
-                  This is how EdTechie Corp transforms boring into brilliant.
+                  Agency credibility without agency premium pricing.
                 </span>
               </p>
             </div>
@@ -65,30 +65,32 @@ export function ProblemSolution() {
               <div className="flex items-start space-x-4">
                 <CheckCircle className="w-6 h-6 text-[#03A6A6] mt-1 flex-shrink-0" />
                 <div>
-                  <h3 className="text-lg font-semibold text-[#FEFFFB] mb-2">Content Transformation Magic</h3>
+                  <h3 className="text-lg font-semibold text-[#FEFFFB] mb-2">
+                    Modern Tool Mastery + Strategic Expertise
+                  </h3>
                   <p className="text-slate-400">
-                    Convert your existing PDFs, PowerPoints, and Word docs into engaging interactive e-learning across
-                    all compliance areas.
+                    Template-based approach eliminates development bottlenecks. Professional results through efficient
+                    global operations.
                   </p>
                 </div>
               </div>
               <div className="flex items-start space-x-4">
                 <TrendingUp className="w-6 h-6 text-[#05F2C7] mt-1 flex-shrink-0" />
                 <div>
-                  <h3 className="text-lg font-semibold text-[#FEFFFB] mb-2">Measurable Engagement Tracking</h3>
+                  <h3 className="text-lg font-semibold text-[#FEFFFB] mb-2">10x Development Speed</h3>
                   <p className="text-slate-400">
-                    Track completion rates, engagement metrics, and knowledge retention with detailed analytics across
-                    all your training programs.
+                    60-80% faster than custom development with measurable engagement tracking and knowledge retention
+                    analytics.
                   </p>
                 </div>
               </div>
               <div className="flex items-start space-x-4">
-                <Users className="w-6 h-6 text-[#4981F2] mt-1 flex-shrink-0" />
+                <Globe className="w-6 h-6 text-[#4981F2] mt-1 flex-shrink-0" />
                 <div>
-                  <h3 className="text-lg font-semibold text-[#FEFFFB] mb-2">Cross-Industry Expertise</h3>
+                  <h3 className="text-lg font-semibold text-[#FEFFFB] mb-2">Global Team, Cultural Expertise</h3>
                   <p className="text-slate-400">
-                    From HR compliance to safety training to financial regulations - we transform content across all
-                    industries and compliance areas.
+                    Better time zone alignment than Asian competitors. French/English fluency with Western business
+                    understanding across all compliance areas.
                   </p>
                 </div>
               </div>

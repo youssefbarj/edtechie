@@ -22,19 +22,19 @@ export function Stats() {
   }, [])
 
   const stats = [
+    { label: "Development Speed", value: "10x", color: "text-[#4981F2]", detail: "faster than scratch builds" },
+    {
+      label: "Cost Efficiency",
+      value: "60%",
+      color: "text-[#4981F2]",
+      detail: "agency quality at competitive rates",
+    },
     { label: "Completion Rate Improvement", value: "+89%", color: "text-[#4981F2]", detail: "vs traditional methods" },
     {
       label: "Knowledge Retention Increase",
       value: "+73%",
       color: "text-[#4981F2]",
       detail: "interactive vs static",
-    },
-    { label: "Content Creation Speed", value: "10x", color: "text-[#4981F2]", detail: "transformation vs scratch" },
-    {
-      label: "Works Across ALL Compliance Areas",
-      value: "100%",
-      color: "text-[#4981F2]",
-      detail: "not just one industry",
     },
   ]
 
@@ -72,6 +72,7 @@ export function Stats() {
               <li>• 40% knowledge retention</li>
               <li>• Weeks to create new content</li>
               <li>• Static PDFs and PowerPoints</li>
+              <li>• Expensive agencies or risky freelancers</li>
             </ul>
           </div>
           <div className="bg-[#03A6A6]/20 border border-[#03A6A6]/30 rounded-lg p-6">
@@ -81,6 +82,7 @@ export function Stats() {
               <li>• 85% knowledge retention</li>
               <li>• Days to transform content</li>
               <li>• Interactive engaging experiences</li>
+              <li>• Professional results, competitive rates</li>
             </ul>
           </div>
         </div>

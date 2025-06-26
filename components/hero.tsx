@@ -40,6 +40,10 @@ export function Hero() {
               and Word docs into engaging interactive e-learning that actually works{" "}
               <span className="text-[#03A6A6] font-semibold">across ALL compliance areas.</span>
             </p>
+            <p className="text-sm sm:text-base md:text-lg text-slate-400 max-w-4xl mx-auto">
+              <span className="text-[#05F2C7] font-semibold">60-80% faster than custom development</span> • Modern
+              authoring tools + business expertise • Agency quality at competitive rates
+            </p>
           </div>
 
           <div className="flex flex-wrap justify-center gap-3 sm:gap-4 lg:gap-6 text-xs sm:text-sm md:text-base lg:text-lg">
@@ -49,11 +53,11 @@ export function Hero() {
             </div>
             <div className="flex items-center space-x-2 bg-slate-800/50 px-3 sm:px-4 py-2 rounded-full">
               <Zap className="w-4 h-4 sm:w-5 sm:h-5 text-[#4981F2]" />
-              <span>73% Better Knowledge Retention</span>
+              <span>10x Faster Than Scratch Builds</span>
             </div>
             <div className="flex items-center space-x-2 bg-slate-800/50 px-3 sm:px-4 py-2 rounded-full">
               <Target className="w-4 h-4 sm:w-5 sm:h-5 text-[#05F2C7]" />
-              <span>10x Faster Than Building From Scratch</span>
+              <span>Global Efficiency, US Standards</span>
             </div>
           </div>
 
@@ -64,7 +68,7 @@ export function Hero() {
               className="w-full sm:w-auto bg-[#4981F2] hover:bg-[#180A73] text-[#FEFFFB] font-bold px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-blue-500/25"
             >
               <Link href="/contact" className="flex items-center justify-center space-x-2">
-                <span className="text-center">See Your PDFs Come to Life - Free Demo</span>
+                <span className="text-center">Get Free Content Audit</span>
                 <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
               </Link>
             </Button>
@@ -74,14 +78,14 @@ export function Hero() {
               size="lg"
               className="w-full sm:w-auto border-slate-600 text-slate-300 hover:bg-slate-800 hover:text-[#FEFFFB] px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base rounded-lg transition-all duration-300"
             >
-              <Link href="/resources">Get Free PDF Transformation Sample</Link>
+              <Link href="/services">Take 2-Minute Assessment</Link>
             </Button>
           </div>
 
           <div className="pt-6 sm:pt-8 text-slate-400 text-xs sm:text-sm px-2">
             <p className="max-w-4xl mx-auto">
-              Trusted by 1000+ organizations across healthcare, manufacturing, financial services, and more • Free
-              consultation
+              Trusted by 1000+ organizations across healthcare, manufacturing, financial services, and more • Global
+              team, local expertise • International efficiency with US business standards
             </p>
           </div>
         </div>

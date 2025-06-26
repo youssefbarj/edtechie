@@ -3,18 +3,32 @@
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Check, ArrowRight, Star, ArrowLeft, Zap, Users, Cog, Play, Gamepad2, Sparkles, Shield } from "lucide-react"
+import {
+  Check,
+  ArrowRight,
+  Star,
+  ArrowLeft,
+  Zap,
+  Users,
+  Cog,
+  Play,
+  Gamepad2,
+  Sparkles,
+  Shield,
+  HelpCircle,
+} from "lucide-react"
 import Link from "next/link"
 
 export function ServiceTiers() {
   const [showQuickTransformDetails, setShowQuickTransformDetails] = useState(false)
+  const [showAssessment, setShowAssessment] = useState(false)
 
   const quickTransformTiers = [
     {
       name: "Basic",
-      subtitle: "Up to 8 Documents",
+      subtitle: "8 documents (50 pages)",
       price: "$3,495",
-      priceSubtitle: "Professional service + modern tools",
+      priceSubtitle: "Basic interactions",
       description: "Perfect for compliance docs and simple training materials",
       icon: <Play className="w-8 h-8" />,
       features: [
@@ -22,19 +36,20 @@ export function ServiceTiers() {
         "Basic interactions & quizzes",
         "Standard templates",
         "2-week delivery",
-        "Dedicated Project Manager assigned",
-        "Quality Assurance Process included",
-        "Professional Service Standards",
-        "Global Team Efficiency advantage",
+        "Dedicated Project Manager",
+        "Quality Assurance Process",
+        "SCORM compliant output",
       ],
       examples: "Accordions, hotspots, flip cards, multiple choice",
       perfectFor: "Compliance training, policy documents, quick wins",
+      cta: "Get Content Audit",
+      ctaLink: "/contact",
     },
     {
       name: "Enhanced",
-      subtitle: "Up to 5 Documents",
+      subtitle: "5 documents (50 pages)",
       price: "$4,995",
-      priceSubtitle: "Full-service transformation",
+      priceSubtitle: "Interactive videos, animations",
       description: "Advanced interactions with video and custom elements",
       icon: <Sparkles className="w-8 h-8" />,
       features: [
@@ -42,20 +57,21 @@ export function ServiceTiers() {
         "Interactive videos & animations",
         "Drag-and-drop activities",
         "Custom graphics included",
-        "Dedicated Project Manager assigned",
-        "Quality Assurance Process included",
-        "Professional Service Standards",
-        "Global Team Efficiency advantage",
+        "Dedicated Project Manager",
+        "Quality Assurance Process",
+        "SCORM compliant output",
       ],
       examples: "Clickable videos, branching scenarios, custom animations",
       perfectFor: "Engaging training materials, video-based content",
       popular: true,
+      cta: "Get Content Audit",
+      ctaLink: "/contact",
     },
     {
       name: "Premium",
-      subtitle: "Up to 3 Documents",
+      subtitle: "3 documents (50 pages)",
       price: "$7,995",
-      priceSubtitle: "Advanced custom development",
+      priceSubtitle: "Serious games, simulations",
       description: "Serious games and immersive simulations",
       icon: <Gamepad2 className="w-8 h-8" />,
       features: [
@@ -63,15 +79,125 @@ export function ServiceTiers() {
         "Serious games & simulations",
         "Virtual environments",
         "Advanced multimedia",
-        "Dedicated Project Manager assigned",
-        "Quality Assurance Process included",
-        "Professional Service Standards",
-        "Global Team Efficiency advantage",
+        "Dedicated Project Manager",
+        "Quality Assurance Process",
+        "SCORM compliant output",
       ],
       examples: "Game-based learning, complex simulations, virtual scenarios",
       perfectFor: "High-engagement training, skill-based learning",
+      cta: "Strategy Call",
+      ctaLink: "/contact",
     },
   ]
+
+  const AssessmentModal = () => (
+    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+      <Card className="bg-slate-900 border-slate-700 max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+        <CardHeader>
+          <div className="flex justify-between items-center">
+            <CardTitle className="text-2xl text-white">2-Minute Content Assessment</CardTitle>
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setShowAssessment(false)}
+              className="text-slate-400 hover:text-white"
+            >
+              ×
+            </Button>
+          </div>
+          <p className="text-slate-300">Help us recommend the right service for your needs</p>
+        </CardHeader>
+        <CardContent className="space-y-6">
+          <div className="space-y-4">
+            <div>
+              <h3 className="text-white font-semibold mb-3">1. How many documents do you need transformed?</h3>
+              <div className="space-y-2">
+                <Button
+                  variant="outline"
+                  className="w-full justify-start border-slate-600 text-slate-300 hover:bg-slate-800"
+                >
+                  1-3 documents → Premium Package
+                </Button>
+                <Button
+                  variant="outline"
+                  className="w-full justify-start border-slate-600 text-slate-300 hover:bg-slate-800"
+                >
+                  4-5 documents → Enhanced Package
+                </Button>
+                <Button
+                  variant="outline"
+                  className="w-full justify-start border-slate-600 text-slate-300 hover:bg-slate-800"
+                >
+                  6-8 documents → Basic Package
+                </Button>
+                <Button
+                  variant="outline"
+                  className="w-full justify-start border-slate-600 text-slate-300 hover:bg-slate-800"
+                >
+                  9+ documents → Custom Development
+                </Button>
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-white font-semibold mb-3">2. What level of interactivity do you need?</h3>
+              <div className="space-y-2">
+                <Button
+                  variant="outline"
+                  className="w-full justify-start border-slate-600 text-slate-300 hover:bg-slate-800"
+                >
+                  Basic (clicks, quizzes) → Basic Package
+                </Button>
+                <Button
+                  variant="outline"
+                  className="w-full justify-start border-slate-600 text-slate-300 hover:bg-slate-800"
+                >
+                  Advanced (videos, animations) → Enhanced Package
+                </Button>
+                <Button
+                  variant="outline"
+                  className="w-full justify-start border-slate-600 text-slate-300 hover:bg-slate-800"
+                >
+                  Games & simulations → Premium Package
+                </Button>
+                <Button
+                  variant="outline"
+                  className="w-full justify-start border-slate-600 text-slate-300 hover:bg-slate-800"
+                >
+                  Complete LMS solution → Custom Development
+                </Button>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-slate-800/50 p-4 rounded-lg">
+            <p className="text-slate-300 text-sm mb-3">
+              <strong>Quick Recommendation:</strong>
+            </p>
+            <p className="text-slate-400 text-sm">
+              Most clients start with our <strong className="text-green-400">Enhanced Package</strong> - it offers the
+              best balance of engagement and value for typical compliance training needs.
+            </p>
+          </div>
+
+          <div className="flex gap-4">
+            <Button
+              onClick={() => {
+                setShowAssessment(false)
+                setShowQuickTransformDetails(true)
+              }}
+              className="flex-1 bg-green-600 hover:bg-green-700"
+            >
+              View Packages
+            </Button>
+            <Button asChild variant="outline" className="flex-1 border-slate-600 text-slate-300 hover:bg-slate-800">
+              <Link href="/contact">Get Personal Consultation</Link>
+            </Button>
+          </div>
+        </CardContent>
+      </Card>
+    </div>
+  )
 
   if (showQuickTransformDetails) {
     return (
@@ -91,7 +217,9 @@ export function ServiceTiers() {
 
           {/* Header */}
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">Choose Your Complexity Level</h2>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+              Quick Transformation Packages
+            </h2>
             <p className="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto">
               All packages include 2-week delivery, 1 revision round, and SCORM output
             </p>
@@ -163,8 +291,8 @@ export function ServiceTiers() {
                     asChild
                     className="w-full mt-auto bg-green-600 hover:bg-green-700 transition-all duration-300 py-3"
                   >
-                    <Link href="/contact" className="flex items-center justify-center space-x-2">
-                      <span>Schedule Project Consultation</span>
+                    <Link href={tier.ctaLink} className="flex items-center justify-center space-x-2">
+                      <span>{tier.cta}</span>
                       <ArrowRight className="w-4 h-4" />
                     </Link>
                   </Button>
@@ -173,63 +301,8 @@ export function ServiceTiers() {
             ))}
           </div>
 
-          {/* Value Comparison */}
-          <div className="bg-gradient-to-r from-blue-900/20 to-purple-900/20 border border-blue-500/30 rounded-lg p-6 mb-8">
-            <h3 className="text-xl font-bold text-white mb-4 flex items-center space-x-2">
-              <span>💡</span>
-              <span>Why not DIY tools?</span>
-            </h3>
-            <p className="text-slate-300 text-lg">
-              While tools like Articulate cost $1,400/year + your time, we deliver professional results in 2 weeks with
-              zero learning curve.
-            </p>
-          </div>
-
-          {/* Comparison Table */}
-          <div className="bg-slate-800/30 rounded-lg p-6">
-            <h3 className="text-xl font-bold text-white mb-6 text-center">Quick Comparison</h3>
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="border-b border-slate-700">
-                    <th className="text-left py-3 text-slate-300">Feature</th>
-                    <th className="text-center py-3 text-green-400">Basic</th>
-                    <th className="text-center py-3 text-green-400">Enhanced</th>
-                    <th className="text-center py-3 text-green-400">Premium</th>
-                  </tr>
-                </thead>
-                <tbody className="text-slate-300">
-                  <tr className="border-b border-slate-700/50">
-                    <td className="py-3">Max Documents</td>
-                    <td className="text-center py-3">8</td>
-                    <td className="text-center py-3">5</td>
-                    <td className="text-center py-3">3</td>
-                  </tr>
-                  <tr className="border-b border-slate-700/50">
-                    <td className="py-3">Interactive Videos</td>
-                    <td className="text-center py-3">-</td>
-                    <td className="text-center py-3">✓</td>
-                    <td className="text-center py-3">✓</td>
-                  </tr>
-                  <tr className="border-b border-slate-700/50">
-                    <td className="py-3">Custom Graphics</td>
-                    <td className="text-center py-3">-</td>
-                    <td className="text-center py-3">✓</td>
-                    <td className="text-center py-3">✓</td>
-                  </tr>
-                  <tr>
-                    <td className="py-3">Serious Games</td>
-                    <td className="text-center py-3">-</td>
-                    <td className="text-center py-3">-</td>
-                    <td className="text-center py-3">✓</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          {/* Professional Agency Credibility */}
-          <div className="bg-gradient-to-r from-slate-800/50 to-slate-700/50 border border-slate-600 rounded-lg p-8 mt-12">
+          {/* Why Choose EdTechie Corp */}
+          <div className="bg-gradient-to-r from-slate-800/50 to-slate-700/50 border border-slate-600 rounded-lg p-8 mb-8">
             <h3 className="text-2xl font-bold text-white mb-6 text-center">Why Choose EdTechie Corp?</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-4">
@@ -237,18 +310,14 @@ export function ServiceTiers() {
                   <Check className="w-5 h-5 text-green-400 flex-shrink-0 mt-1" />
                   <div>
                     <h4 className="text-white font-semibold">Established Content Transformation Processes</h4>
-                    <p className="text-slate-300 text-sm">
-                      Proven methodologies refined through 1000+ successful projects
-                    </p>
+                    <p className="text-slate-300 text-sm">1000+ successful projects with proven methodologies</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
                   <Check className="w-5 h-5 text-green-400 flex-shrink-0 mt-1" />
                   <div>
                     <h4 className="text-white font-semibold">Multicultural Team with Global Perspective</h4>
-                    <p className="text-slate-300 text-sm">
-                      Diverse expertise ensuring content works across all audiences
-                    </p>
+                    <p className="text-slate-300 text-sm">French/English fluency with Western business understanding</p>
                   </div>
                 </div>
               </div>
@@ -257,24 +326,21 @@ export function ServiceTiers() {
                   <Check className="w-5 h-5 text-green-400 flex-shrink-0 mt-1" />
                   <div>
                     <h4 className="text-white font-semibold">US Business Hours Support</h4>
-                    <p className="text-slate-300 text-sm">
-                      International efficiency with local communication standards
-                    </p>
+                    <p className="text-slate-300 text-sm">International efficiency with US business standards</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
                   <Check className="w-5 h-5 text-green-400 flex-shrink-0 mt-1" />
                   <div>
-                    <h4 className="text-white font-semibold">Fixed-Price Projects</h4>
-                    <p className="text-slate-300 text-sm">
-                      Transparent deliverables with professional contracts and invoicing
-                    </p>
+                    <h4 className="text-white font-semibold">Modern Tool Mastery + Strategic Expertise</h4>
+                    <p className="text-slate-300 text-sm">Template-based approach eliminates development bottlenecks</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+        {showAssessment && <AssessmentModal />}
       </section>
     )
   }
@@ -299,7 +365,7 @@ export function ServiceTiers() {
                 </div>
               </div>
               <CardTitle className="text-2xl sm:text-3xl font-bold text-white mb-3">
-                Transform Existing Content
+                Quick Transformation Packages
               </CardTitle>
               <p className="text-green-400 font-semibold text-lg mb-4">2-week delivery, multiple complexity levels</p>
               <div className="text-3xl font-bold text-green-400 mb-4">$3,495 - $7,995</div>
@@ -328,11 +394,11 @@ export function ServiceTiers() {
                 </li>
                 <li className="flex items-center space-x-3">
                   <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
-                  <span className="text-slate-300">No learning curve - we do the work for you</span>
+                  <span className="text-slate-300">No learning curve - professional results guaranteed</span>
                 </li>
                 <li className="flex items-center space-x-3">
                   <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
-                  <span className="text-slate-300">Professional quality assurance & testing</span>
+                  <span className="text-slate-300">Modern tool mastery eliminates bottlenecks</span>
                 </li>
                 <li className="flex items-center space-x-3">
                   <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
@@ -358,9 +424,11 @@ export function ServiceTiers() {
                   <Users className="w-12 h-12 text-purple-400" />
                 </div>
               </div>
-              <CardTitle className="text-2xl sm:text-3xl font-bold text-white mb-3">Build From Scratch</CardTitle>
-              <p className="text-purple-400 font-semibold text-lg mb-4">Complete courses & infrastructure</p>
-              <div className="text-3xl font-bold text-purple-400 mb-4">$15,000+</div>
+              <CardTitle className="text-2xl sm:text-3xl font-bold text-white mb-3">
+                Custom Development Services
+              </CardTitle>
+              <p className="text-purple-400 font-semibold text-lg mb-4">Complete LMS ecosystem solutions</p>
+              <div className="text-3xl font-bold text-purple-400 mb-4">Starting at enterprise level</div>
             </CardHeader>
 
             <CardContent className="space-y-6 flex-1 flex flex-col">
@@ -399,7 +467,7 @@ export function ServiceTiers() {
                 className="w-full bg-purple-600 hover:bg-purple-700 transition-all duration-300 py-4 text-lg group-hover:scale-105"
               >
                 <Link href="/contact" className="flex items-center justify-center space-x-2">
-                  <span>Book Strategy Session</span>
+                  <span>Strategy Call</span>
                   <ArrowRight className="w-5 h-5" />
                 </Link>
               </Button>
@@ -410,11 +478,22 @@ export function ServiceTiers() {
         {/* Help Section */}
         <div className="text-center mt-12">
           <p className="text-slate-400 mb-4">Not sure which option fits your needs?</p>
-          <Button asChild variant="outline" className="border-slate-600 text-slate-300 hover:bg-slate-800 px-6 py-3">
-            <Link href="/contact">Get Free Consultation</Link>
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button
+              onClick={() => setShowAssessment(true)}
+              variant="outline"
+              className="border-slate-600 text-slate-300 hover:bg-slate-800 px-6 py-3"
+            >
+              <HelpCircle className="w-4 h-4 mr-2" />
+              Take 2-Minute Assessment
+            </Button>
+            <Button asChild variant="outline" className="border-slate-600 text-slate-300 hover:bg-slate-800 px-6 py-3">
+              <Link href="/contact">Get Free Consultation</Link>
+            </Button>
+          </div>
         </div>
       </div>
+      {showAssessment && <AssessmentModal />}
     </section>
   )
 }

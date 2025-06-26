@@ -7,22 +7,33 @@ export function Testimonials() {
       name: "Jennifer Martinez",
       role: "HR Director, TechFlow Inc",
       content:
-        "Converting our compliance PDFs took 3 weeks. Worth every penny - our completion rates doubled and people actually retain the info now.",
+        "Converting our HIPAA compliance PDFs took 3 weeks. Worth every penny - our completion rates doubled and people actually retain the info now. ROI was clear within 2 months.",
       rating: 5,
+      industry: "Healthcare Compliance",
     },
     {
       name: "David Chen",
       role: "Safety Manager, Manufacturing Corp",
       content:
-        "Our OSHA training was just endless PowerPoints. EdTechie made it interactive and our incident reports dropped 40%. Managers love the analytics.",
+        "Our OSHA training was just endless PowerPoints. EdTechie made it interactive and our incident reports dropped 40%. Managers love the analytics. Saved us $50K in potential fines.",
       rating: 5,
+      industry: "Manufacturing Safety",
     },
     {
       name: "Sarah Rodriguez",
       role: "L&D Director, Financial Services",
       content:
-        "Had 200+ compliance PDFs gathering dust. EdTechie transformed the critical ones first - saved us 6 months of internal development time.",
+        "Had 200+ compliance PDFs gathering dust. EdTechie transformed the critical ones first - saved us 6 months of internal development time. SOX audit prep became actually manageable.",
       rating: 5,
+      industry: "Financial Services",
+    },
+    {
+      name: "Michael Thompson",
+      role: "Compliance Officer, Corporate HR",
+      content:
+        "Harassment prevention training went from 23% completion to 94% after EdTechie transformation. The interactive scenarios made all the difference. No more compliance headaches.",
+      rating: 5,
+      industry: "Corporate HR",
     },
   ]
 
@@ -31,10 +42,12 @@ export function Testimonials() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-[#FEFFFB] mb-4">What Learning Leaders Are Saying</h2>
-          <p className="text-xl text-slate-300">Don't take our word for it. Listen to the transformation results.</p>
+          <p className="text-xl text-slate-300">
+            Real results across healthcare, manufacturing, financial services, and corporate HR.
+          </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {testimonials.map((testimonial, index) => (
             <Card
               key={index}
@@ -46,10 +59,15 @@ export function Testimonials() {
                     <Star key={i} className="w-5 h-5 text-[#05F2C7] fill-current" />
                   ))}
                 </div>
-                <p className="text-slate-300 mb-6 italic">"{testimonial.content}"</p>
+                <div className="mb-4">
+                  <span className="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded-full">
+                    {testimonial.industry}
+                  </span>
+                </div>
+                <p className="text-slate-300 mb-6 italic text-sm">"{testimonial.content}"</p>
                 <div>
-                  <div className="font-semibold text-[#FEFFFB]">{testimonial.name}</div>
-                  <div className="text-sm text-slate-400">{testimonial.role}</div>
+                  <div className="font-semibold text-[#FEFFFB] text-sm">{testimonial.name}</div>
+                  <div className="text-xs text-slate-400">{testimonial.role}</div>
                 </div>
               </CardContent>
             </Card>
