@@ -329,8 +329,10 @@ export function ServiceTiers() {
                 <div className="flex items-start space-x-3">
                   <Check className="w-5 h-5 text-green-400 flex-shrink-0 mt-1" />
                   <div>
-                    <h4 className="text-white font-semibold">Multicultural Team with Global Perspective</h4>
-                    <p className="text-slate-300 text-sm">French/English fluency with Western business understanding</p>
+                    <h4 className="text-white font-semibold">Dedicated Content Transformation Team</h4>
+                    <p className="text-slate-300 text-sm">
+                      Specialists focused exclusively on e-learning content optimization
+                    </p>
                   </div>
                 </div>
               </div>
@@ -338,8 +340,10 @@ export function ServiceTiers() {
                 <div className="flex items-start space-x-3">
                   <Check className="w-5 h-5 text-green-400 flex-shrink-0 mt-1" />
                   <div>
-                    <h4 className="text-white font-semibold">US Business Hours Support</h4>
-                    <p className="text-slate-300 text-sm">International efficiency with US business standards</p>
+                    <h4 className="text-white font-semibold">Responsive Project Management</h4>
+                    <p className="text-slate-300 text-sm">
+                      Dedicated project managers ensure smooth delivery and communication
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">

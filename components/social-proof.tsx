@@ -54,7 +54,7 @@ export function SocialProof() {
           </div>
           <div className="text-center">
             <div className="text-3xl font-bold text-[#4981F2] mb-2">$25M+</div>
-            <div className="text-slate-300">Training Costs Saved</div>
+            <div className="text-slate-300">Training Costs Saved Through Efficiency</div>
           </div>
         </div>
       </div>

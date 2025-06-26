@@ -70,44 +70,46 @@ export function ServiceFeatures() {
           ))}
         </div>
 
-        {/* Geographic Arbitrage Section */}
+        {/* Operational Excellence Section */}
         <div className="mt-20 bg-gradient-to-r from-blue-900/20 to-purple-900/20 border border-blue-500/30 rounded-lg p-8">
           <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-white mb-4">Agency Credibility Without Agency Premium Pricing</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">Agency Quality Through Operational Excellence</h3>
             <p className="text-slate-300 text-lg">The smart choice between expensive agencies and risky freelancers</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="text-center">
               <div className="w-16 h-16 bg-blue-900/40 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Globe className="w-8 h-8 text-blue-400" />
+                <Zap className="w-8 h-8 text-blue-400" />
               </div>
-              <h4 className="text-white font-semibold mb-2">International Efficiency</h4>
-              <p className="text-slate-400 text-sm">US business standards with global cost advantages</p>
+              <h4 className="text-white font-semibold mb-2">Modern Tool Mastery</h4>
+              <p className="text-slate-400 text-sm">Advanced authoring platforms eliminate development bottlenecks</p>
             </div>
 
             <div className="text-center">
               <div className="w-16 h-16 bg-green-900/40 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Clock className="w-8 h-8 text-green-400" />
               </div>
-              <h4 className="text-white font-semibold mb-2">Better Time Zones</h4>
-              <p className="text-slate-400 text-sm">Superior alignment vs Asian competitors</p>
+              <h4 className="text-white font-semibold mb-2">Process Innovation</h4>
+              <p className="text-slate-400 text-sm">Proprietary methods reduce development time by 60%</p>
             </div>
 
             <div className="text-center">
               <div className="w-16 h-16 bg-purple-900/40 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Users className="w-8 h-8 text-purple-400" />
               </div>
-              <h4 className="text-white font-semibold mb-2">Cultural Expertise</h4>
-              <p className="text-slate-400 text-sm">French/English fluency, Western business understanding</p>
+              <h4 className="text-white font-semibold mb-2">Specialized Focus</h4>
+              <p className="text-slate-400 text-sm">Content transformation specialists, not generalist designers</p>
             </div>
 
             <div className="text-center">
               <div className="w-16 h-16 bg-cyan-900/40 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Zap className="w-8 h-8 text-cyan-400" />
+                <Target className="w-8 h-8 text-cyan-400" />
               </div>
-              <h4 className="text-white font-semibold mb-2">Tool Mastery</h4>
-              <p className="text-slate-400 text-sm">Modern authoring tools eliminate development bottlenecks</p>
+              <h4 className="text-white font-semibold mb-2">Template Efficiency</h4>
+              <p className="text-slate-400 text-sm">
+                Proven frameworks accelerate delivery without sacrificing quality
+              </p>
             </div>
           </div>
         </div>

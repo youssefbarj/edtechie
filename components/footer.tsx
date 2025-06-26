@@ -88,8 +88,8 @@ export function Footer() {
                 <MapPin className="w-4 h-4 flex-shrink-0" />
                 <div>
                   <span>San Francisco, CA</span>
-                  <div className="text-sm text-slate-300">Global team, local expertise</div>
-                  <div className="text-xs text-slate-400">International efficiency with US business standards</div>
+                  <div className="text-sm text-slate-300">Specialized content transformation team</div>
+                  <div className="text-xs text-slate-400">Modern tools and efficient processes</div>
                 </div>
               </li>
             </ul>

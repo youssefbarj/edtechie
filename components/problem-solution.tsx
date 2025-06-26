@@ -1,4 +1,4 @@
-import { AlertTriangle, CheckCircle, TrendingUp, Globe } from "lucide-react"
+import { AlertTriangle, CheckCircle, TrendingUp } from "lucide-react"
 
 export function ProblemSolution() {
   return (
@@ -56,7 +56,7 @@ export function ProblemSolution() {
                 Transform static content into interactive experiences that learners actually want to complete.
                 <span className="text-[#03A6A6] font-semibold">
                   {" "}
-                  Agency credibility without agency premium pricing.
+                  Agency credibility through operational excellence, not premium pricing.
                 </span>
               </p>
             </div>
@@ -85,12 +85,12 @@ export function ProblemSolution() {
                 </div>
               </div>
               <div className="flex items-start space-x-4">
-                <Globe className="w-6 h-6 text-[#4981F2] mt-1 flex-shrink-0" />
+                <TrendingUp className="w-6 h-6 text-[#05F2C7] mt-1 flex-shrink-0" />
                 <div>
-                  <h3 className="text-lg font-semibold text-[#FEFFFB] mb-2">Global Team, Cultural Expertise</h3>
+                  <h3 className="text-lg font-semibold text-[#FEFFFB] mb-2">Specialized Efficiency</h3>
                   <p className="text-slate-400">
-                    Better time zone alignment than Asian competitors. French/English fluency with Western business
-                    understanding across all compliance areas.
+                    Content transformation specialists using modern authoring tools deliver 60% faster results with
+                    measurable engagement tracking.
                   </p>
                 </div>
               </div>
