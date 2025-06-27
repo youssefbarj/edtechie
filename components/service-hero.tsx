@@ -12,7 +12,7 @@ export function ServiceHero() {
             </span>
           </h1>
           <p className="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto">
-            Global team, local expertise - delivering agency-quality results at competitive rates.
+            Specialized content transformation team - delivering agency-quality results at competitive rates.
             <span className="text-[#6366F1] font-semibold">
               {" "}
               EdTechie Corp gets your learners engaged and compliant fast.

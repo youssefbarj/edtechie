@@ -84,8 +84,8 @@ export function Hero() {
 
           <div className="pt-6 sm:pt-8 text-slate-400 text-xs sm:text-sm px-2">
             <p className="max-w-4xl mx-auto">
-              Trusted by 1000+ organizations across healthcare, manufacturing, financial services, and more • Global
-              team, local expertise • Advanced authoring tools with proven methodologies
+              Trusted by 1000+ organizations across healthcare, manufacturing, financial services, and more •
+              Specialized team, proven expertise • Advanced authoring tools with proven methodologies
             </p>
           </div>
         </div>
