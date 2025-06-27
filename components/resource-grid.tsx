@@ -35,7 +35,7 @@ export function ResourceGrid() {
         time: "12 minutes",
         engagement: "9/10",
       },
-      preview: "/placeholder.svg?height=200&width=300&text=Interactive+HIPAA+Training",
+      preview: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-HUVnmg8gxyYSX4R0fCHrfCJZ37Lb2p.png",
     },
     {
       title: "Safety Protocol Training",
@@ -52,7 +52,7 @@ export function ResourceGrid() {
         time: "18 minutes",
         engagement: "9/10",
       },
-      preview: "/placeholder.svg?height=200&width=300&text=Interactive+Safety+Training",
+      preview: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-MBHLV5B3ORiHu0eekjJPPeiAbkUcPC.png",
     },
     {
       title: "Financial Compliance",
@@ -69,7 +69,7 @@ export function ResourceGrid() {
         time: "25 minutes",
         engagement: "8/10",
       },
-      preview: "/placeholder.svg?height=200&width=300&text=Interactive+Finance+Training",
+      preview: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-YSoLWgaHqlCRs6V53aOY1YsVPqai4g.png",
     },
   ]
 
