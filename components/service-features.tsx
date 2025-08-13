@@ -1,47 +1,48 @@
 import { Card, CardContent } from "@/components/ui/card"
-import { Zap, Target, Users, Play, Globe, CheckCircle, Clock, BarChart3 } from "lucide-react"
+import { Shield, Target, BarChart3, Users, Clock, CheckCircle, Zap, Lock } from "lucide-react"
 
 export function ServiceFeatures() {
   const features = [
     {
-      icon: Zap,
-      title: "60% Faster Development",
-      description: "Modern authoring tools and templates vs custom coding from scratch.",
+      icon: Shield,
+      title: "Real Attack Simulations",
+      description:
+        "Practice with actual malware, phishing attempts, and social engineering tactics in a safe environment.",
     },
     {
       icon: Target,
-      title: "ALL Compliance Areas",
-      description: "Healthcare, manufacturing, financial services, HR - we transform content across every industry.",
-    },
-    {
-      icon: Users,
-      title: "Agency-Quality Results",
-      description: "Professional team delivering enterprise-grade content at competitive rates.",
-    },
-    {
-      icon: Play,
-      title: "Interactive Engagement",
-      description: "Videos, simulations, scenarios, and gamification that actually engage learners.",
-    },
-    {
-      icon: Globe,
-      title: "Specialized Expertise",
-      description: "Dedicated content transformation team with deep industry knowledge and proven processes.",
-    },
-    {
-      icon: CheckCircle,
-      title: "Template Efficiency",
-      description: "Leverage proven methodologies and reusable components for faster delivery.",
-    },
-    {
-      icon: Clock,
-      title: "Quick Deployment",
-      description: "Transform existing PDFs and PowerPoints into interactive content in weeks, not months.",
+      title: "Industry-Specific Scenarios",
+      description: "Training tailored to your sector's unique threats - fintech, healthcare, SaaS, and more.",
     },
     {
       icon: BarChart3,
-      title: "Proven ROI",
-      description: "89% higher completion rates and 73% better knowledge retention vs static content.",
+      title: "Detailed Analytics",
+      description: "Track progress, identify weak spots, and generate audit-ready compliance reports.",
+    },
+    {
+      icon: Users,
+      title: "Team Collaboration",
+      description: "Multi-user scenarios that test communication and incident response procedures.",
+    },
+    {
+      icon: Clock,
+      title: "Flexible Scheduling",
+      description: "Self-paced learning that fits into busy schedules without disrupting productivity.",
+    },
+    {
+      icon: CheckCircle,
+      title: "Certification Ready",
+      description: "Prepare for SOC 2, ISO 27001, NIST, and other compliance frameworks.",
+    },
+    {
+      icon: Zap,
+      title: "Instant Deployment",
+      description: "Get started in minutes, not months. No complex setup or IT overhead required.",
+    },
+    {
+      icon: Lock,
+      title: "Secure Platform",
+      description: "Enterprise-grade security with SOC 2 Type II compliance and end-to-end encryption.",
     },
   ]
 
@@ -49,10 +50,8 @@ export function ServiceFeatures() {
     <section className="py-20 bg-slate-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-4">Why EdTechie Content Transformation Works</h2>
-          <p className="text-xl text-slate-300">
-            Modern tools, proven processes, and global expertise delivering results across all compliance areas.
-          </p>
+          <h2 className="text-4xl font-bold text-white mb-4">Why EdTechie Training Works</h2>
+          <p className="text-xl text-slate-300">Interactive, measurable, and designed for real-world threats.</p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -68,50 +67,6 @@ export function ServiceFeatures() {
               </CardContent>
             </Card>
           ))}
-        </div>
-
-        {/* Operational Excellence Section */}
-        <div className="mt-20 bg-gradient-to-r from-blue-900/20 to-purple-900/20 border border-blue-500/30 rounded-lg p-8">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-white mb-4">Agency Quality Through Operational Excellence</h3>
-            <p className="text-slate-300 text-lg">The smart choice between expensive agencies and risky freelancers</p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-blue-900/40 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Zap className="w-8 h-8 text-blue-400" />
-              </div>
-              <h4 className="text-white font-semibold mb-2">Modern Tool Mastery</h4>
-              <p className="text-slate-400 text-sm">Advanced authoring platforms eliminate development bottlenecks</p>
-            </div>
-
-            <div className="text-center">
-              <div className="w-16 h-16 bg-green-900/40 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Clock className="w-8 h-8 text-green-400" />
-              </div>
-              <h4 className="text-white font-semibold mb-2">Process Innovation</h4>
-              <p className="text-slate-400 text-sm">Proprietary methods reduce development time by 60%</p>
-            </div>
-
-            <div className="text-center">
-              <div className="w-16 h-16 bg-purple-900/40 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Users className="w-8 h-8 text-purple-400" />
-              </div>
-              <h4 className="text-white font-semibold mb-2">Specialized Focus</h4>
-              <p className="text-slate-400 text-sm">Content transformation specialists, not generalist designers</p>
-            </div>
-
-            <div className="text-center">
-              <div className="w-16 h-16 bg-cyan-900/40 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Target className="w-8 h-8 text-cyan-400" />
-              </div>
-              <h4 className="text-white font-semibold mb-2">Template Efficiency</h4>
-              <p className="text-slate-400 text-sm">
-                Proven frameworks accelerate delivery without sacrificing quality
-              </p>
-            </div>
-          </div>
         </div>
       </div>
     </section>

@@ -1,11 +1,11 @@
 {
-  "name": "EdTechie Corp - E-Learning Content Transformation",
-  "short_name": "EdTechie Corp",
-  "description": "Interactive e-learning transformation across all compliance areas",
+  "name": "EdTechie Corp - Cybersecurity Training",
+  "short_name": "EdTechie",
+  "description": "Interactive cybersecurity training that actually works",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#1e293b",
-  "theme_color": "#180a73",
+  "theme_color": "#4981f2",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",

@@ -1,4 +1,4 @@
-import { AlertTriangle, CheckCircle, TrendingUp } from "lucide-react"
+import { AlertTriangle, CheckCircle, TrendingUp, Users } from "lucide-react"
 
 export function ProblemSolution() {
   return (
@@ -8,41 +8,34 @@ export function ProblemSolution() {
           {/* Problem */}
           <div className="space-y-8">
             <div>
-              <h2 className="text-4xl font-bold text-[#4981F2] mb-4">The Problem</h2>
+              <h2 className="text-4xl font-bold text-red-400 mb-4">The Problem</h2>
               <p className="text-xl text-slate-300 mb-8">
-                Your compliance training is putting people to sleep. What doesn't engage doesn't stick.
+                Your team failed the cybersecurity audit. Again. Generic training isn't cutting it.
               </p>
             </div>
 
             <div className="space-y-6">
               <div className="flex items-start space-x-4">
-                <AlertTriangle className="w-6 h-6 text-[#4981F2] mt-1 flex-shrink-0" />
+                <AlertTriangle className="w-6 h-6 text-red-400 mt-1 flex-shrink-0" />
                 <div>
-                  <h3 className="text-lg font-semibold text-[#FEFFFB] mb-2">Death by PowerPoint Syndrome</h3>
+                  <h3 className="text-lg font-semibold text-white mb-2">Failed Audits Cost Millions</h3>
                   <p className="text-slate-400">
-                    PDFs and presentations don't engage learners, leading to poor retention and failed compliance across
-                    all industries.
+                    Compliance failures lead to fines, lost contracts, and damaged reputation.
                   </p>
                 </div>
               </div>
               <div className="flex items-start space-x-4">
-                <AlertTriangle className="w-6 h-6 text-[#4981F2] mt-1 flex-shrink-0" />
+                <AlertTriangle className="w-6 h-6 text-red-400 mt-1 flex-shrink-0" />
                 <div>
-                  <h3 className="text-lg font-semibold text-[#FEFFFB] mb-2">Static Content Doesn't Stick</h3>
-                  <p className="text-slate-400">
-                    Traditional training materials result in 40% retention rates and high failure rates across HR,
-                    safety, and compliance areas.
-                  </p>
+                  <h3 className="text-lg font-semibold text-white mb-2">Generic Training Doesn't Work</h3>
+                  <p className="text-slate-400">One-size-fits-all solutions ignore your specific vulnerabilities.</p>
                 </div>
               </div>
               <div className="flex items-start space-x-4">
-                <AlertTriangle className="w-6 h-6 text-[#4981F2] mt-1 flex-shrink-0" />
+                <AlertTriangle className="w-6 h-6 text-red-400 mt-1 flex-shrink-0" />
                 <div>
-                  <h3 className="text-lg font-semibold text-[#FEFFFB] mb-2">Expensive Agencies vs Risky Freelancers</h3>
-                  <p className="text-slate-400">
-                    Premium agencies charge $50K+ while freelancers lack business expertise and reliability. You need
-                    the smart choice in between.
-                  </p>
+                  <h3 className="text-lg font-semibold text-white mb-2">Teams Aren't Engaged</h3>
+                  <p className="text-slate-400">Boring presentations create checkbox compliance, not real security.</p>
                 </div>
               </div>
             </div>
@@ -51,12 +44,12 @@ export function ProblemSolution() {
           {/* Solution */}
           <div className="space-y-8">
             <div>
-              <h2 className="text-4xl font-bold text-[#03A6A6] mb-4">The EdTechie Solution</h2>
+              <h2 className="text-4xl font-bold text-[#180A73] mb-4">The EdTechie Solution</h2>
               <p className="text-xl text-slate-300 mb-8">
-                Transform static content into interactive experiences that learners actually want to complete.
-                <span className="text-[#03A6A6] font-semibold">
+                Interactive simulations that mirror real attacks. Your team learns by doing, not watching.
+                <span className="text-[#180A73] font-semibold">
                   {" "}
-                  Agency credibility through operational excellence, not premium pricing.
+                  This is how EdTechie Corp fixes what others break.
                 </span>
               </p>
             </div>
@@ -65,33 +58,22 @@ export function ProblemSolution() {
               <div className="flex items-start space-x-4">
                 <CheckCircle className="w-6 h-6 text-[#03A6A6] mt-1 flex-shrink-0" />
                 <div>
-                  <h3 className="text-lg font-semibold text-[#FEFFFB] mb-2">
-                    Modern Tool Mastery + Strategic Expertise
-                  </h3>
-                  <p className="text-slate-400">
-                    Template-based approach eliminates development bottlenecks. Tool mastery reduces costs 60-80% vs
-                    custom development.
-                  </p>
+                  <h3 className="text-lg font-semibold text-white mb-2">Real-World Scenarios</h3>
+                  <p className="text-slate-400">Practice with actual attack vectors targeting your industry.</p>
                 </div>
               </div>
               <div className="flex items-start space-x-4">
                 <TrendingUp className="w-6 h-6 text-[#05F2C7] mt-1 flex-shrink-0" />
                 <div>
-                  <h3 className="text-lg font-semibold text-[#FEFFFB] mb-2">10x Development Speed</h3>
-                  <p className="text-slate-400">
-                    Modern authoring tools + business expertise deliver 60-80% faster results with measurable engagement
-                    tracking.
-                  </p>
+                  <h3 className="text-lg font-semibold text-white mb-2">Measurable Progress</h3>
+                  <p className="text-slate-400">Track improvement with detailed analytics and audit-ready reports.</p>
                 </div>
               </div>
               <div className="flex items-start space-x-4">
-                <TrendingUp className="w-6 h-6 text-[#05F2C7] mt-1 flex-shrink-0" />
+                <Users className="w-6 h-6 text-[#4981F2] mt-1 flex-shrink-0" />
                 <div>
-                  <h3 className="text-lg font-semibold text-[#FEFFFB] mb-2">Specialized Efficiency</h3>
-                  <p className="text-slate-400">
-                    Content transformation specialists using modern authoring tools deliver 60% faster results with
-                    measurable engagement tracking.
-                  </p>
+                  <h3 className="text-lg font-semibold text-white mb-2">Team Engagement</h3>
+                  <p className="text-slate-400">Gamified learning that keeps your team coming back for more.</p>
                 </div>
               </div>
             </div>

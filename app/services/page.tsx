@@ -1,22 +1,19 @@
-"use client"
-
-import { useEffect } from "react"
 import { ServiceHero } from "@/components/service-hero"
 import { ServiceTiers } from "@/components/service-tiers"
 import { ServiceFeatures } from "@/components/service-features"
 import { ServiceComparison } from "@/components/service-comparison"
+import { LeadCapture } from "@/components/lead-capture"
+import { ConstructionWall } from "@/components/construction-wall"
 
 export default function ServicesPage() {
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
-
   return (
-    <div className="bg-slate-950 min-h-screen">
+    <div className="bg-slate-950 pt-16">
       <ServiceHero />
       <ServiceTiers />
       <ServiceFeatures />
       <ServiceComparison />
+      <LeadCapture />
+      <ConstructionWall />
     </div>
   )
 }

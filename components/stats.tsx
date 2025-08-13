@@ -22,26 +22,18 @@ export function Stats() {
   }, [])
 
   const stats = [
-    {
-      label: "Faster Than Custom Development",
-      value: "60%",
-      color: "text-[#4981F2]",
-      detail: "using modern authoring tools",
-    },
-    { label: "Completion Rate Improvement", value: "+89%", color: "text-[#4981F2]", detail: "vs traditional methods" },
-    { label: "Knowledge Retention Increase", value: "+73%", color: "text-[#4981F2]", detail: "interactive vs static" },
-    { label: "Content Creation Speed", value: "10x", color: "text-[#4981F2]", detail: "transformation vs scratch" },
+    { label: "Audit Pass Rate", value: "95%", color: "text-[#180A73]" },
+    { label: "Training Completion", value: "89%", color: "text-[#180A73]" },
+    { label: "Incident Reduction", value: "73%", color: "text-[#180A73]" },
+    { label: "Client Satisfaction", value: "4.9/5", color: "text-[#180A73]" },
   ]
 
   return (
     <section id="stats-section" className="py-20 bg-slate-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-[#FEFFFB] mb-4">Content Transformation Results Across Industries</h2>
-          <p className="text-xl text-slate-300">
-            The numbers don't lie. Interactive content delivers results everywhere - from healthcare to manufacturing to
-            financial services.
-          </p>
+          <h2 className="text-4xl font-bold text-white mb-4">Before vs After Training</h2>
+          <p className="text-xl text-slate-300">The numbers don't lie. Our training delivers results.</p>
         </div>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
@@ -54,30 +46,27 @@ export function Stats() {
                 {stat.value}
               </div>
               <div className="text-slate-300 font-medium">{stat.label}</div>
-              <div className="text-slate-400 text-sm mt-2">{stat.detail}</div>
             </div>
           ))}
         </div>
 
         <div className="mt-16 grid md:grid-cols-2 gap-8">
-          <div className="bg-[#4981F2]/20 border border-[#4981F2]/30 rounded-lg p-6">
-            <h3 className="text-xl font-bold text-[#4981F2] mb-4">Before EdTechie</h3>
+          <div className="bg-red-900/20 border border-red-500/30 rounded-lg p-6">
+            <h3 className="text-xl font-bold text-red-400 mb-4">Before EdTechie</h3>
             <ul className="space-y-2 text-slate-300">
-              <li>• 34% average completion rates</li>
-              <li>• 40% knowledge retention</li>
-              <li>• Weeks to create new content</li>
-              <li>• Static PDFs and PowerPoints</li>
-              <li>• Expensive agencies or risky freelancers</li>
+              <li>• 67% of teams fail initial audits</li>
+              <li>• Average 12 security incidents per year</li>
+              <li>• 34% training completion rate</li>
+              <li>• $2.4M average breach cost</li>
             </ul>
           </div>
-          <div className="bg-[#03A6A6]/20 border border-[#03A6A6]/30 rounded-lg p-6">
-            <h3 className="text-xl font-bold text-[#03A6A6] mb-4">After EdTechie</h3>
+          <div className="bg-[#180A73]/20 border border-[#180A73]/30 rounded-lg p-6">
+            <h3 className="text-xl font-bold text-[#180A73] mb-4">After EdTechie</h3>
             <ul className="space-y-2 text-slate-300">
-              <li>• 89% completion rates</li>
-              <li>• 85% knowledge retention</li>
-              <li>• Days to transform content</li>
-              <li>• Interactive engaging experiences</li>
-              <li>• Professional results, competitive rates</li>
+              <li>• 95% audit pass rate</li>
+              <li>• 73% reduction in incidents</li>
+              <li>• 89% training completion</li>
+              <li>• ROI within 6 months</li>
             </ul>
           </div>
         </div>

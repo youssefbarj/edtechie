@@ -26,10 +26,9 @@ export function LeadCapture() {
           <CardContent className="p-8 md:p-12 text-center">
             <div className="mb-8">
               <Mail className="w-16 h-16 text-[#6366F1] mx-auto mb-4" />
-              <h2 className="text-3xl font-bold text-white mb-4">Ready to Transform Your Content?</h2>
+              <h2 className="text-3xl font-bold text-white mb-4">Ready to Stop Failing Audits?</h2>
               <p className="text-xl text-slate-300">
-                Get our free Content Transformation Guide and see how to turn your boring PDFs into engaging
-                experiences.
+                Get our free Cybersecurity Audit Checklist and see where your team stands.
               </p>
             </div>
 
@@ -48,7 +47,7 @@ export function LeadCapture() {
                     "Sent!"
                   ) : (
                     <>
-                      Get Transformation Guide
+                      Get Checklist
                       <ArrowRight className="w-4 h-4 ml-2" />
                     </>
                   )}
@@ -56,9 +55,7 @@ export function LeadCapture() {
               </div>
             </form>
 
-            <p className="text-sm text-slate-400 mt-4">
-              No spam. Unsubscribe anytime. Used by 1000+ learning professionals.
-            </p>
+            <p className="text-sm text-slate-400 mt-4">No spam. Unsubscribe anytime. Used by 500+ IT leaders.</p>
           </CardContent>
         </Card>
       </div>
