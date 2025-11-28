@@ -1,14 +1,11 @@
 import type React from "react"
-import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import type { Metadata, Viewport } from "next"
 import "./globals.css"
 
-const inter = Inter({ subsets: ["latin"] })
-
 export const metadata: Metadata = {
-  title: "EdTechie Corp - Coming Soon",
+  title: "EdTechie Corp - E-Learning & Cybersecurity Training",
   description:
-    "EdTechie Corp is building the future of e-learning and digital training. Something amazing is on the way.",
+    "Interactive cybersecurity training and e-learning solutions that engage your team and deliver measurable results. Built by EdTechie Corp.",
   manifest: "/manifest.json",
   icons: {
     icon: [
@@ -24,13 +21,14 @@ export const metadata: Metadata = {
     statusBarStyle: "black-translucent",
     title: "EdTechie Corp",
   },
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
-    userScalable: false,
-  },
-  generator: "v0.dev",
+}
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  themeColor: "#0f172a",
 }
 
 export default function RootLayout({
@@ -53,7 +51,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#4981f2" />
         <meta name="msapplication-TileColor" content="#4981f2" />
       </head>
-      <body className={`${inter.className} bg-[#1e293b] text-white antialiased`}>{children}</body>
+      <body className="bg-[#0f172a] text-white antialiased" style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }}>{children}</body>
     </html>
   )
 }
