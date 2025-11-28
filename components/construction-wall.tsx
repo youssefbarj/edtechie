@@ -25,7 +25,8 @@ export function ConstructionWall() {
       } else {
         setError(result.error || "Failed to sign up. Please try again.")
       }
-    } catch {
+    } catch (err) {
+      console.error("Signup error:", err)
       setError("Something went wrong. Please try again.")
     } finally {
       setIsLoading(false)
