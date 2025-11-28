@@ -1,69 +1,84 @@
 "use client"
 
-import type React from "react"
-
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { MessageCircle, X, Send, Bot, User } from "lucide-react"
+import { useState, useRef, useEffect } from "react"
+import { MessageCircle, X, Send, Loader2 } from "lucide-react"
 
 interface Message {
   id: string
   content: string
   role: "user" | "assistant"
-  timestamp: Date
 }
 
 export function AIChatbot() {
   const [isOpen, setIsOpen] = useState(false)
   const [messages, setMessages] = useState<Message[]>([
     {
-      id: "1",
-      content: "Hi! I'm your EdTechie security assistant. How can I help you with cybersecurity training today?",
+      id: "welcome",
+      content: "Hey! 👋 How can I help you today?",
       role: "assistant",
-      timestamp: new Date(),
     },
   ])
   const [input, setInput] = useState("")
   const [isLoading, setIsLoading] = useState(false)
+  const messagesEndRef = useRef<HTMLDivElement>(null)
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
+  }
+
+  useEffect(() => {
+    scrollToBottom()
+  }, [messages])
 
   const handleSend = async () => {
-    if (!input.trim()) return
+    if (!input.trim() || isLoading) return
 
     const userMessage: Message = {
       id: Date.now().toString(),
-      content: input,
+      content: input.trim(),
       role: "user",
-      timestamp: new Date(),
     }
 
     setMessages((prev) => [...prev, userMessage])
     setInput("")
     setIsLoading(true)
 
-    // Simulate AI response (replace with actual CopilotKit integration)
-    setTimeout(() => {
-      const responses = [
-        "EdTechie Corp specializes in interactive cybersecurity training that transforms your team from your biggest liability into your strongest defense. Would you like to schedule a demo?",
-        "Our training covers phishing simulations, incident response, and audit preparation. We have both ready-made and custom solutions. What's your biggest security challenge?",
-        "We help companies pass their cybersecurity audits with a 95% success rate. Our interactive simulations prepare your team for real-world threats. Interested in learning more?",
-        "EdTechie's training is designed for tech companies who need audit-ready security awareness. We offer SOC 2, ISO 27001, and NIST compliance training. How can we help you?",
-      ]
+    try {
+      const response = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          messages: [...messages, userMessage].map((m) => ({
+            role: m.role,
+            content: m.content,
+          })),
+        }),
+      })
 
+      if (!response.ok) throw new Error("Failed to get response")
+
+      const data = await response.json()
+      
       const assistantMessage: Message = {
         id: (Date.now() + 1).toString(),
-        content: responses[Math.floor(Math.random() * responses.length)],
+        content: data.message || "Sorry, I couldn't process that. Please try again.",
         role: "assistant",
-        timestamp: new Date(),
       }
 
       setMessages((prev) => [...prev, assistantMessage])
+    } catch (error) {
+      const errorMessage: Message = {
+        id: (Date.now() + 1).toString(),
+        content: "Sorry, something went wrong. Please try again or email us at barjyoussef5@gmail.com",
+        role: "assistant",
+      }
+      setMessages((prev) => [...prev, errorMessage])
+    } finally {
       setIsLoading(false)
-    }, 1000)
+    }
   }
 
-  const handleKeyPress = (e: React.KeyboardEvent) => {
+  const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault()
       handleSend()
@@ -73,95 +88,89 @@ export function AIChatbot() {
   return (
     <>
       {/* Chat Toggle Button */}
-      {!isOpen && (
-        <Button
-          onClick={() => setIsOpen(true)}
-          className="fixed bottom-6 right-6 z-50 h-14 w-14 rounded-full bg-[#180A73] hover:bg-[#4981F2] shadow-lg shadow-purple-500/25 transition-all duration-300 transform hover:scale-110"
-          size="icon"
-        >
-          <MessageCircle className="h-6 w-6 text-white" />
-        </Button>
-      )}
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className={`fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 shadow-lg ${
+          isOpen 
+            ? "bg-slate-700 hover:bg-slate-600" 
+            : "bg-[#03A6A6] hover:bg-[#03A6A6]/90"
+        }`}
+        aria-label={isOpen ? "Close chat" : "Open chat"}
+      >
+        {isOpen ? (
+          <X className="w-6 h-6 text-white" />
+        ) : (
+          <MessageCircle className="w-6 h-6 text-white" />
+        )}
+      </button>
 
       {/* Chat Window */}
       {isOpen && (
-        <Card className="fixed bottom-6 right-6 z-50 w-96 h-[500px] bg-slate-800 border-slate-700 shadow-2xl">
-          <CardHeader className="bg-gradient-to-r from-[#180A73] to-[#4981F2] text-white rounded-t-lg">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-2">
-                <Bot className="h-5 w-5" />
-                <CardTitle className="text-lg">EdTechie Security Assistant</CardTitle>
+        <div className="fixed bottom-24 right-6 z-50 w-[360px] h-[480px] bg-[#1e293b] rounded-2xl shadow-2xl border border-slate-700 flex flex-col overflow-hidden">
+          {/* Header */}
+          <div className="px-5 py-4 border-b border-slate-700">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-[#03A6A6]/20 flex items-center justify-center">
+                <MessageCircle className="w-5 h-5 text-[#03A6A6]" />
               </div>
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={() => setIsOpen(false)}
-                className="text-white hover:bg-white/20"
+              <div>
+                <h3 className="font-semibold text-white text-sm">EdTechie Assistant</h3>
+                <p className="text-xs text-slate-400">Usually replies instantly</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Messages */}
+          <div className="flex-1 overflow-y-auto p-4 space-y-4">
+            {messages.map((message) => (
+              <div
+                key={message.id}
+                className={`flex ${message.role === "user" ? "justify-end" : "justify-start"}`}
               >
-                <X className="h-4 w-4" />
-              </Button>
-            </div>
-          </CardHeader>
-
-          <CardContent className="flex flex-col h-[400px] p-0">
-            {/* Messages */}
-            <div className="flex-1 overflow-y-auto p-4 space-y-4">
-              {messages.map((message) => (
-                <div key={message.id} className={`flex ${message.role === "user" ? "justify-end" : "justify-start"}`}>
-                  <div
-                    className={`max-w-[80%] rounded-lg p-3 ${
-                      message.role === "user"
-                        ? "bg-[#180A73] text-white"
-                        : "bg-slate-700 text-slate-100 border-l-4 border-[#03A6A6]"
-                    }`}
-                  >
-                    <div className="flex items-start space-x-2">
-                      {message.role === "assistant" && <Bot className="h-4 w-4 mt-0.5 text-[#03A6A6]" />}
-                      {message.role === "user" && <User className="h-4 w-4 mt-0.5" />}
-                      <p className="text-sm">{message.content}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-              {isLoading && (
-                <div className="flex justify-start">
-                  <div className="bg-slate-700 text-slate-100 border-l-4 border-[#03A6A6] rounded-lg p-3">
-                    <div className="flex items-center space-x-2">
-                      <Bot className="h-4 w-4 text-[#03A6A6]" />
-                      <div className="flex space-x-1">
-                        <div className="w-2 h-2 bg-[#03A6A6] rounded-full animate-bounce"></div>
-                        <div className="w-2 h-2 bg-[#03A6A6] rounded-full animate-bounce delay-100"></div>
-                        <div className="w-2 h-2 bg-[#03A6A6] rounded-full animate-bounce delay-200"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* Input */}
-            <div className="border-t border-slate-700 p-4">
-              <div className="flex space-x-2">
-                <Input
-                  value={input}
-                  onChange={(e) => setInput(e.target.value)}
-                  onKeyPress={handleKeyPress}
-                  placeholder="Ask about cybersecurity training..."
-                  className="flex-1 bg-slate-700 border-slate-600 text-white placeholder-slate-400"
-                  disabled={isLoading}
-                />
-                <Button
-                  onClick={handleSend}
-                  disabled={!input.trim() || isLoading}
-                  className="bg-[#180A73] hover:bg-[#4981F2]"
-                  size="icon"
+                <div
+                  className={`max-w-[85%] px-4 py-2.5 rounded-2xl text-sm leading-relaxed ${
+                    message.role === "user"
+                      ? "bg-[#03A6A6] text-white rounded-br-md"
+                      : "bg-slate-800 text-slate-200 rounded-bl-md"
+                  }`}
                 >
-                  <Send className="h-4 w-4" />
-                </Button>
+                  {message.content}
+                </div>
               </div>
+            ))}
+            {isLoading && (
+              <div className="flex justify-start">
+                <div className="bg-slate-800 text-slate-200 px-4 py-2.5 rounded-2xl rounded-bl-md">
+                  <Loader2 className="w-4 h-4 animate-spin" />
+                </div>
+              </div>
+            )}
+            <div ref={messagesEndRef} />
+          </div>
+
+          {/* Input */}
+          <div className="p-4 border-t border-slate-700">
+            <div className="flex items-center gap-2 bg-slate-800 rounded-xl px-4 py-2">
+              <input
+                type="text"
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                onKeyDown={handleKeyDown}
+                placeholder="Type a message..."
+                disabled={isLoading}
+                className="flex-1 bg-transparent text-white text-sm placeholder-slate-500 focus:outline-none disabled:opacity-50"
+              />
+              <button
+                onClick={handleSend}
+                disabled={!input.trim() || isLoading}
+                className="text-[#03A6A6] hover:text-[#03A6A6]/80 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                aria-label="Send message"
+              >
+                <Send className="w-5 h-5" />
+              </button>
             </div>
-          </CardContent>
-        </Card>
+          </div>
+        </div>
       )}
     </>
   )
