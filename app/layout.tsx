@@ -1,9 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
 import "./globals.css"
-
-const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "EdTechie Corp - Coming Soon",
@@ -53,7 +50,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#4981f2" />
         <meta name="msapplication-TileColor" content="#4981f2" />
       </head>
-      <body className={`${inter.className} bg-[#1e293b] text-white antialiased`}>{children}</body>
+      <body className="bg-[#1e293b] text-white antialiased" style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }}>{children}</body>
     </html>
   )
 }
