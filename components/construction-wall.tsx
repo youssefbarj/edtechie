@@ -1,38 +1,7 @@
-"use client"
-
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Mail, CheckCircle, AlertCircle } from "lucide-react"
+import { Mail } from "lucide-react"
 import Image from "next/image"
-import { notifySignup } from "@/app/actions"
 
 export function ConstructionWall() {
-  const [isSubmitted, setIsSubmitted] = useState(false)
-  const [isLoading, setIsLoading] = useState(false)
-  const [error, setError] = useState("")
-
-  const handleSubmit = async (formData: FormData) => {
-    setIsLoading(true)
-    setError("")
-
-    try {
-      const result = await notifySignup(formData)
-
-      if (result.success) {
-        setIsSubmitted(true)
-        setTimeout(() => setIsSubmitted(false), 5000)
-      } else {
-        setError(result.error || "Failed to sign up. Please try again.")
-      }
-    } catch (err) {
-      console.error("Signup error:", err)
-      setError("Something went wrong. Please try again.")
-    } finally {
-      setIsLoading(false)
-    }
-  }
-
   return (
     <div className="min-h-screen bg-[#0f172a] flex items-center justify-center relative overflow-hidden">
       {/* Subtle background */}
@@ -59,45 +28,8 @@ export function ConstructionWall() {
             We're working on something new.
           </h1>
           <p className="text-slate-400 text-lg">
-            Our website is currently being updated. Drop your email below and we'll let you know when we're live.
+            Our website is currently being updated. Check back soon!
           </p>
-        </div>
-
-        {/* Email Form */}
-        <div className="max-w-md mx-auto mb-16">
-          {!isSubmitted ? (
-            <form action={handleSubmit} className="space-y-4">
-              <div className="flex flex-col sm:flex-row gap-3">
-                <Input
-                  type="email"
-                  name="email"
-                  placeholder="your@email.com"
-                  required
-                  disabled={isLoading}
-                  className="flex-1 bg-slate-800/50 border-slate-700 text-white placeholder-slate-500 h-12 px-4"
-                />
-                <Button
-                  type="submit"
-                  disabled={isLoading}
-                  className="bg-[#03A6A6] hover:bg-[#03A6A6]/90 text-white font-medium h-12 px-6"
-                >
-                  {isLoading ? "..." : "Notify Me"}
-                </Button>
-              </div>
-
-              {error && (
-                <div className="flex items-center justify-center gap-2 text-red-400 text-sm">
-                  <AlertCircle className="w-4 h-4" />
-                  <span>{error}</span>
-                </div>
-              )}
-            </form>
-          ) : (
-            <div className="flex items-center justify-center gap-3 text-[#03A6A6]">
-              <CheckCircle className="w-5 h-5" />
-              <span>Got it! We'll be in touch.</span>
-            </div>
-          )}
         </div>
 
         {/* Contact */}
