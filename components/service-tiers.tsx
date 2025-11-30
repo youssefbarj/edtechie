@@ -1,117 +1,151 @@
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Check, ArrowRight, Star } from "lucide-react"
+import { FileText, Server, Rocket, ArrowRight, Check } from "lucide-react"
 import Link from "next/link"
 
 export function ServiceTiers() {
-  const tiers = [
+  const stages = [
     {
-      name: "Ready-Made Training",
-      subtitle: "Deploy Tonight",
-      price: "$2,500",
-      period: "/month",
-      description:
-        "Pre-built simulations covering the most common attack vectors. Perfect for getting audit-ready fast.",
+      stage: "01",
+      icon: FileText,
+      name: "Content Transformation",
+      subtitle: "Analog → Digital",
+      description: "We take your proven training content and engineer it into engaging, interactive digital experiences.",
       features: [
-        "20+ Interactive Simulations",
-        "Phishing & Social Engineering",
-        "Password Security Training",
-        "Data Breach Response",
-        "Compliance Reporting",
-        "24/7 Support",
-        "Mobile Access",
-        "Progress Tracking",
+        "PDF & document conversion",
+        "Interactive lesson design",
+        "Video integration & editing",
+        "Quiz & assessment creation",
+        "Mobile-responsive content",
+        "SCORM/xAPI compliance",
       ],
-      cta: "Start Training",
-      popular: false,
+      deliverable: "Complete interactive course modules",
+      timeline: "4-6 weeks",
+      color: "#00CED1",
     },
     {
-      name: "Custom Simulations",
-      subtitle: "Built for Your Threats",
-      price: "$7,500",
-      period: "/month",
-      description: "Tailored training that mirrors your actual environment and specific threat landscape.",
+      stage: "02",
+      icon: Server,
+      name: "Platform Engineering",
+      subtitle: "Local → Scalable",
+      description: "Custom LMS architecture built for your specific needs, designed to scale with unlimited students.",
       features: [
-        "Everything in Ready-Made",
-        "Custom Threat Scenarios",
-        "Your Tech Stack Integration",
-        "Industry-Specific Attacks",
-        "Advanced Analytics",
-        "Dedicated Success Manager",
-        "White-Label Options",
-        "API Integration",
+        "Custom LMS development",
+        "Student portal & dashboards",
+        "Progress tracking system",
+        "Certificate generation",
+        "Admin management tools",
+        "Analytics & reporting",
       ],
-      cta: "Get Custom Quote",
-      popular: true,
+      deliverable: "Fully functional learning platform",
+      timeline: "6-8 weeks",
+      color: "#3D2C8D",
+    },
+    {
+      stage: "03",
+      icon: Rocket,
+      name: "Digital Launch",
+      subtitle: "Static → Live",
+      description: "We train your team, migrate your students, and ensure a successful global launch.",
+      features: [
+        "Staff training sessions",
+        "Student migration support",
+        "Launch strategy planning",
+        "Marketing materials",
+        "Technical support setup",
+        "Ongoing optimization",
+      ],
+      deliverable: "Live platform with active students",
+      timeline: "2-4 weeks",
+      color: "#FF8559",
     },
   ]
 
   return (
-    <section className="py-20 bg-slate-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-4">Choose Your Training Approach</h2>
-          <p className="text-xl text-slate-300">Fast deployment or custom-built. Both get you audit-ready.</p>
-        </div>
+    <section className="py-20 bg-[#1A1F5C]">
+      <div className="max-w-6xl mx-auto px-6 lg:px-12">
+        <div className="grid lg:grid-cols-3 gap-6">
+          {stages.map((stage) => {
+            const Icon = stage.icon
+            return (
+              <div
+                key={stage.stage}
+                className="relative bg-gradient-to-b from-[#3D2C8D]/20 to-transparent rounded-2xl border border-[#3D2C8D]/30 overflow-hidden group hover:border-[#3D2C8D]/50 transition-all duration-300"
+              >
+                {/* Top accent */}
+                <div className="h-1 w-full" style={{ backgroundColor: stage.color }} />
+                
+                <div className="p-6 lg:p-8">
+                  {/* Header */}
+                  <div className="flex items-start gap-4 mb-6">
+                    <div 
+                      className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
+                      style={{ backgroundColor: `${stage.color}20` }}
+                    >
+                      <Icon className="w-6 h-6" style={{ color: stage.color }} />
+                    </div>
+                    <div>
+                      <div className="text-[11px] font-bold tracking-[0.15em] uppercase mb-1" style={{ color: stage.color }}>
+                        Stage {stage.stage}
+                      </div>
+                      <h3 className="text-xl font-bold text-[#FDFBD4]">{stage.name}</h3>
+                      <p className="text-[13px] text-[#FDFBD4]/50">{stage.subtitle}</p>
+                    </div>
+                  </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {tiers.map((tier, index) => (
-            <Card
-              key={index}
-              className={`relative bg-slate-800/50 border-slate-700 hover:border-cyan-500/50 transition-all duration-300 ${
-                tier.popular ? "ring-2 ring-purple-500/50" : ""
-              }`}
-            >
-              {tier.popular && (
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <div className="bg-gradient-to-r from-[#6366F1] to-[#5B21B6] text-white px-4 py-1 rounded-full text-sm font-semibold flex items-center space-x-1">
-                    <Star className="w-4 h-4" />
-                    <span>Most Popular</span>
+                  <p className="text-[#FDFBD4]/60 text-[15px] leading-relaxed mb-6">
+                    {stage.description}
+                  </p>
+
+                  {/* Features */}
+                  <ul className="space-y-3 mb-6">
+                    {stage.features.map((feature, i) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <Check className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: stage.color }} />
+                        <span className="text-[14px] text-[#FDFBD4]/70">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* Deliverable & Timeline */}
+                  <div className="pt-6 border-t border-[#3D2C8D]/20 space-y-3">
+                    <div className="flex justify-between items-center">
+                      <span className="text-[12px] text-[#FDFBD4]/40 uppercase tracking-wider">Deliverable</span>
+                      <span className="text-[13px] text-[#FDFBD4]/80">{stage.deliverable}</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-[12px] text-[#FDFBD4]/40 uppercase tracking-wider">Timeline</span>
+                      <span className="text-[13px] font-semibold" style={{ color: stage.color }}>{stage.timeline}</span>
+                    </div>
                   </div>
                 </div>
-              )}
-
-              <CardHeader className="text-center pb-4">
-                <CardTitle className="text-2xl font-bold text-white">{tier.name}</CardTitle>
-                <p className="text-cyan-400 font-semibold">{tier.subtitle}</p>
-                <div className="mt-4">
-                  <span className="text-4xl font-bold text-white">{tier.price}</span>
-                  <span className="text-slate-400">{tier.period}</span>
-                </div>
-                <p className="text-slate-300 mt-2">{tier.description}</p>
-              </CardHeader>
-
-              <CardContent className="space-y-6">
-                <ul className="space-y-3">
-                  {tier.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center space-x-3">
-                      <Check className="w-5 h-5 text-cyan-400 flex-shrink-0" />
-                      <span className="text-slate-300">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <Button
-                  asChild
-                  className={`w-full ${
-                    tier.popular ? "bg-[#6366F1] hover:bg-[#5B21B6]" : "bg-slate-700 hover:bg-slate-600"
-                  } transition-all duration-300`}
-                >
-                  <Link href="/contact" className="flex items-center justify-center space-x-2">
-                    <span>{tier.cta}</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
-          ))}
+              </div>
+            )
+          })}
         </div>
 
-        <div className="text-center mt-12">
-          <p className="text-slate-400 mb-4">Not sure which option is right for you?</p>
-          <Button asChild variant="outline" className="border-slate-600 text-slate-300 hover:bg-slate-800">
-            <Link href="/contact">Schedule a Consultation</Link>
-          </Button>
+        {/* Bottom CTA */}
+        <div className="mt-16 text-center">
+          <p className="text-[#FDFBD4]/50 text-[15px] mb-5">
+            All three stages included in every transformation project.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button
+              asChild
+              className="bg-[#FF8559] hover:bg-[#FF6B3D] text-white font-semibold px-8 py-6 rounded-xl transition-all duration-300"
+            >
+              <Link href="/contact" className="flex items-center gap-2">
+                <span>Get Your Transformation Quote</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </Button>
+            <Button
+              asChild
+              variant="outline"
+              className="border-[#3D2C8D]/50 text-[#FDFBD4]/70 hover:text-[#FDFBD4] hover:bg-[#3D2C8D]/20 px-8 py-6 rounded-xl"
+            >
+              <Link href="/case-studies">See Institut Fandi Case Study</Link>
+            </Button>
+          </div>
         </div>
       </div>
     </section>

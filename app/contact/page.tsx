@@ -1,19 +1,21 @@
+import { Navigation } from "@/components/navigation"
+import { Footer } from "@/components/footer"
 import { ContactHero } from "@/components/contact-hero"
 import { ContactForm } from "@/components/contact-form"
 import { ContactInfo } from "@/components/contact-info"
-import { DemoScheduler } from "@/components/demo-scheduler"
-import { ConstructionWall } from "@/components/construction-wall"
 
 export default function ContactPage() {
   return (
-    <div className="bg-slate-950 pt-16">
+    <div className="bg-[#1A1F5C] min-h-screen">
+      <Navigation />
       <ContactHero />
-      <ConstructionWall />
-      <div className="grid lg:grid-cols-2 gap-0">
-        <DemoScheduler />
-        <ContactForm />
+      <div className="max-w-6xl mx-auto px-6 lg:px-12 py-12">
+        <div className="grid lg:grid-cols-2 gap-8">
+          <ContactForm />
+          <ContactInfo />
+        </div>
       </div>
-      <ContactInfo />
+      <Footer />
     </div>
   )
 }

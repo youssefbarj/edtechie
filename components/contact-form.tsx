@@ -1,13 +1,11 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Mail, MessageSquare, CheckCircle } from "lucide-react"
+import { MessageSquare, ArrowRight, CheckCircle } from "lucide-react"
 
 export function ContactForm() {
   const [isSubmitted, setIsSubmitted] = useState(false)
@@ -19,91 +17,78 @@ export function ContactForm() {
   }
 
   return (
-    <section className="bg-slate-950 p-8 lg:p-12">
-      <Card className="bg-slate-800/50 border-slate-700 h-full">
-        <CardHeader className="text-center">
-          <div className="flex items-center justify-center space-x-2 mb-4">
-            <MessageSquare className="w-8 h-8 text-[#3B82F6]" />
-            <CardTitle className="text-2xl text-white">Get In Touch</CardTitle>
-          </div>
-          <p className="text-slate-400">Have questions? Need a custom quote? We're here to help.</p>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          {!isSubmitted ? (
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="grid md:grid-cols-2 gap-4">
-                <Input
-                  placeholder="First Name"
-                  required
-                  className="bg-slate-700 border-slate-600 text-white placeholder-slate-400"
-                />
-                <Input
-                  placeholder="Last Name"
-                  required
-                  className="bg-slate-700 border-slate-600 text-white placeholder-slate-400"
-                />
-              </div>
-              <Input
-                type="email"
-                placeholder="Work Email"
-                required
-                className="bg-slate-700 border-slate-600 text-white placeholder-slate-400"
-              />
-              <Input
-                placeholder="Company Name"
-                required
-                className="bg-slate-700 border-slate-600 text-white placeholder-slate-400"
-              />
-              <Input
-                placeholder="Phone Number (Optional)"
-                className="bg-slate-700 border-slate-600 text-white placeholder-slate-400"
-              />
-              <div>
-                <label className="block text-sm font-medium text-slate-300 mb-2">What can we help you with?</label>
-                <select
-                  required
-                  className="w-full bg-slate-700 border border-slate-600 text-white rounded-md px-3 py-2"
-                >
-                  <option value="">Select an option</option>
-                  <option value="demo">Schedule a demo</option>
-                  <option value="pricing">Get pricing information</option>
-                  <option value="custom">Custom training solution</option>
-                  <option value="support">Technical support</option>
-                  <option value="partnership">Partnership opportunities</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-              <Textarea
-                placeholder="Tell us more about your needs..."
-                required
-                className="bg-slate-700 border-slate-600 text-white placeholder-slate-400 min-h-[120px]"
-              />
-              <Button type="submit" className="w-full bg-[#6366F1] hover:bg-[#5B21B6] font-semibold py-3">
-                <Mail className="w-4 h-4 mr-2" />
-                Send Message
-              </Button>
-            </form>
-          ) : (
-            <div className="text-center py-8">
-              <CheckCircle className="w-16 h-16 text-green-400 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-white mb-2">Message Sent!</h3>
-              <p className="text-slate-400 mb-4">
-                Thanks for reaching out. We'll get back to you within 2 hours during business hours.
-              </p>
-              <p className="text-sm text-slate-500">For urgent matters, call us at 1-800-EDTECHIE</p>
-            </div>
-          )}
+    <div className="bg-[#3D2C8D]/10 rounded-2xl border border-[#3D2C8D]/20 p-6 lg:p-8">
+      <div className="flex items-center gap-3 mb-6">
+        <div className="w-10 h-10 rounded-xl bg-[#00CED1]/20 flex items-center justify-center">
+          <MessageSquare className="w-5 h-5 text-[#00CED1]" />
+        </div>
+        <div>
+          <h2 className="text-xl font-bold text-[#FDFBD4]">Start a Conversation</h2>
+          <p className="text-[13px] text-[#FDFBD4]/50">Tell us about your training content</p>
+        </div>
+      </div>
 
-          <div className="border-t border-slate-700 pt-6">
-            <h3 className="text-lg font-semibold text-white mb-3">Prefer to talk?</h3>
-            <div className="space-y-2 text-sm text-slate-400">
-              <p>📞 1-800-EDTECHIE (1-800-338-3244)</p>
-              <p>📧 hello@edtechie.com</p>
-              <p>🕒 Mon-Fri, 9 AM - 6 PM PST</p>
-            </div>
+      {!isSubmitted ? (
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div className="grid sm:grid-cols-2 gap-4">
+            <Input
+              placeholder="Your Name"
+              required
+              className="bg-[#1A1F5C]/80 border-[#3D2C8D]/50 text-[#FDFBD4] placeholder-[#FDFBD4]/40 focus:border-[#00CED1]"
+            />
+            <Input
+              placeholder="Organization"
+              required
+              className="bg-[#1A1F5C]/80 border-[#3D2C8D]/50 text-[#FDFBD4] placeholder-[#FDFBD4]/40 focus:border-[#00CED1]"
+            />
           </div>
-        </CardContent>
-      </Card>
-    </section>
+          <Input
+            type="email"
+            placeholder="Email Address"
+            required
+            className="bg-[#1A1F5C]/80 border-[#3D2C8D]/50 text-[#FDFBD4] placeholder-[#FDFBD4]/40 focus:border-[#00CED1]"
+          />
+          <div>
+            <label className="block text-sm font-medium text-[#FDFBD4]/70 mb-2">What type of training do you offer?</label>
+            <select
+              required
+              className="w-full bg-[#1A1F5C]/80 border border-[#3D2C8D]/50 text-[#FDFBD4] rounded-md px-3 py-2.5 focus:border-[#00CED1] focus:outline-none"
+            >
+              <option value="" className="bg-[#1A1F5C]">Select your industry</option>
+              <option value="beauty" className="bg-[#1A1F5C]">Beauty & Aesthetics</option>
+              <option value="vocational" className="bg-[#1A1F5C]">Vocational Training</option>
+              <option value="professional" className="bg-[#1A1F5C]">Professional Certification</option>
+              <option value="corporate" className="bg-[#1A1F5C]">Corporate Training</option>
+              <option value="other" className="bg-[#1A1F5C]">Other</option>
+            </select>
+          </div>
+          <Textarea
+            placeholder="Tell us about your current training content and what you'd like to transform..."
+            required
+            className="bg-[#1A1F5C]/80 border-[#3D2C8D]/50 text-[#FDFBD4] placeholder-[#FDFBD4]/40 focus:border-[#00CED1] min-h-[120px]"
+          />
+          <Button 
+            type="submit" 
+            className="w-full bg-[#FF8559] hover:bg-[#FF6B3D] text-white font-semibold py-6 rounded-xl"
+          >
+            Start Your Transformation
+            <ArrowRight className="w-4 h-4 ml-2" />
+          </Button>
+          <p className="text-[12px] text-[#FDFBD4]/40 text-center">
+            Free consultation • Response within 24 hours
+          </p>
+        </form>
+      ) : (
+        <div className="text-center py-12">
+          <div className="w-16 h-16 rounded-full bg-[#00CED1]/20 flex items-center justify-center mx-auto mb-4">
+            <CheckCircle className="w-8 h-8 text-[#00CED1]" />
+          </div>
+          <h3 className="text-xl font-semibold text-[#FDFBD4] mb-2">Message Sent!</h3>
+          <p className="text-[#FDFBD4]/60 mb-4">
+            Thank you for reaching out. We&apos;ll be in touch within 24 hours to discuss your transformation.
+          </p>
+        </div>
+      )}
+    </div>
   )
 }
