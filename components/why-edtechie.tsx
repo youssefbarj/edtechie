@@ -93,7 +93,7 @@ export function WhyEdTechie() {
           {/* Progress line */}
           <div className="absolute top-8 left-0 right-0 h-1 bg-[#3D2C8D]/30 rounded-full hidden lg:block">
             <div 
-              className="h-full bg-gradient-to-r from-[#00CED1] via-[#3D2C8D] to-[#FF8559] rounded-full transition-all duration-2000 ease-out"
+              className="h-full bg-gradient-to-r from-[#00CED1] via-[#3D2C8D] to-[#FF8559] rounded-full transition-all duration-1000 ease-out"
               style={{ width: `${progressWidth}%` }}
             />
           </div>
