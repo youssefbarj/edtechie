@@ -1,33 +1,39 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import Image from "next/image"
+import { ArrowRight } from "lucide-react"
+import Link from "next/link"
 
-const features = [
+const transformationJourney = [
   {
-    number: "01",
-    title: "We listen first",
-    description: "Every team is different. We start by understanding your specific challenges before proposing solutions."
+    phase: "Day 1",
+    old: "Static PDF courses",
+    new: "Content audit complete",
+    description: "We analyze every piece of your training material"
   },
   {
-    number: "02", 
-    title: "Built for engagement",
-    description: "Interactive scenarios, not slide decks. People learn by doing, so that's how we build."
+    phase: "Week 2",
+    old: "Scattered documents",
+    new: "Structured curriculum",
+    description: "Your content organized for digital delivery"
   },
   {
-    number: "03",
-    title: "Measurable outcomes",
-    description: "Clear metrics showing skill improvement. You'll know exactly what's working."
+    phase: "Month 2",
+    old: "No platform",
+    new: "LMS architecture built",
+    description: "Custom platform engineered for your needs"
   },
   {
-    number: "04",
-    title: "Fast turnaround",
-    description: "From kickoff to deployment in weeks, not months. Your time matters."
+    phase: "Month 4",
+    old: "Local only",
+    new: "Global launch 🚀",
+    description: "Students accessing courses worldwide"
   }
 ]
 
 export function WhyEdTechie() {
-  const [visibleItems, setVisibleItems] = useState<number[]>([])
+  const [visiblePhases, setVisiblePhases] = useState<number[]>([])
+  const [progressWidth, setProgressWidth] = useState(0)
   const sectionRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
@@ -35,16 +41,19 @@ export function WhyEdTechie() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            // Stagger the reveal of items
-            features.forEach((_, index) => {
+            // Animate progress bar
+            setTimeout(() => setProgressWidth(100), 200)
+            
+            // Stagger reveal phases
+            transformationJourney.forEach((_, index) => {
               setTimeout(() => {
-                setVisibleItems(prev => [...new Set([...prev, index])])
-              }, index * 150)
+                setVisiblePhases(prev => [...new Set([...prev, index])])
+              }, 400 + index * 300)
             })
           }
         })
       },
-      { threshold: 0.2 }
+      { threshold: 0.3 }
     )
 
     if (sectionRef.current) {
@@ -55,74 +64,118 @@ export function WhyEdTechie() {
   }, [])
 
   return (
-    <section ref={sectionRef} className="py-32 bg-[#0f172a] relative overflow-hidden">
-      {/* Background elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/2 left-0 w-96 h-96 bg-[#180A73] rounded-full blur-[200px] opacity-20 -translate-y-1/2" />
-      </div>
+    <section ref={sectionRef} className="py-24 lg:py-32 bg-gradient-to-b from-[#1A1F5C] to-[#1A1F5C] relative overflow-hidden">
+      {/* Background accents */}
+      <div className="absolute top-1/2 right-0 w-[400px] h-[400px] bg-[#00CED1]/5 rounded-full blur-[150px] -translate-y-1/2" />
+      <div className="absolute bottom-0 left-1/4 w-[300px] h-[300px] bg-[#3D2C8D]/10 rounded-full blur-[100px]" />
+      
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative">
+        {/* Section header */}
+        <div className="max-w-3xl mb-16">
+          <div className="flex items-center gap-3 mb-5">
+            <div className="w-10 h-px bg-[#FF8559]" />
+            <span className="text-[#FF8559] text-[12px] font-semibold tracking-[0.15em] uppercase">Transformation Timeline</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#FDFBD4] leading-[1.15] mb-5">
+            Institut Fandi&apos;s journey
+            <br />
+            <span className="text-[#FDFBD4]/50">from analog to</span>{" "}
+            <span className="text-[#00CED1]">digital.</span>
+          </h2>
+          <p className="text-[1.1rem] text-[#FDFBD4]/55 leading-relaxed">
+            This is exactly what we built. Not a hypothetical—a real transformation 
+            for Morocco&apos;s #1 beauty academy. And we can do the same for you.
+          </p>
+        </div>
 
-      <div className="max-w-6xl mx-auto px-6 relative">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left - Image/Logo area */}
-          <div className="relative">
-            <div className="relative aspect-square max-w-md mx-auto">
-              {/* Decorative circles */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-full h-full rounded-full border border-slate-800" />
-                <div className="absolute w-3/4 h-3/4 rounded-full border border-slate-800" />
-                <div className="absolute w-1/2 h-1/2 rounded-full border border-slate-700" />
-              </div>
-              
-              {/* Center logo */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="relative">
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#03A6A6] to-[#4981F2] blur-3xl opacity-30 scale-150" />
-                  <Image
-                    src="/images/edtechie-owl-icon.png"
-                    alt="EdTechie"
-                    width={160}
-                    height={160}
-                    className="relative drop-shadow-2xl"
-                  />
-                </div>
-              </div>
-
-              {/* Floating accent dots */}
-              <div className="absolute top-10 right-10 w-3 h-3 bg-[#03A6A6] rounded-full animate-pulse" />
-              <div className="absolute bottom-20 left-5 w-2 h-2 bg-[#4981F2] rounded-full animate-pulse delay-500" />
-              <div className="absolute top-1/3 left-10 w-2 h-2 bg-[#05F2C7] rounded-full animate-pulse delay-1000" />
-            </div>
+        {/* Transformation timeline */}
+        <div className="relative">
+          {/* Progress line */}
+          <div className="absolute top-8 left-0 right-0 h-1 bg-[#3D2C8D]/30 rounded-full hidden lg:block">
+            <div 
+              className="h-full bg-gradient-to-r from-[#00CED1] via-[#3D2C8D] to-[#FF8559] rounded-full transition-all duration-1000 ease-out"
+              style={{ width: `${progressWidth}%` }}
+            />
           </div>
 
-          {/* Right - Content */}
-          <div>
-            <span className="text-[#03A6A6] font-medium text-sm tracking-wider uppercase">Why Us</span>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mt-4 mb-12">
-              Training done<br />
-              <span className="bg-gradient-to-r from-[#03A6A6] to-[#4981F2] bg-clip-text text-transparent">differently.</span>
-            </h2>
-
-            <div className="space-y-8">
-              {features.map((feature, index) => (
+          {/* Timeline phases */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+            {transformationJourney.map((phase, index) => {
+              const isVisible = visiblePhases.includes(index)
+              const isLast = index === transformationJourney.length - 1
+              
+              return (
                 <div 
-                  key={feature.number}
-                  className={`flex gap-6 transition-all duration-700 ${
-                    visibleItems.includes(index) 
-                      ? 'opacity-100 translate-x-0' 
-                      : 'opacity-0 translate-x-8'
+                  key={phase.phase}
+                  className={`relative transition-all duration-700 ${
+                    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                   }`}
                 >
-                  <div className="flex-shrink-0">
-                    <span className="text-[#03A6A6] font-mono text-sm">{feature.number}</span>
+                  {/* Timeline dot */}
+                  <div className="hidden lg:flex items-center justify-center mb-8">
+                    <div className={`relative w-4 h-4 rounded-full transition-all duration-500 ${
+                      isVisible 
+                        ? isLast ? 'bg-[#FF8559] shadow-[0_0_20px_rgba(255,133,89,0.5)]' : 'bg-[#00CED1]' 
+                        : 'bg-[#3D2C8D]/50'
+                    }`}>
+                      {isLast && isVisible && (
+                        <div className="absolute inset-0 rounded-full bg-[#FF8559] animate-ping opacity-50" />
+                      )}
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-white mb-2">{feature.title}</h3>
-                    <p className="text-slate-400 leading-relaxed">{feature.description}</p>
+
+                  {/* Phase card */}
+                  <div className={`p-6 rounded-xl border transition-all duration-500 ${
+                    isLast 
+                      ? 'bg-gradient-to-br from-[#FF8559]/10 to-transparent border-[#FF8559]/30' 
+                      : 'bg-[#3D2C8D]/10 border-[#3D2C8D]/20'
+                  }`}>
+                    {/* Phase label */}
+                    <div className={`text-[11px] font-bold tracking-[0.15em] uppercase mb-4 ${
+                      isLast ? 'text-[#FF8559]' : 'text-[#00CED1]'
+                    }`}>
+                      {phase.phase}
+                    </div>
+
+                    {/* Before/After */}
+                    <div className="space-y-3 mb-4">
+                      <div className="flex items-start gap-2">
+                        <span className="text-[#FDFBD4]/30 text-xs mt-0.5">✕</span>
+                        <span className="text-[13px] text-[#FDFBD4]/40 line-through">{phase.old}</span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <span className={`text-xs mt-0.5 ${isLast ? 'text-[#FF8559]' : 'text-[#00CED1]'}`}>✓</span>
+                        <span className={`text-[14px] font-medium ${isLast ? 'text-[#FF8559]' : 'text-[#FDFBD4]'}`}>{phase.new}</span>
+                      </div>
+                    </div>
+
+                    <p className="text-[13px] text-[#FDFBD4]/50 leading-relaxed">
+                      {phase.description}
+                    </p>
                   </div>
                 </div>
-              ))}
-            </div>
+              )
+            })}
           </div>
+        </div>
+
+        {/* Bottom CTA */}
+        <div className="mt-16 lg:mt-20 flex flex-col sm:flex-row items-center justify-between gap-6 p-6 lg:p-8 rounded-2xl bg-gradient-to-r from-[#3D2C8D]/20 to-[#00CED1]/10 border border-[#3D2C8D]/20">
+          <div>
+            <p className="text-[#FDFBD4] font-semibold text-lg mb-1">
+              Your transformation could start today.
+            </p>
+            <p className="text-[#FDFBD4]/50 text-[14px]">
+              Same process. Same results. Your training, made global.
+            </p>
+          </div>
+          <Link 
+            href="/contact"
+            className="group inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#00CED1] hover:bg-[#00CED1]/90 text-[#1A1F5C] font-semibold text-[14px] transition-all duration-300 shadow-[0_4px_20px_rgba(0,206,209,0.25)] hover:shadow-[0_6px_28px_rgba(0,206,209,0.35)] hover:-translate-y-0.5 whitespace-nowrap"
+          >
+            <span>Start Your Timeline</span>
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+          </Link>
         </div>
       </div>
     </section>

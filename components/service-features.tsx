@@ -1,71 +1,78 @@
-import { Card, CardContent } from "@/components/ui/card"
-import { Shield, Target, BarChart3, Users, Clock, CheckCircle, Zap, Lock } from "lucide-react"
+import { FileText, Server, Globe, BarChart3, Users, Smartphone, Zap, Lock } from "lucide-react"
 
 export function ServiceFeatures() {
   const features = [
     {
-      icon: Shield,
-      title: "Real Attack Simulations",
-      description:
-        "Practice with actual malware, phishing attempts, and social engineering tactics in a safe environment.",
+      icon: FileText,
+      title: "Content Engineering",
+      description: "Transform PDFs, documents, and videos into interactive, engaging digital modules.",
     },
     {
-      icon: Target,
-      title: "Industry-Specific Scenarios",
-      description: "Training tailored to your sector's unique threats - fintech, healthcare, SaaS, and more.",
+      icon: Server,
+      title: "Custom LMS Development",
+      description: "Platform architecture designed for your specific workflow and scaling needs.",
+    },
+    {
+      icon: Globe,
+      title: "Global Accessibility",
+      description: "Reach students anywhere in the world, 24/7, without geographic limitations.",
     },
     {
       icon: BarChart3,
-      title: "Detailed Analytics",
-      description: "Track progress, identify weak spots, and generate audit-ready compliance reports.",
+      title: "Analytics Dashboard",
+      description: "Real-time insights into student progress, completion rates, and engagement.",
     },
     {
       icon: Users,
-      title: "Team Collaboration",
-      description: "Multi-user scenarios that test communication and incident response procedures.",
+      title: "Team Training",
+      description: "We train your staff to manage the platform and support students effectively.",
     },
     {
-      icon: Clock,
-      title: "Flexible Scheduling",
-      description: "Self-paced learning that fits into busy schedules without disrupting productivity.",
-    },
-    {
-      icon: CheckCircle,
-      title: "Certification Ready",
-      description: "Prepare for SOC 2, ISO 27001, NIST, and other compliance frameworks.",
+      icon: Smartphone,
+      title: "Mobile-First Design",
+      description: "Responsive platforms that work seamlessly on any device, anywhere.",
     },
     {
       icon: Zap,
-      title: "Instant Deployment",
-      description: "Get started in minutes, not months. No complex setup or IT overhead required.",
+      title: "Rapid Deployment",
+      description: "From kickoff to launch in 4 months—not years. We move fast.",
     },
     {
       icon: Lock,
-      title: "Secure Platform",
-      description: "Enterprise-grade security with SOC 2 Type II compliance and end-to-end encryption.",
+      title: "Ongoing Support",
+      description: "Technical support and platform optimization long after launch.",
     },
   ]
 
   return (
-    <section className="py-20 bg-slate-950">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 bg-[#1A1F5C]">
+      <div className="max-w-6xl mx-auto px-6 lg:px-12">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-4">Why EdTechie Training Works</h2>
-          <p className="text-xl text-slate-300">Interactive, measurable, and designed for real-world threats.</p>
+          <div className="flex items-center justify-center gap-3 mb-5">
+            <div className="w-10 h-px bg-[#00CED1]" />
+            <span className="text-[#00CED1] text-[12px] font-semibold tracking-[0.15em] uppercase">What&apos;s Included</span>
+            <div className="w-10 h-px bg-[#00CED1]" />
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#FDFBD4] mb-4">
+            Everything you need for a
+            <br />
+            <span className="text-[#00CED1]">complete transformation.</span>
+          </h2>
+          <p className="text-[#FDFBD4]/60 text-lg max-w-2xl mx-auto">
+            Every transformation project includes these core capabilities.
+          </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((feature, index) => (
-            <Card
+            <div
               key={index}
-              className="bg-slate-800/50 border-slate-700 hover:border-cyan-500/50 transition-all duration-300 group"
+              className="p-6 rounded-xl bg-[#3D2C8D]/10 border border-[#3D2C8D]/20 hover:border-[#3D2C8D]/40 transition-all duration-300 group"
             >
-              <CardContent className="p-6 text-center">
-                <feature.icon className="w-12 h-12 text-[#6366F1] mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" />
-                <h3 className="text-lg font-semibold text-white mb-2">{feature.title}</h3>
-                <p className="text-slate-400 text-sm">{feature.description}</p>
-              </CardContent>
-            </Card>
+              <feature.icon className="w-10 h-10 text-[#00CED1] mb-4 group-hover:scale-110 transition-transform duration-300" />
+              <h3 className="text-lg font-semibold text-[#FDFBD4] mb-2">{feature.title}</h3>
+              <p className="text-[#FDFBD4]/50 text-[14px] leading-relaxed">{feature.description}</p>
+            </div>
           ))}
         </div>
       </div>

@@ -1,40 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-
-const stats = [
-  { value: 95, suffix: "%", label: "Audit pass rate", description: "First-time passes for our clients" },
-  { value: 89, suffix: "%", label: "Completion rate", description: "People finish what they start" },
-  { value: 73, suffix: "%", label: "Fewer incidents", description: "Reduction in security events" },
-  { value: 14, suffix: " days", label: "Average delivery", description: "From start to deployment" }
-]
-
-function AnimatedCounter({ value, suffix, isVisible }: { value: number; suffix: string; isVisible: boolean }) {
-  const [count, setCount] = useState(0)
-  
-  useEffect(() => {
-    if (!isVisible) return
-    
-    const duration = 2000
-    const steps = 60
-    const increment = value / steps
-    let current = 0
-    
-    const timer = setInterval(() => {
-      current += increment
-      if (current >= value) {
-        setCount(value)
-        clearInterval(timer)
-      } else {
-        setCount(Math.floor(current))
-      }
-    }, duration / steps)
-    
-    return () => clearInterval(timer)
-  }, [isVisible, value])
-  
-  return <span>{count}{suffix}</span>
-}
+import { Quote, Zap } from "lucide-react"
 
 export function ResultsSection() {
   const [isVisible, setIsVisible] = useState(false)
@@ -49,7 +16,7 @@ export function ResultsSection() {
           }
         })
       },
-      { threshold: 0.3 }
+      { threshold: 0.2 }
     )
 
     if (sectionRef.current) {
@@ -60,52 +27,104 @@ export function ResultsSection() {
   }, [])
 
   return (
-    <section ref={sectionRef} className="py-32 relative overflow-hidden">
-      {/* Gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a] via-[#180A73]/20 to-[#0f172a]" />
+    <section ref={sectionRef} className="py-24 lg:py-32 relative overflow-hidden bg-[#1A1F5C]">
+      {/* Dramatic top accent */}
+      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#00CED1] via-[#3D2C8D] to-[#FF8559]" />
       
-      {/* Accent glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[#03A6A6] rounded-full blur-[200px] opacity-10" />
+      {/* Background */}
+      <div className="absolute inset-0">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#3D2C8D]/10 rounded-full blur-[200px]" />
+      </div>
 
-      <div className="max-w-6xl mx-auto px-6 relative">
-        {/* Section Header */}
-        <div className="text-center mb-20">
-          <span className="text-[#03A6A6] font-medium text-sm tracking-wider uppercase">Results</span>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mt-4 mb-6">
-            Numbers that matter.
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative">
+        {/* Section header */}
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#00CED1]/10 border border-[#00CED1]/25 mb-5">
+            <Zap className="w-3.5 h-3.5 text-[#00CED1]" strokeWidth={2.5} />
+            <span className="text-[12px] font-semibold tracking-[0.08em] uppercase text-[#00CED1]">Transformation Results</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#FDFBD4] leading-tight">
+            The numbers speak for
+            <br />
+            <span className="text-[#00CED1]">themselves.</span>
           </h2>
-          <p className="text-slate-400 text-lg max-w-xl mx-auto">
-            We track what counts. Here's how our training impacts the teams we work with.
-          </p>
         </div>
 
-        {/* Stats Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {stats.map((stat, index) => (
-            <div 
-              key={stat.label}
-              className={`text-center p-8 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-[#03A6A6]/30 transition-all duration-500 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}
-              style={{ transitionDelay: `${index * 100}ms` }}
-            >
-              <div className="text-5xl md:text-6xl font-bold bg-gradient-to-br from-white to-slate-400 bg-clip-text text-transparent mb-2">
-                <AnimatedCounter value={stat.value} suffix={stat.suffix} isVisible={isVisible} />
+        {/* Transformation metrics - Before/After format */}
+        <div className="grid sm:grid-cols-3 gap-6 lg:gap-8 mb-20">
+          {/* Metric 1 */}
+          <div className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <div className="relative p-6 rounded-2xl bg-gradient-to-b from-[#3D2C8D]/20 to-transparent border border-[#3D2C8D]/20 h-full">
+              <div className="text-center">
+                <div className="text-[11px] font-bold tracking-[0.15em] uppercase text-[#FDFBD4]/40 mb-3">Content Format</div>
+                <div className="space-y-2">
+                  <div className="text-[#FDFBD4]/40 text-lg line-through">Static PDFs</div>
+                  <div className="text-2xl text-[#00CED1]">↓</div>
+                  <div className="text-3xl font-bold text-[#00CED1]">Interactive LMS</div>
+                </div>
+                <p className="text-[13px] text-[#FDFBD4]/50 mt-4">30 years of curriculum transformed</p>
               </div>
-              <div className="text-white font-medium mb-1">{stat.label}</div>
-              <div className="text-sm text-slate-500">{stat.description}</div>
             </div>
-          ))}
+          </div>
+
+          {/* Metric 2 */}
+          <div className={`transition-all duration-700 delay-150 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <div className="relative p-6 rounded-2xl bg-gradient-to-b from-[#3D2C8D]/20 to-transparent border border-[#3D2C8D]/20 h-full">
+              <div className="text-center">
+                <div className="text-[11px] font-bold tracking-[0.15em] uppercase text-[#FDFBD4]/40 mb-3">Student Reach</div>
+                <div className="space-y-2">
+                  <div className="text-[#FDFBD4]/40 text-lg line-through">Morocco Only</div>
+                  <div className="text-2xl text-[#FF8559]">↓</div>
+                  <div className="text-3xl font-bold text-[#FF8559]">3+ Countries</div>
+                </div>
+                <p className="text-[13px] text-[#FDFBD4]/50 mt-4">Geographic barriers eliminated</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Metric 3 */}
+          <div className={`transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <div className="relative p-6 rounded-2xl bg-gradient-to-b from-[#3D2C8D]/20 to-transparent border border-[#3D2C8D]/20 h-full">
+              <div className="text-center">
+                <div className="text-[11px] font-bold tracking-[0.15em] uppercase text-[#FDFBD4]/40 mb-3">Platform Scale</div>
+                <div className="space-y-2">
+                  <div className="text-[#FDFBD4]/40 text-lg line-through">~50 per class</div>
+                  <div className="text-2xl text-[#D4AF37]">↓</div>
+                  <div className="text-3xl font-bold text-[#D4AF37]">2,000+ Active</div>
+                </div>
+                <p className="text-[13px] text-[#FDFBD4]/50 mt-4">Unlimited concurrent capacity</p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        {/* Social Proof Quote */}
-        <div className={`mt-20 text-center transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <blockquote className="text-xl md:text-2xl text-slate-300 italic max-w-3xl mx-auto">
-            "EdTechie's approach is refreshingly practical. Our team actually looks forward to training now."
-          </blockquote>
-          <div className="mt-6">
-            <div className="text-white font-medium">Sarah Chen</div>
-            <div className="text-slate-500 text-sm">Security Lead, TechFlow Inc</div>
+        {/* Testimonial */}
+        <div className={`relative transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
+          <div className="bg-gradient-to-br from-[#3D2C8D]/30 to-[#1A1F5C]/50 rounded-2xl p-8 lg:p-12 border border-[#8B7FB8]/15 relative overflow-hidden">
+            {/* Decorative quote */}
+            <div className="absolute top-6 left-6 lg:top-8 lg:left-8">
+              <Quote className="w-10 h-10 lg:w-16 lg:h-16 text-[#00CED1]/15" strokeWidth={1} />
+            </div>
+            
+            <div className="relative z-10 max-w-3xl mx-auto text-center">
+              <blockquote className="text-xl sm:text-2xl text-[#FDFBD4] leading-relaxed font-medium mb-8">
+                &ldquo;EdTechie didn&apos;t just digitize our courses—they <span className="text-[#00CED1]">transformed</span> how we 
+                deliver education. Students in Europe can now access the same quality training that made us 
+                <span className="text-[#D4AF37]"> Morocco&apos;s leading beauty academy</span>. 
+                That was <span className="text-[#FF8559]">impossible</span> before.&rdquo;
+              </blockquote>
+              
+              <div className="flex flex-col items-center gap-3">
+                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#00CED1] to-[#3D2C8D] flex items-center justify-center text-xl font-bold text-white">
+                  IF
+                </div>
+                <div>
+                  <div className="text-[#FDFBD4] font-semibold">Institut Fandi</div>
+                  <div className="text-[13px] text-[#D4AF37]">🏆 1st Prize Winner, 21st National Competition</div>
+                  <div className="text-[13px] text-[#FDFBD4]/50">30+ Years of Excellence in Beauty Training</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

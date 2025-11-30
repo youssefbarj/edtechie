@@ -1,18 +1,31 @@
+import { Zap } from "lucide-react"
+
 export function ContactHero() {
   return (
-    <section className="py-20 bg-gradient-to-br from-slate-950 via-blue-950 to-slate-950">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="space-y-8">
-          <h1 className="text-5xl md:text-6xl font-bold">
-            Ready to Let <span className="text-[#6366F1]">EdTechie</span>{" "}
-            <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
-              Fix Your Security?
-            </span>
+    <section className="pt-32 pb-16 bg-[#1A1F5C] relative overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0">
+        <div className="absolute top-0 right-0 w-[60%] h-[70%] bg-gradient-to-bl from-[#3D2C8D]/30 to-transparent" />
+        <div className="absolute bottom-0 left-0 w-[40%] h-[50%] bg-gradient-to-tr from-[#00CED1]/10 to-transparent" />
+      </div>
+
+      <div className="max-w-6xl mx-auto px-6 lg:px-12 relative">
+        <div className="text-center max-w-3xl mx-auto">
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#FF8559]/10 border border-[#FF8559]/25 mb-8">
+            <Zap className="w-3.5 h-3.5 text-[#FF8559]" strokeWidth={2.5} />
+            <span className="text-[12px] font-semibold tracking-[0.08em] uppercase text-[#FF8559]">Start Your Transformation</span>
+          </div>
+
+          <h1 className="text-4xl sm:text-5xl font-bold leading-tight mb-6">
+            <span className="text-[#FDFBD4]">Let&apos;s talk about</span>
+            <br />
+            <span className="text-[#00CED1]">your transformation.</span>
           </h1>
-          <p className="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto">
-            Schedule a demo and see how <span className="text-[#6366F1] font-semibold">EdTechie Corp</span> transforms
-            your biggest security liability into your strongest defense.
-            <span className="text-cyan-400 font-semibold"> Your next audit is coming.</span>
+          
+          <p className="text-lg text-[#FDFBD4]/60 leading-relaxed">
+            Whether you&apos;re a beauty academy, professional institute, or vocational school—
+            tell us about your training content, and we&apos;ll show you how to transform it.
           </p>
         </div>
       </div>

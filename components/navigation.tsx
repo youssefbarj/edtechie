@@ -9,8 +9,9 @@ import { Menu, X } from "lucide-react"
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
-  { href: "/case-studies", label: "Work" },
+  { href: "/case-studies", label: "Success Stories" },
   { href: "/resources", label: "Resources" },
+  { href: "/contact", label: "Contact" },
 ]
 
 export function Navigation() {
@@ -29,7 +30,7 @@ export function Navigation() {
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         isScrolled 
-          ? "bg-[#0f172a]/90 backdrop-blur-xl border-b border-slate-800/50" 
+          ? "bg-brand-navy/95 backdrop-blur-xl border-b border-brand-purple/30 shadow-lg" 
           : "bg-transparent"
       }`}
     >
@@ -42,7 +43,7 @@ export function Navigation() {
               alt="EdTechie Corp"
               width={180}
               height={54}
-              className="h-9 w-auto"
+              className="h-10 w-auto"
               priority
             />
           </Link>
@@ -53,7 +54,7 @@ export function Navigation() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+                className="px-4 py-2 text-sm text-brand-cream/70 hover:text-brand-teal transition-colors rounded-lg hover:bg-brand-purple/20 font-medium"
               >
                 {link.label}
               </Link>
@@ -64,7 +65,7 @@ export function Navigation() {
           <div className="hidden md:block">
             <Button
               asChild
-              className="bg-[#03A6A6] hover:bg-[#03A6A6]/90 text-white font-medium px-6 py-2 rounded-lg transition-all duration-300"
+              className="bg-brand-coral hover:bg-brand-coral/90 text-white font-semibold px-6 py-2 rounded-lg transition-all duration-300 shadow-lg shadow-brand-coral/25 hover:shadow-brand-coral/40 hover:scale-105"
             >
               <Link href="/contact">Get Started</Link>
             </Button>
@@ -72,7 +73,7 @@ export function Navigation() {
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden p-2 text-slate-400 hover:text-white transition-colors"
+            className="md:hidden p-2 text-brand-cream/70 hover:text-brand-teal transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -82,13 +83,13 @@ export function Navigation() {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-slate-800/50">
+          <div className="md:hidden py-4 border-t border-brand-purple/30 bg-brand-navy/95 backdrop-blur-xl">
             <div className="flex flex-col gap-1">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="px-4 py-3 text-slate-400 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
+                  className="px-4 py-3 text-brand-cream/70 hover:text-brand-teal hover:bg-brand-purple/20 rounded-lg transition-colors font-medium"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.label}
@@ -97,7 +98,7 @@ export function Navigation() {
               <div className="pt-4 px-4">
                 <Button
                   asChild
-                  className="w-full bg-[#03A6A6] hover:bg-[#03A6A6]/90 text-white"
+                  className="w-full bg-brand-coral hover:bg-brand-coral/90 text-white font-semibold"
                 >
                   <Link href="/contact">Get Started</Link>
                 </Button>

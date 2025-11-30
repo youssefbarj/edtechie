@@ -5,13 +5,10 @@ import { WhyEdTechie } from "@/components/why-edtechie"
 import { ResultsSection } from "@/components/results-section"
 import { CTASection } from "@/components/cta-section"
 import { Footer } from "@/components/footer"
-import { AIChatbot } from "@/components/ai-chatbot"
-import { SiteGate } from "@/components/site-gate"
-import { ConstructionWall } from "@/components/construction-wall"
 
-function ActualSite() {
+export default function HomePage() {
   return (
-    <main className="min-h-screen bg-[#0f172a]">
+    <main className="min-h-screen bg-brand-navy">
       <Navigation />
       <HeroSection />
       <ServicesPreview />
@@ -19,16 +16,6 @@ function ActualSite() {
       <ResultsSection />
       <CTASection />
       <Footer />
-      <AIChatbot />
     </main>
-  )
-}
-
-export default function HomePage() {
-  return (
-    <SiteGate
-      constructionPage={<ConstructionWall />}
-      actualSite={<ActualSite />}
-    />
   )
 }
