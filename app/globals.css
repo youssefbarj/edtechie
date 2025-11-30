@@ -2,28 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap');
+
 @layer base {
   :root {
-    --background: 30 41 59;
-    --foreground: 254 255 251; /* #FEFFFB */
-    --card: 30 41 59;
-    --card-foreground: 254 255 251;
-    --primary: 24 10 115; /* #180A73 - Dark Purple */
-    --primary-foreground: 254 255 251;
-    --secondary: 3 166 166; /* #03A6A6 - Teal */
-    --secondary-foreground: 254 255 251;
-    --accent: 73 129 242; /* #4981F2 - Medium Blue */
-    --accent-foreground: 254 255 251;
-    --success: 5 242 199; /* #05F2C7 - Light Teal */
-    --success-foreground: 24 10 115;
-    --muted: 51 65 85;
-    --muted-foreground: 148 163 184;
-    --destructive: 239 68 68;
-    --destructive-foreground: 254 255 251;
-    --border: 51 65 85;
-    --input: 51 65 85;
-    --ring: 24 10 115;
-    --radius: 0.5rem;
+    /* EdTechie Brand Colors - Precise HSL values */
+    --color-navy: 236 55% 23%; /* #1A1F5C */
+    --color-purple: 252 52% 36%; /* #3D2C8D */
+    --color-purple-soft: 252 30% 61%; /* #8B7FB8 */
+    --color-teal: 181 100% 41%; /* #00CED1 */
+    --color-teal-bright: 174 72% 56%; /* #40E0D0 */
+    --color-coral: 16 100% 67%; /* #FF8559 */
+    --color-gold: 43 62% 52%; /* #D4AF37 */
+    --color-cream: 56 100% 97%; /* #FDFBD4 */
+    
+    /* Semantic colors */
+    --background: var(--color-navy);
+    --foreground: var(--color-cream);
+    --card: 236 55% 20%;
+    --card-foreground: var(--color-cream);
+    --primary: var(--color-purple);
+    --primary-foreground: var(--color-cream);
+    --secondary: var(--color-teal);
+    --secondary-foreground: var(--color-navy);
+    --accent: var(--color-coral);
+    --accent-foreground: var(--color-cream);
+    --muted: 236 30% 30%;
+    --muted-foreground: 236 20% 70%;
+    --border: 252 30% 35%;
+    --input: 236 30% 25%;
+    --ring: var(--color-teal);
+    --radius: 0.75rem;
+    
+    /* Spacing rhythm - 8px base */
+    --space-1: 0.25rem;  /* 4px */
+    --space-2: 0.5rem;   /* 8px */
+    --space-3: 0.75rem;  /* 12px */
+    --space-4: 1rem;     /* 16px */
+    --space-5: 1.5rem;   /* 24px */
+    --space-6: 2rem;     /* 32px */
+    --space-7: 2.5rem;   /* 40px */
+    --space-8: 3rem;     /* 48px */
+    --space-10: 4rem;    /* 64px */
+    --space-12: 5rem;    /* 80px */
+    --space-16: 6rem;    /* 96px */
+    --space-20: 8rem;    /* 128px */
   }
 }
 
@@ -31,26 +55,168 @@
   * {
     @apply border-border;
   }
+  
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
   body {
     @apply bg-background text-foreground;
-    background-color: #1e293b;
-    color: #fefffb;
+    background-color: hsl(var(--color-navy));
+    color: hsl(var(--color-cream));
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    line-height: 1.6;
+    letter-spacing: -0.011em;
+  }
+  
+  /* Typography system - commanding hierarchy */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', system-ui, sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+  }
+  
+  h1 {
+    font-weight: 700;
+    letter-spacing: -0.035em;
+  }
+  
+  /* Focus styles - accessible and on-brand */
+  *:focus-visible {
+    outline: 2px solid hsl(var(--color-teal));
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+  
+  /* Selection styling */
+  ::selection {
+    background-color: hsl(var(--color-teal) / 0.3);
+    color: hsl(var(--color-cream));
   }
 }
 
+/* Custom scrollbar - subtle, refined */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #1e293b;
+  background: hsl(var(--color-navy));
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #180a73;
-  border-radius: 4px;
+  background: hsl(var(--color-purple) / 0.5);
+  border-radius: 5px;
+  border: 2px solid hsl(var(--color-navy));
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #4981f2;
+  background: hsl(var(--color-teal) / 0.7);
+}
+
+/* Smooth animations - 60fps performance */
+@layer utilities {
+  .transition-smooth {
+    transition-property: transform, opacity, background-color, border-color, color, box-shadow;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+  }
+  
+  .transition-fast {
+    transition-property: transform, opacity, background-color, border-color, color, box-shadow;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+  }
+  
+  /* Hover lift effect - subtle, professional */
+  .hover-lift {
+    transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-2px);
+  }
+  
+  /* Text gradient utility */
+  .text-gradient-teal {
+    background: linear-gradient(135deg, hsl(var(--color-teal)) 0%, hsl(var(--color-teal-bright)) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .text-gradient-coral {
+    background: linear-gradient(135deg, hsl(var(--color-coral)) 0%, hsl(43 80% 60%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Glow effects */
+  .glow-teal {
+    box-shadow: 0 0 40px hsl(var(--color-teal) / 0.3);
+  }
+  
+  .glow-coral {
+    box-shadow: 0 0 40px hsl(var(--color-coral) / 0.3);
+  }
+}
+
+/* Animation keyframes */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes pulse-soft {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 3s ease-in-out infinite;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.6s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out forwards;
 }

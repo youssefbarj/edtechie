@@ -3,9 +3,9 @@ import type { Metadata, Viewport } from "next"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "EdTechie Corp - E-Learning & Cybersecurity Training",
+  title: "EdTechie Corp - E-Learning & Digital Solutions",
   description:
-    "Interactive cybersecurity training and e-learning solutions that engage your team and deliver measurable results. Built by EdTechie Corp.",
+    "Aide et conseil en transformation digitale des processus de formation et d'apprentissage. We transform vocational training content into interactive e-learning experiences.",
   manifest: "/manifest.json",
   icons: {
     icon: [
@@ -28,7 +28,7 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 1,
   userScalable: false,
-  themeColor: "#0f172a",
+  themeColor: "#1A1F5C",
 }
 
 export default function RootLayout({
@@ -44,14 +44,16 @@ export default function RootLayout({
         <link rel="icon" href="/favicon-32x32.png?v=2" sizes="32x32" type="image/png" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2" sizes="180x180" />
         <link rel="manifest" href="/manifest.json" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="apple-mobile-web-app-title" content="EdTechie" />
-        <meta name="theme-color" content="#4981f2" />
-        <meta name="msapplication-TileColor" content="#4981f2" />
+        <meta name="theme-color" content="#1A1F5C" />
+        <meta name="msapplication-TileColor" content="#1A1F5C" />
       </head>
-      <body className="bg-[#0f172a] text-white antialiased" style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }}>{children}</body>
+      <body className="bg-brand-navy text-brand-cream antialiased">{children}</body>
     </html>
   )
 }

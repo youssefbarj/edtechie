@@ -1,43 +1,90 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Mail } from "lucide-react"
+import { ArrowRight, Zap } from "lucide-react"
 import Link from "next/link"
 
 export function CTASection() {
   return (
-    <section className="py-32 bg-[#0f172a] relative overflow-hidden">
-      {/* Background accents */}
+    <section className="py-24 lg:py-32 bg-[#1A1F5C] relative overflow-hidden">
+      {/* Background with tech pattern */}
       <div className="absolute inset-0">
-        <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-[#180A73] rounded-full blur-[150px] opacity-30" />
-        <div className="absolute top-0 right-1/4 w-64 h-64 bg-[#03A6A6] rounded-full blur-[120px] opacity-20" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#3D2C8D]/20 via-transparent to-[#00CED1]/10" />
+        {/* Grid pattern */}
+        <div 
+          className="absolute inset-0 opacity-[0.02]"
+          style={{
+            backgroundImage: `
+              linear-gradient(rgba(0,206,209,0.2) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(0,206,209,0.2) 1px, transparent 1px)
+            `,
+            backgroundSize: '40px 40px'
+          }}
+        />
       </div>
 
-      <div className="max-w-4xl mx-auto px-6 relative">
+      <div className="max-w-5xl mx-auto px-6 lg:px-12 relative">
         <div className="text-center">
-          {/* Main CTA Content */}
-          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
-            Ready to build something<br />
-            <span className="bg-gradient-to-r from-[#03A6A6] via-[#4981F2] to-[#05F2C7] bg-clip-text text-transparent">
-              that actually works?
-            </span>
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#FF8559]/10 border border-[#FF8559]/30 mb-8">
+            <Zap className="w-3.5 h-3.5 text-[#FF8559]" strokeWidth={2.5} />
+            <span className="text-[12px] font-semibold tracking-[0.08em] uppercase text-[#FF8559]">Ready to Transform?</span>
+          </div>
+
+          {/* Headline - Transformation focused */}
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#FDFBD4] mb-6 leading-tight">
+            Your training deserves to be
+            <br />
+            <span className="text-[#00CED1]">more than PDFs.</span>
           </h2>
           
-          <p className="text-lg text-slate-400 max-w-xl mx-auto mb-10">
-            Let's talk about your training needs. No sales pitch, just a conversation 
-            about what you're trying to accomplish.
+          <p className="text-lg text-[#FDFBD4]/60 max-w-2xl mx-auto mb-10 leading-relaxed">
+            Whether you&apos;re a beauty academy, professional institute, or vocational school—
+            we engineer the <span className="text-[#FDFBD4]">complete digital transformation</span> that 
+            takes you from analog limitations to global reach.
           </p>
+
+          {/* Transformation promise */}
+          <div className="flex flex-wrap justify-center gap-8 mb-12">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-lg bg-[#00CED1]/15 flex items-center justify-center">
+                <span className="text-[#00CED1] text-lg">📄</span>
+              </div>
+              <div className="text-left">
+                <div className="text-[#FDFBD4]/40 text-[12px] line-through">PDFs</div>
+                <div className="text-[#00CED1] text-[14px] font-semibold">→ Interactive</div>
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-lg bg-[#FF8559]/15 flex items-center justify-center">
+                <span className="text-[#FF8559] text-lg">📍</span>
+              </div>
+              <div className="text-left">
+                <div className="text-[#FDFBD4]/40 text-[12px] line-through">Local</div>
+                <div className="text-[#FF8559] text-[14px] font-semibold">→ Global</div>
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-lg bg-[#D4AF37]/15 flex items-center justify-center">
+                <span className="text-[#D4AF37] text-lg">⏱️</span>
+              </div>
+              <div className="text-left">
+                <div className="text-[#FDFBD4]/40 text-[12px]">Timeline</div>
+                <div className="text-[#D4AF37] text-[14px] font-semibold">4 Months</div>
+              </div>
+            </div>
+          </div>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button
               asChild
               size="lg"
-              className="group bg-gradient-to-r from-[#03A6A6] to-[#4981F2] hover:from-[#4981F2] hover:to-[#03A6A6] text-white font-semibold px-10 py-6 rounded-xl transition-all duration-300 shadow-lg shadow-[#03A6A6]/25 hover:shadow-[#4981F2]/40"
+              className="group bg-[#FF8559] hover:bg-[#FF6B3D] text-white font-semibold text-[15px] px-8 py-6 rounded-xl transition-all duration-300 shadow-[0_4px_24px_rgba(255,133,89,0.3)] hover:shadow-[0_8px_32px_rgba(255,133,89,0.4)] hover:-translate-y-0.5"
             >
-              <Link href="/contact" className="flex items-center gap-2">
-                <span>Start a Conversation</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <Link href="/contact" className="flex items-center gap-3">
+                <span>Start Your Transformation</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" strokeWidth={2.5} />
               </Link>
             </Button>
             
@@ -45,18 +92,17 @@ export function CTASection() {
               asChild
               variant="outline"
               size="lg"
-              className="group border-slate-700 text-slate-300 hover:text-white hover:bg-slate-800 hover:border-slate-600 px-10 py-6 rounded-xl transition-all duration-300"
+              className="border-[#00CED1]/40 text-[#00CED1] hover:text-[#00CED1] hover:bg-[#00CED1]/10 hover:border-[#00CED1]/60 text-[15px] px-8 py-6 rounded-xl transition-all duration-300"
             >
-              <a href="mailto:barjyoussef5@gmail.com" className="flex items-center gap-2">
-                <Mail className="w-4 h-4" />
-                <span>Email Us Directly</span>
-              </a>
+              <Link href="/case-studies">
+                <span>See Transformation in Action</span>
+              </Link>
             </Button>
           </div>
 
           {/* Trust note */}
-          <p className="text-sm text-slate-600 mt-8">
-            Usually respond within 24 hours • No commitment required
+          <p className="text-[13px] text-[#FDFBD4]/40 mt-8">
+            Free consultation • Custom transformation roadmap • No upfront commitment
           </p>
         </div>
       </div>

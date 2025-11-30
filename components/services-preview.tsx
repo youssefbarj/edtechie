@@ -1,124 +1,210 @@
 "use client"
 
 import { useState } from "react"
-import { BookOpen, Shield, Users, Zap, ArrowRight } from "lucide-react"
+import { FileText, Server, Rocket, ArrowRight, ChevronRight } from "lucide-react"
 import Link from "next/link"
 
-const services = [
+const transformationStages = [
   {
-    icon: Shield,
-    title: "Cybersecurity Training",
-    description: "Interactive simulations that prepare your team for real-world threats. Not another boring compliance video.",
-    color: "#03A6A6",
-    href: "/services"
+    stage: "01",
+    icon: FileText,
+    title: "Content Transformation",
+    subtitle: "Analog → Digital",
+    before: "PDFs, documents, slide decks gathering dust",
+    after: "Interactive modules students actually complete",
+    description: "We take your proven training content—every PDF, every manual, every video—and engineer it into engaging, interactive digital experiences. Same expertise, new delivery.",
+    techHighlight: "Interactive LMS modules • Video integration • Quiz systems • Progress tracking",
+    color: "#00CED1",
+    metric: "30 years of content transformed for Institut Fandi"
   },
   {
-    icon: BookOpen,
-    title: "Custom E-Learning",
-    description: "Tailored courses built around your specific needs. Your content, our expertise in making it engaging.",
-    color: "#4981F2",
-    href: "/services"
+    stage: "02",
+    icon: Server,
+    title: "Platform Engineering",
+    subtitle: "Local → Scalable",
+    before: "Limited by classroom walls and geography",
+    after: "Custom LMS that scales to thousands",
+    description: "We architect and build your learning platform from the ground up. Student portals, admin dashboards, analytics—all engineered to handle unlimited growth.",
+    techHighlight: "Custom LMS • Student dashboards • Real-time analytics • Mobile-ready",
+    color: "#3D2C8D",
+    metric: "2K+ concurrent users on Institut Fandi's platform"
   },
   {
-    icon: Users,
-    title: "Team Workshops",
-    description: "Hands-on sessions that get your team working together. Real scenarios, real solutions.",
-    color: "#05F2C7",
-    href: "/services"
-  },
-  {
-    icon: Zap,
-    title: "Rapid Deployment",
-    description: "Need it fast? We build and deploy training solutions in days, not months.",
-    color: "#180A73",
-    href: "/services"
+    stage: "03",
+    icon: Rocket,
+    title: "Digital Launch",
+    subtitle: "Static → Live",
+    before: "Uncertain how to make the transition",
+    after: "Fully operational, globally accessible",
+    description: "The tech is only half the battle. We train your team, migrate your students, and ensure a smooth launch. You focus on teaching—we handle the technology transition.",
+    techHighlight: "Staff training • Student migration • Launch support • Ongoing optimization",
+    color: "#FF8559",
+    metric: "4 months from kickoff to global reach"
   }
 ]
 
 export function ServicesPreview() {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+  const [activeStage, setActiveStage] = useState<number>(0)
 
   return (
-    <section className="py-32 bg-[#0f172a] relative overflow-hidden">
-      {/* Subtle background accent */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#180A73]/5 to-transparent" />
+    <section className="py-24 lg:py-32 bg-[#1A1F5C] relative overflow-hidden">
+      {/* Tech background pattern */}
+      <div className="absolute inset-0">
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#00CED1]/30 to-transparent" />
+        <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#3D2C8D]/30 to-transparent" />
+        {/* Circuit pattern */}
+        <div 
+          className="absolute inset-0 opacity-[0.02]"
+          style={{
+            backgroundImage: `radial-gradient(circle at 2px 2px, rgba(0,206,209,0.3) 1px, transparent 0)`,
+            backgroundSize: '32px 32px'
+          }}
+        />
+      </div>
       
-      <div className="max-w-6xl mx-auto px-6 relative">
-        {/* Section Header */}
-        <div className="mb-20">
-          <span className="text-[#03A6A6] font-medium text-sm tracking-wider uppercase">What We Do</span>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mt-4 mb-6">
-            Training that works,<br />
-            <span className="text-slate-400">delivered your way.</span>
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative">
+        {/* Section header */}
+        <div className="max-w-3xl mb-16 lg:mb-20">
+          <div className="flex items-center gap-3 mb-5">
+            <div className="w-10 h-px bg-[#00CED1]" />
+            <span className="text-[#00CED1] text-[12px] font-semibold tracking-[0.15em] uppercase">The Transformation Process</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#FDFBD4] leading-[1.15] mb-5">
+            Three stages from
+            <br />
+            <span className="text-[#FDFBD4]/50">analog</span> to{" "}
+            <span className="text-[#00CED1]">digital.</span>
           </h2>
-          <p className="text-slate-400 text-lg max-w-xl">
-            We specialize in creating learning experiences that people actually want to complete. 
-            Here's how we help teams level up.
+          <p className="text-[1.1rem] text-[#FDFBD4]/55 leading-relaxed max-w-2xl">
+            We don&apos;t just &quot;build websites.&quot; We engineer complete digital transformations—
+            taking training organizations from static content and local limitations to 
+            interactive platforms with global reach.
           </p>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid md:grid-cols-2 gap-6">
-          {services.map((service, index) => {
-            const Icon = service.icon
-            const isHovered = hoveredIndex === index
-            
-            return (
-              <Link
-                key={service.title}
-                href={service.href}
-                className="group relative"
-                onMouseEnter={() => setHoveredIndex(index)}
-                onMouseLeave={() => setHoveredIndex(null)}
-              >
-                <div 
-                  className={`relative p-8 rounded-2xl border transition-all duration-500 ${
-                    isHovered 
-                      ? 'bg-slate-800/80 border-slate-600' 
-                      : 'bg-slate-900/50 border-slate-800'
+        {/* Transformation stages - Interactive timeline */}
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12">
+          {/* Stage selector - left side */}
+          <div className="lg:col-span-4 space-y-4">
+            {transformationStages.map((stage, index) => {
+              const Icon = stage.icon
+              const isActive = activeStage === index
+              
+              return (
+                <button
+                  key={stage.stage}
+                  onClick={() => setActiveStage(index)}
+                  className={`w-full text-left p-5 rounded-xl border transition-all duration-300 group ${
+                    isActive 
+                      ? 'bg-gradient-to-r from-[#3D2C8D]/40 to-transparent border-[#3D2C8D]/60' 
+                      : 'bg-transparent border-[#3D2C8D]/20 hover:border-[#3D2C8D]/40 hover:bg-[#3D2C8D]/10'
                   }`}
                 >
-                  {/* Glow effect on hover */}
-                  <div 
-                    className={`absolute inset-0 rounded-2xl transition-opacity duration-500 ${isHovered ? 'opacity-100' : 'opacity-0'}`}
-                    style={{
-                      background: `radial-gradient(600px circle at ${isHovered ? '50%' : '0%'} 50%, ${service.color}10, transparent 40%)`
-                    }}
-                  />
-                  
-                  <div className="relative">
-                    {/* Icon */}
+                  <div className="flex items-start gap-4">
                     <div 
-                      className="w-12 h-12 rounded-xl flex items-center justify-center mb-6 transition-all duration-300"
-                      style={{ 
-                        backgroundColor: `${service.color}15`,
-                        transform: isHovered ? 'scale(1.1)' : 'scale(1)'
-                      }}
+                      className={`w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300 ${
+                        isActive ? 'scale-110' : 'group-hover:scale-105'
+                      }`}
+                      style={{ backgroundColor: `${stage.color}${isActive ? '30' : '15'}` }}
                     >
-                      <Icon 
-                        className="w-6 h-6 transition-colors duration-300" 
-                        style={{ color: service.color }}
-                      />
+                      <Icon className="w-5 h-5" style={{ color: stage.color }} strokeWidth={2} />
                     </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className="text-[11px] font-bold tracking-[0.1em] uppercase" style={{ color: stage.color }}>
+                          Stage {stage.stage}
+                        </span>
+                        <ChevronRight 
+                          className={`w-3 h-3 transition-transform duration-300 ${isActive ? 'translate-x-1 opacity-100' : 'opacity-0'}`} 
+                          style={{ color: stage.color }} 
+                        />
+                      </div>
+                      <div className="text-[15px] font-semibold text-[#FDFBD4] mb-1">{stage.title}</div>
+                      <div className="text-[13px] text-[#FDFBD4]/50">{stage.subtitle}</div>
+                    </div>
+                  </div>
+                </button>
+              )
+            })}
+          </div>
 
-                    {/* Content */}
-                    <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-[#03A6A6] transition-colors">
-                      {service.title}
-                    </h3>
-                    <p className="text-slate-400 leading-relaxed mb-4">
-                      {service.description}
+          {/* Stage detail - right side */}
+          <div className="lg:col-span-8">
+            {transformationStages.map((stage, index) => {
+              const isActive = activeStage === index
+              if (!isActive) return null
+              
+              return (
+                <div 
+                  key={stage.stage}
+                  className="bg-gradient-to-br from-[#3D2C8D]/30 to-[#1A1F5C]/50 rounded-2xl border border-[#8B7FB8]/15 overflow-hidden"
+                >
+                  {/* Before/After comparison */}
+                  <div className="grid sm:grid-cols-2 border-b border-[#8B7FB8]/10">
+                    {/* Before - muted */}
+                    <div className="p-6 bg-[#1A1F5C]/40">
+                      <div className="flex items-center gap-2 mb-3">
+                        <div className="w-1.5 h-1.5 rounded-full bg-[#FDFBD4]/30" />
+                        <span className="text-[10px] font-bold tracking-[0.15em] uppercase text-[#FDFBD4]/40">Before</span>
+                      </div>
+                      <p className="text-[#FDFBD4]/50 text-[15px] line-through decoration-[#FF8559]/30">{stage.before}</p>
+                    </div>
+                    {/* After - vibrant */}
+                    <div className="p-6 bg-gradient-to-r from-transparent to-[#00CED1]/5">
+                      <div className="flex items-center gap-2 mb-3">
+                        <div className="w-1.5 h-1.5 rounded-full bg-[#00CED1] animate-pulse" />
+                        <span className="text-[10px] font-bold tracking-[0.15em] uppercase text-[#00CED1]">After</span>
+                      </div>
+                      <p className="text-[#FDFBD4] text-[15px] font-medium">{stage.after}</p>
+                    </div>
+                  </div>
+
+                  {/* Main content */}
+                  <div className="p-6 lg:p-8">
+                    <p className="text-[#FDFBD4]/70 text-[16px] leading-relaxed mb-6">
+                      {stage.description}
                     </p>
 
-                    {/* Arrow */}
-                    <div className="flex items-center gap-2 text-slate-500 group-hover:text-[#03A6A6] transition-colors">
-                      <span className="text-sm font-medium">Learn more</span>
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    {/* Tech highlight */}
+                    <div className="mb-6 p-4 rounded-xl bg-[#1A1F5C]/50 border border-[#3D2C8D]/30">
+                      <div className="text-[10px] font-bold tracking-[0.15em] uppercase text-[#3D2C8D] mb-2">Technology Stack</div>
+                      <div className="text-[13px] text-[#FDFBD4]/60">{stage.techHighlight}</div>
+                    </div>
+
+                    {/* Proof metric */}
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ backgroundColor: `${stage.color}20` }}>
+                          <span className="text-sm">✓</span>
+                        </div>
+                        <span className="text-[13px] text-[#FDFBD4]/60">{stage.metric}</span>
+                      </div>
+                      <Link 
+                        href="/services"
+                        className="group inline-flex items-center gap-2 text-[13px] font-medium transition-colors"
+                        style={{ color: stage.color }}
+                      >
+                        <span>Learn more</span>
+                        <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                      </Link>
                     </div>
                   </div>
                 </div>
-              </Link>
-            )
-          })}
+              )
+            })}
+          </div>
+        </div>
+
+        {/* Bottom CTA */}
+        <div className="mt-16 lg:mt-20 text-center">
+          <p className="text-[#FDFBD4]/50 text-[15px] mb-5">Ready to start your transformation?</p>
+          <Link 
+            href="/contact"
+            className="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-[#FF8559] hover:bg-[#FF6B3D] text-white font-semibold text-[15px] transition-all duration-300 shadow-[0_4px_20px_rgba(255,133,89,0.25)] hover:shadow-[0_6px_28px_rgba(255,133,89,0.35)] hover:-translate-y-0.5"
+          >
+            <span>Start Your Transformation</span>
+            <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
       </div>
     </section>
