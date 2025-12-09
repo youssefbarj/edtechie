@@ -22,13 +22,14 @@ const config: Config = {
   				foreground: 'hsl(var(--popover-foreground))'
   			},
   			primary: {
-  				DEFAULT: 'hsl(var(--primary))',
-  				foreground: 'hsl(var(--primary-foreground))'
+  				DEFAULT: '#00CED1',
+  				foreground: '#FFFFFF'
   			},
   			secondary: {
-  				DEFAULT: 'hsl(var(--secondary))',
-  				foreground: 'hsl(var(--secondary-foreground))'
+  				DEFAULT: '#3D2C8D',
+  				foreground: '#FFFFFF'
   			},
+  			action: '#FF8559',
   			muted: {
   				DEFAULT: 'hsl(var(--muted))',
   				foreground: 'hsl(var(--muted-foreground))'
@@ -61,7 +62,7 @@ const config: Config = {
   				border: 'hsl(var(--sidebar-border))',
   				ring: 'hsl(var(--sidebar-ring))'
   			},
-  			// EdTechie Corp Brand Colors
+  			// EdTechie Corp Brand Colors (Legacy support)
   			brand: {
   				teal: '#00CED1',
   				'teal-bright': '#40E0D0',
@@ -73,6 +74,10 @@ const config: Config = {
   				gold: '#D4AF37',
   				charcoal: '#4A4A4A',
   				cream: '#FDFBD4',
+  			},
+  			bg: {
+  				dark: '#0F172A',
+  				light: '#F8FAFC'
   			}
   		},
   		fontFamily: {
