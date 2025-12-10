@@ -9,6 +9,7 @@ export default function HomePage() {
           <svg
             viewBox="0 0 100 100"
             className="w-12 h-12 sm:w-16 sm:h-16"
+            role="img"
             aria-label="EdTechie Corp"
           >
             {/* Branch */}
@@ -47,8 +48,14 @@ export default function HomePage() {
             <path d="M50 35 L45 40 L55 40 Z" fill="#FFA726" />
             
             {/* Feet */}
-            <path d="M45 65 L43 72 M45 65 L47 72 M45 65 L45 72" stroke="#FFA726" strokeWidth="2" />
-            <path d="M55 65 L53 72 M55 65 L57 72 M55 65 L55 72" stroke="#FFA726" strokeWidth="2" />
+            <g stroke="#FFA726" strokeWidth="2">
+              <path d="M45 65 L43 72" />
+              <path d="M45 65 L47 72" />
+              <path d="M45 65 L45 72" />
+              <path d="M55 65 L53 72" />
+              <path d="M55 65 L57 72" />
+              <path d="M55 65 L55 72" />
+            </g>
           </svg>
           <h1 className="text-2xl sm:text-3xl font-bold text-[#00CED1] font-heading">
             EdTechie CORP
