@@ -1,4 +1,3 @@
-import Image from "next/image"
 import { Mail } from "lucide-react"
 
 export default function HomePage() {
@@ -7,13 +6,50 @@ export default function HomePage() {
       <div className="max-w-2xl w-full text-center space-y-8">
         {/* Logo */}
         <div className="flex items-center justify-center gap-3">
-          <Image
-            src="/images/owl-icon.png"
-            alt="EdTechie Corp"
-            width={60}
-            height={60}
+          <svg
+            viewBox="0 0 100 100"
             className="w-12 h-12 sm:w-16 sm:h-16"
-          />
+            aria-label="EdTechie Corp"
+          >
+            {/* Branch */}
+            <path
+              d="M20 75 Q50 73 80 75"
+              stroke="#8B7355"
+              strokeWidth="3"
+              fill="none"
+            />
+            {/* Leaves */}
+            <ellipse cx="30" cy="75" rx="5" ry="8" fill="#4CAF50" />
+            <ellipse cx="45" cy="73" rx="5" ry="8" fill="#4CAF50" />
+            <ellipse cx="70" cy="75" rx="5" ry="8" fill="#4CAF50" />
+            
+            {/* Owl Body */}
+            <ellipse cx="50" cy="45" rx="20" ry="25" fill="#00CED1" />
+            
+            {/* Owl Wings */}
+            <ellipse cx="32" cy="48" rx="8" ry="15" fill="#00BEC1" />
+            <ellipse cx="68" cy="48" rx="8" ry="15" fill="#00BEC1" />
+            
+            {/* Owl Head */}
+            <circle cx="50" cy="32" r="18" fill="#00CED1" />
+            
+            {/* Ear Tufts */}
+            <path d="M38 18 L35 12 L40 20 Z" fill="#00CED1" />
+            <path d="M62 18 L65 12 L60 20 Z" fill="#00CED1" />
+            
+            {/* Eyes */}
+            <circle cx="43" cy="32" r="6" fill="white" />
+            <circle cx="57" cy="32" r="6" fill="white" />
+            <circle cx="43" cy="32" r="3" fill="#1E293B" />
+            <circle cx="57" cy="32" r="3" fill="#1E293B" />
+            
+            {/* Beak */}
+            <path d="M50 35 L45 40 L55 40 Z" fill="#FFA726" />
+            
+            {/* Feet */}
+            <path d="M45 65 L43 72 M45 65 L47 72 M45 65 L45 72" stroke="#FFA726" strokeWidth="2" />
+            <path d="M55 65 L53 72 M55 65 L57 72 M55 65 L55 72" stroke="#FFA726" strokeWidth="2" />
+          </svg>
           <h1 className="text-2xl sm:text-3xl font-bold text-[#00CED1] font-heading">
             EdTechie CORP
           </h1>
