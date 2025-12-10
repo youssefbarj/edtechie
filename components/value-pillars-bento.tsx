@@ -14,7 +14,7 @@ const pillars = [
     id: "reach",
     title: "🌍 Broader Reach",
     problem: "Physical classrooms trap expertise in one location",
-    solution: "Global accessibility. Paris to Casablaba, same content",
+    solution: "Global accessibility. Paris to Casablanca, same content",
     icon: Globe,
     gradient: "from-primary/20 to-primary/5",
     iconColor: "text-primary",
