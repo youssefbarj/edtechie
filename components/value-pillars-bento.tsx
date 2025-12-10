@@ -12,48 +12,58 @@ const springConfig = {
 const pillars = [
   {
     id: "reach",
-    title: "Broader Reach",
-    description: "Break geographic barriers. Go from local classrooms to global audiences.",
+    title: "🌍 Broader Reach",
+    problem: "Physical classrooms trap expertise in one location",
+    solution: "Global accessibility. Paris to Casablaba, same content",
     icon: Globe,
     gradient: "from-primary/20 to-primary/5",
     iconColor: "text-primary",
-    size: "large" as const
+    size: "large" as const,
+    stat: "Global, not local"
   },
   {
-    id: "async",
-    title: "Asynchronicity",
-    description: "24/7 access. Learning on their schedule, not yours.",
-    icon: Clock,
-    gradient: "from-action/20 to-action/5",
-    iconColor: "text-action",
-    size: "medium" as const
-  },
-  {
-    id: "engagement",
-    title: "Deep Engagement",
-    description: "Transform passive PDFs into active, immersive experiences.",
+    id: "learning",
+    title: "📚 Deeper Learning",
+    problem: "PDFs are passive, students skim and forget",
+    solution: "Interactive modules, quizzes, multimedia",
     icon: Gamepad2,
     gradient: "from-secondary/20 to-secondary/5",
     iconColor: "text-secondary",
-    size: "large" as const
+    size: "large" as const,
+    stat: "Interactive, not static"
   },
   {
-    id: "clarity",
-    title: "Clarity & Standardization",
-    description: "Every student gets the same premium experience. Every time.",
+    id: "engagement",
+    title: "🎯 Higher Engagement",
+    problem: "Static content = learners zone out",
+    solution: "Serious games, simulations, scenarios",
     icon: CheckCircle2,
+    gradient: "from-action/20 to-action/5",
+    iconColor: "text-action",
+    size: "medium" as const,
+    stat: "70% better retention"
+  },
+  {
+    id: "async",
+    title: "⏰ Asynchronous Flexibility",
+    problem: "Fixed schedules exclude busy professionals",
+    solution: "24/7 access, learn anytime",
+    icon: Clock,
     gradient: "from-primary/20 to-primary/5",
     iconColor: "text-primary",
-    size: "medium" as const
+    size: "medium" as const,
+    stat: "10x larger market"
   },
   {
     id: "cost",
-    title: "Cost & Compliance",
-    description: "Slash training costs by 10x. Automate ISO/FDA audit trails.",
+    title: "💰 Cost Reduction",
+    problem: "Traditional training costs $1,200/employee",
+    solution: "Digital = $120/employee (10x cheaper)",
     icon: DollarSign,
     gradient: "from-action/20 to-action/5",
     iconColor: "text-action",
-    size: "medium" as const
+    size: "medium" as const,
+    stat: "Perfect compliance tracking"
   }
 ]
 
@@ -79,7 +89,7 @@ export function ValuePillarsBento() {
             viewport={{ once: true }}
             transition={{ ...springConfig, delay: 0.1 }}
           >
-            Why Digital?
+            Five Reasons Digital Training Wins
           </motion.h2>
           <motion.p 
             className="text-xl text-gray-600 max-w-2xl mx-auto"
@@ -129,13 +139,23 @@ export function ValuePillarsBento() {
                   </motion.div>
 
                   {/* Content */}
-                  <div className="relative z-10 space-y-3">
+                  <div className="relative z-10 space-y-4">
                     <h3 className="font-heading text-2xl font-bold text-gray-900">
                       {pillar.title}
                     </h3>
-                    <p className="text-gray-600 leading-relaxed">
-                      {pillar.description}
-                    </p>
+                    <div className="space-y-2">
+                      <p className="text-sm text-gray-500 font-medium">
+                        <span className="text-red-600">Problem:</span> {pillar.problem}
+                      </p>
+                      <p className="text-sm text-gray-700 font-medium">
+                        <span className="text-green-600">Solution:</span> {pillar.solution}
+                      </p>
+                      {pillar.stat && (
+                        <p className={`text-xs font-bold ${pillar.iconColor} uppercase tracking-wider mt-3`}>
+                          → {pillar.stat}
+                        </p>
+                      )}
+                    </div>
                   </div>
 
                   {/* Hover reveal effect */}

@@ -1,17 +1,15 @@
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
-import { CaseStudyHero } from "@/components/case-study-hero"
-import { CaseStudyGrid } from "@/components/case-study-grid"
-import { CaseStudyStats } from "@/components/case-study-stats"
+import { InstitutFandiCaseStudy } from "@/components/institut-fandi-case-study"
+import { ComingSoonCases } from "@/components/coming-soon-cases"
 import { LeadCapture } from "@/components/lead-capture"
 
 export default function CaseStudiesPage() {
   return (
-    <div className="bg-[#1A1F5C] min-h-screen">
+    <div className="min-h-screen">
       <Navigation />
-      <CaseStudyHero />
-      <CaseStudyGrid />
-      <CaseStudyStats />
+      <InstitutFandiCaseStudy />
+      <ComingSoonCases />
       <LeadCapture />
       <Footer />
     </div>
